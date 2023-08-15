@@ -14,4 +14,9 @@ public class Bullet_T : MonoBehaviour
 
         Destroy(gameObject, 5f);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+    }
 }
