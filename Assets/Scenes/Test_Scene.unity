@@ -376,6 +376,7 @@ GameObject:
   - component: {fileID: 287937135}
   - component: {fileID: 287937138}
   - component: {fileID: 287937137}
+  - component: {fileID: 287937142}
   - component: {fileID: 287937136}
   - component: {fileID: 287937140}
   - component: {fileID: 287937139}
@@ -535,6 +536,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 2135253694}
   bulletPrefab: {fileID: 5449274703226503303, guid: 1e44109abb7bd12499e5db8cc465e128, type: 3}
+--- !u!114 &287937142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287937134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb84b161dafa6e4086da5e3e3843161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
 --- !u!1 &569141132
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +651,8 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 4983525774823111614, guid: 4d34383c5ebf67e42a2e3158f2e1e212, type: 3}
   player: {fileID: 287937135}
   speed: 1
+  damage: 5
+  damageCooldown: 2
 --- !u!136 &569141138
 CapsuleCollider:
   m_ObjectHideFlags: 0

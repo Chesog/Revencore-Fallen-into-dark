@@ -6,10 +6,14 @@ public class Enemy_T : MonoBehaviour
 {
     [SerializeField] private string bulletTag = "Bullet";
     [SerializeField] private GameObject floatingTextPrefab;
-    [SerializeField] private Transform player;
+    [SerializeField] private PlayerDamage_T player;
     [SerializeField] private float speed = 3f;
+    [SerializeField] private float damage = 5f;
+    [SerializeField] private float damageCooldown = 2f;
     private float currentHealth;
     private float distance;
+    private bool canTakeDamage = true;
+    private float damageTimer = 0f;
 
     void Start()
     {
@@ -18,14 +22,36 @@ public class Enemy_T : MonoBehaviour
 
     private void Update()
     {
-        distance = Vector3.Distance(transform.position, player.position);
-        Vector3 direction = player.position - transform.position;
+        distance = Vector3.Distance(transform.position, player.transform.position);
+        Vector3 direction = player.transform.position - transform.position;
 
-        if (distance > 1.2f) 
+        if (distance > 1.2f)
+        {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        }
+        else
+        {
+            if (canTakeDamage)
+            {
+                player.TakeDamage(damage);
+                canTakeDamage = false;
+                damageTimer = damageCooldown;
+            }
+        }
 
-        if(!IsAlive())
+        if (!IsAlive())
+        {
             Destroy(gameObject);
+        }
+
+        if (!canTakeDamage)
+        {
+            damageTimer -= Time.deltaTime;
+            if (damageTimer <= 0f)
+            {
+                canTakeDamage = true;
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
