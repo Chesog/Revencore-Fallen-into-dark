@@ -27,7 +27,7 @@ public class T_Player_Movement : MonoBehaviour
         }
 
         movement.y = rigidbody.velocity.y;
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }

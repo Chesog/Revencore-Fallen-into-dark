@@ -520,7 +520,7 @@ MonoBehaviour:
   rigidbody: {fileID: 287937139}
   speed: 10
   z_speed: 0
-  jumpForce: 1
+  jumpForce: 4
 --- !u!114 &287937141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,6 +634,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletTag: Bullet
   floatingTextPrefab: {fileID: 4983525774823111614, guid: 4d34383c5ebf67e42a2e3158f2e1e212, type: 3}
+  player: {fileID: 287937135}
+  speed: 1
 --- !u!136 &569141138
 CapsuleCollider:
   m_ObjectHideFlags: 0
