@@ -5,7 +5,6 @@ using UnityEngine;
 public class T_Player_Movement : MonoBehaviour
 {
     [SerializeField] Vector3 movement = Vector3.zero;
-    [SerializeField] Camera cam;
     [SerializeField] Rigidbody rigidbody;
     [SerializeField] float speed;
     [SerializeField] float z_speed;
@@ -28,12 +27,12 @@ public class T_Player_Movement : MonoBehaviour
         }
 
         movement.y = rigidbody.velocity.y;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
         rigidbody.velocity = movement;
-        cam.transform.position += movement * Time.deltaTime;
     }
 }

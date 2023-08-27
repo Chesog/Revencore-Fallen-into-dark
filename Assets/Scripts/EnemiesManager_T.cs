@@ -18,6 +18,14 @@ public class EnemiesManager_T : MonoBehaviour
         remainingEnemies = enemiesToKill;
     }
 
+    private void Update()
+    {
+        if (remainingEnemies <= 0)
+        {
+
+        }
+    }
+
     private void ReduceEnemy()
     {
         remainingEnemies--;
