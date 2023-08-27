@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
 
 public class Enemy_T : MonoBehaviour
 {
+    public static event Action Destroyed;
+
     [SerializeField] private string bulletTag = "Bullet";
     [SerializeField] private GameObject floatingTextPrefab;
+    [SerializeField] private Transform floatingTextSpawn;
     [SerializeField] private PlayerDamage_T player;
     [SerializeField] private float speed = 3f;
     [SerializeField] private float damage = 5f;
     [SerializeField] private float damageCooldown = 2f;
+    [SerializeField] private float maxHealth = 100f;
     private float currentHealth;
     private float distance;
     private bool canTakeDamage = true;
@@ -17,7 +23,7 @@ public class Enemy_T : MonoBehaviour
 
     void Start()
     {
-        currentHealth = 1000;
+        currentHealth = 100;
     }
 
     private void Update()
@@ -71,12 +77,17 @@ public class Enemy_T : MonoBehaviour
 
     private void ShowFloatingText()
     {
-       var go = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity, transform);
+       var go = Instantiate(floatingTextPrefab, floatingTextSpawn.position, Quaternion.identity, transform);
         go.GetComponent<TextMesh>().text = currentHealth.ToString();
     }
 
     private bool IsAlive()
     {
-        return currentHealth >= 0;
+        return currentHealth > 0;
+    }
+
+    private void OnDestroy()
+    {
+        Destroyed?.Invoke();
     }
 }
