@@ -34,7 +34,7 @@ Transform:
   - {fileID: 9172297530491867763}
   - {fileID: 2318019474169141084}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3705006775998116896
 MonoBehaviour:
@@ -55,6 +55,7 @@ MonoBehaviour:
   speed: 3
   damage: 5
   damageCooldown: 2
+  maxHealth: 100
 --- !u!212 &4420720911596393439
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -126,8 +127,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.65, y: 14.227154, z: 1.3621749}
-  m_Center: {x: 0, y: 3.1785803, z: 0.08821348}
+  m_Size: {x: 10.65, y: 10.979439, z: 3.1074324}
+  m_Center: {x: 0, y: 1.5547233, z: 0.08821348}
 --- !u!1 &7216221411072093589
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +231,10 @@ PrefabInstance:
     - target: {fileID: 4983525774823111614, guid: 4d34383c5ebf67e42a2e3158f2e1e212, type: 3}
       propertyPath: m_Name
       value: FloatingText
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983525774823111614, guid: 4d34383c5ebf67e42a2e3158f2e1e212, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
