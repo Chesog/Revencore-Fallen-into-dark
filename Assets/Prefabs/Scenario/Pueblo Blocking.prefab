@@ -5371,7 +5371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1508310463309334339}
   m_Layer: 0
-  m_Name: Blocking
+  m_Name: Pueblo Blocking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
