@@ -1,38 +1,63 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class T_Player_Movement : MonoBehaviour
 {
-    [SerializeField] Vector3 movement = Vector3.zero;
-    [SerializeField] Rigidbody rigidbody;
-    [SerializeField] float speed;
-    [SerializeField] float z_speed;
-    [SerializeField] float jumpForce;
+    [SerializeField] private Vector3 movement = Vector3.zero;
+    [SerializeField] private Rigidbody rigidbody;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private float speed;
+    [SerializeField] private float z_speed;
+    [SerializeField] private float jumpForce;
+    private bool pause;
     void Update()
     {
         z_speed = speed / 2;
-
-        movement.x = Input.GetAxisRaw("Horizontal") * speed;
-        movement.z = Input.GetAxisRaw("Vertical") * z_speed;
-
-        if (Input.GetKey(KeyCode.D)) 
+        if (!pause) 
         {
-            transform.forward = Vector3.forward;
+            movement.x = Input.GetAxisRaw("Horizontal") * speed;
+            movement.z = Input.GetAxisRaw("Vertical") * z_speed;
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.forward = Vector3.forward;
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.forward = Vector3.back;
+            }
+
+            movement.y = rigidbody.velocity.y;
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            }
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            transform.forward = Vector3.back;
+            if (pauseMenu.activeInHierarchy)
+                UnPauseGame();
+            else
+                PauseGame();
         }
-
-        movement.y = rigidbody.velocity.y;
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        }
-
         rigidbody.velocity = movement;
+    }
+
+    public void PauseGame() 
+    {
+        pauseMenu.SetActive(true);
+        pause = true;
+        Time.timeScale = 0.1f;
+    }
+    public void UnPauseGame()
+    {
+        pauseMenu.SetActive(false);
+        pause = false;
+        Time.timeScale = 1;
     }
 }
