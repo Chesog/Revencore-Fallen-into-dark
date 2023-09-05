@@ -23,7 +23,7 @@ public class Enemy_T : MonoBehaviour
 
     void Start()
     {
-        currentHealth = 100;
+        currentHealth = maxHealth;
     }
 
     private void Update()
@@ -64,13 +64,10 @@ public class Enemy_T : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(bulletTag))
         {
-            Debug.Log("Lo mataste, ASESINO!");
             currentHealth -= 20;
 
             if (floatingTextPrefab)
-            {
                 ShowFloatingText();
-            }
 
         }
     }
@@ -88,6 +85,7 @@ public class Enemy_T : MonoBehaviour
 
     private void OnDestroy()
     {
+        Debug.Log("Mataste un enemigo melee!");
         Destroyed?.Invoke();
     }
 }

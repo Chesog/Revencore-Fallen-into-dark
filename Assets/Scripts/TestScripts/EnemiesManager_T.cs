@@ -11,6 +11,7 @@ public class EnemiesManager_T : MonoBehaviour
     private void Awake()
     {
         Enemy_T.Destroyed += ReduceEnemy;
+        DistanceEnemy.Destroyed += ReduceEnemy;
     }
 
     private void Start()
@@ -22,7 +23,7 @@ public class EnemiesManager_T : MonoBehaviour
     {
         if (remainingEnemies <= 0)
         {
-
+            //Camera to the next stage
         }
     }
 
@@ -34,5 +35,6 @@ public class EnemiesManager_T : MonoBehaviour
     private void OnDestroy()
     {
         Enemy_T.Destroyed -= ReduceEnemy;
+        DistanceEnemy.Destroyed -= ReduceEnemy;
     }
 }
