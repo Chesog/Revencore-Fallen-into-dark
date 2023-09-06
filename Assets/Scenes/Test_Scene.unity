@@ -2480,7 +2480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2079312061525422309, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3204492489471941361, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
       propertyPath: m_Anchor
@@ -2927,7 +2927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2079312061525422309, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3204492489471941361, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
       propertyPath: m_Anchor
@@ -5867,7 +5867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1673375652
 Transform:
   m_ObjectHideFlags: 0
@@ -8498,8 +8498,16 @@ PrefabInstance:
       value: DistanceEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 3204492489471941361, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
+      propertyPath: m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 8df03188cc7f7224aba02f073ec677d6, type: 3}
+    - target: {fileID: 3204492489471941361, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
       propertyPath: m_Anchor
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3204492489471941361, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
+      propertyPath: m_Color.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4518963830658956322, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
       propertyPath: m_RootOrder
@@ -8581,6 +8589,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8581337518517379367, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8df03188cc7f7224aba02f073ec677d6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
