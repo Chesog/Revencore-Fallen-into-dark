@@ -37,9 +37,10 @@ public class DistanceEnemy : MonoBehaviour
 
         if (_distanceToPlayer > _attackDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);
+            Vector3 targetPosition = new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime);
         }
-        else
+        else if (_distanceToPlayer <= _attackDistance && Mathf.Approximately(transform.position.z, _player.transform.position.z))
         {
             Vector3 direction = _player.transform.position - transform.position;
             direction.y = 0f;
@@ -59,6 +60,11 @@ public class DistanceEnemy : MonoBehaviour
                 StartCoroutine(ResetAttack());
             }
 
+        }
+        else if(!Mathf.Approximately(transform.position.x, _player.transform.position.x))
+        {
+            Vector3 targetPosition = new Vector3(transform.position.x, transform.position.y, _player.transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime);
         }
 
         if (!IsAlive())
