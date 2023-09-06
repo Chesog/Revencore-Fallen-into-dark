@@ -8,6 +8,8 @@ public class PlayerDamage_T : MonoBehaviour
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private float currentHealth;
     [SerializeField] private string enemyBulletTag = "EnemyBullet";
+    [SerializeField] private GameObject floatingTextPrefab;
+    [SerializeField] private Transform floatingTextSpawn;
 
 
     private void Start()
@@ -41,6 +43,16 @@ public class PlayerDamage_T : MonoBehaviour
         if (collision.gameObject.CompareTag(enemyBulletTag))
         {
             TakeDamage(5f);
+
+            if (floatingTextPrefab)
+                ShowFloatingText();
         }
     }
+    private void ShowFloatingText()
+    {
+        var go = Instantiate(floatingTextPrefab, floatingTextSpawn.position, Quaternion.identity, transform);
+        go.SetActive(true);
+        go.GetComponent<TextMesh>().text = currentHealth.ToString();
+    }
+
 }
