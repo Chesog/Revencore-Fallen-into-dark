@@ -26,6 +26,10 @@ public class PlayerDamage_T : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log("Player HP: " + currentHealth.ToString());
+
+        if (floatingTextPrefab)
+            ShowFloatingText();
+
         CheckHealth();
     }
 
@@ -44,8 +48,6 @@ public class PlayerDamage_T : MonoBehaviour
         {
             TakeDamage(5f);
 
-            if (floatingTextPrefab)
-                ShowFloatingText();
         }
     }
     private void ShowFloatingText()
