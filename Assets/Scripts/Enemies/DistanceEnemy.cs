@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class DistanceEnemy : MonoBehaviour
 {
+    #region EVENTS
     public static event Action Destroyed;
+    #endregion
 
+    #region EXPOSED_FIELDS
     [SerializeField] private string _bulletTag = "Bullet";
     [SerializeField] private GameObject _projectilePrefab;
     [SerializeField] private Transform _shootingPoint;
@@ -20,8 +23,9 @@ public class DistanceEnemy : MonoBehaviour
     private float _currentHealth;
     private float _distanceToPlayer;
     private bool _isAttacking = false;
+    #endregion
 
-
+    #region UNITY_CALLS
     private void Start()
     {
         _currentHealth = _maxHealth;
@@ -62,7 +66,15 @@ public class DistanceEnemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void OnDestroy()
+    {
+        Debug.Log("Mataste un enemigo a distancia!");
+        Destroyed?.Invoke();
+    }
 
+    #endregion
+    
+    #region PRIVATE_METHODS
     /// <summary>
     /// Resets the enemy's attack state after a certain cooldown, allowing it to attack again.
     /// </summary>
@@ -94,10 +106,7 @@ public class DistanceEnemy : MonoBehaviour
     {
         return _currentHealth > 0;
     }
+    
 
-    private void OnDestroy()
-    {
-        Debug.Log("Mataste un enemigo a distancia!");
-        Destroyed?.Invoke();
-    }
+    #endregion
 }
