@@ -99,6 +99,7 @@ public class DistanceEnemy : MonoBehaviour
     private void ShowFloatingText()
     {
         var go = Instantiate(_floatingTextPrefab, _floatingTextSpawn.position, Quaternion.identity, transform);
+        go.SetActive(true);
         go.GetComponent<TextMesh>().text = _currentHealth.ToString();
     }
 
