@@ -46,7 +46,7 @@ public class PlayerDamage_T : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(enemyBulletTag))
         {
-            TakeDamage(5f);
+            TakeDamage(30f);
 
         }
     }

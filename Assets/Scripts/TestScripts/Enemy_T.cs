@@ -13,7 +13,7 @@ public class Enemy_T : MonoBehaviour
     [SerializeField] private Transform floatingTextSpawn;
     [SerializeField] private PlayerDamage_T player;
     [SerializeField] private float speed = 3f;
-    [SerializeField] private float damage = 5f;
+    [SerializeField] private float damage = 30f;
     [SerializeField] private float damageCooldown = 2f;
     [SerializeField] private float maxHealth = 100f;
     private float currentHealth;
