@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class EnemyComponent : CharacterComponent
@@ -37,10 +38,21 @@ public class EnemyComponent : CharacterComponent
             }
         if (!target)
         {
-            Debug.LogError(message: $"{name}: (logError){nameof(target)} is null");
+            StartCoroutine(SearchForPlayerEverySecond());
+            //Debug.LogError(message: $"{name}: (logError){nameof(target)} is null");
         }
 
         deathLoop = false;
+    }
+
+    private IEnumerator SearchForPlayerEverySecond()
+    {
+        while (!target)
+        {
+            yield return new WaitForSeconds(1);
+            target = player_Source._player.transform;
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)

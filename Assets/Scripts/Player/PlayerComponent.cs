@@ -25,19 +25,13 @@ public class PlayerComponent : CharacterComponent
 
     public bool isPlayer_Attacking;
 
-    private void Start()
-    {
-        character_Health_Component._maxHealth = 100.0f;
-        character_Health_Component._health = character_Health_Component._maxHealth;
-        player_Source._player = this;
-
-        feet_Pivot ??= GetComponent<Transform>();
-    }
-
     private void Awake()
     {
+        player_Source._player = this;
         character_Health_Component._maxHealth = 100.0f;
         character_Health_Component._health = character_Health_Component._maxHealth;
+
+        feet_Pivot ??= GetComponent<Transform>();
     }
 
     private void OnEnable()

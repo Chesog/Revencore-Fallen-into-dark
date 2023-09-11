@@ -4060,6 +4060,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3428974327954055427, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3705006775998116896, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
       propertyPath: player
       value: 
@@ -4314,8 +4318,6 @@ MonoBehaviour:
   initialSpeed: 0
   jumpForce: 1
   movement: {x: 0, y: 0, z: 0}
-  anim: {fileID: 0}
-  rigidbody: {fileID: 0}
   jumpBufferTime: 0
   jumpBufferTimeCounter: 0
   lookRad: 20
@@ -4329,7 +4331,6 @@ MonoBehaviour:
   bulletSpawn: {fileID: 0}
   player_Source: {fileID: 11400000, guid: 5e67e42c21ea55c4b865b291844ebafc, type: 2}
   bulletPrefab: {fileID: 0}
-  hit_Particles: {fileID: 0}
 --- !u!114 &1231930902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6915,8 +6916,6 @@ MonoBehaviour:
   initialSpeed: 0
   jumpForce: 0
   movement: {x: 0, y: 0, z: 0}
-  anim: {fileID: 0}
-  rigidbody: {fileID: 0}
   jumpBufferTime: 0
   jumpBufferTimeCounter: 0
   input: {fileID: 1933857436}
