@@ -1,22 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyStateMachine : MonoBehaviour
+public class EnemyStateMachine : State_Machine
 {
     #region EXPOSED_FIELDS
     [SerializeField] private EnemyComponent enemy;
     #endregion
 
-    // Start is called before the first frame update
-    void Start()
+    #region PRIVATE_FIELDS
+    private EnemyIdleState _idleState;
+    #endregion
+
+    private void OnEnable()
     {
-        
+        if (enemy == null)
+            enemy = GetComponent<EnemyComponent>();
+        if (!enemy)
+        {
+            Debug.LogError(message: $"{name}: (logError){nameof(enemy)} is null");
+            enabled = false;
+        }
+
+        _idleState = new EnemyIdleState(nameof(_idleState),this,enemy);
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override State GetInitialState()
     {
-        
+        base.GetInitialState();
+        return _idleState;
     }
 }

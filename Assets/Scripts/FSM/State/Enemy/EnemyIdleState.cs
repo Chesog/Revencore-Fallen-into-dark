@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyIdleState : EnemyBaseState
 {
-    public EnemyIdleState(string name, State_Machine state_Machine,EnemyComponent enemy) : base(name, state_Machine,enemy) { }
+    public EnemyIdleState(string name, State_Machine state_Machine, EnemyComponent enemy) : base(name, state_Machine,enemy)
+    {
+        
+    }
 
     public override void OnEnter()
     {

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyComponent : CharacterComponent
 {
-     public float lookRad = 20f;
+    public float lookRad = 20f;
     public float stopDistance = 5f;
     public float timeBetweenAttacks = 6.0f;
     public float destroyTime;
@@ -13,10 +13,9 @@ public class EnemyComponent : CharacterComponent
     public Transform target;
     public Transform bulletSpawn;
 
-    //public Player_Data_Source player_Source;
+    public Player_Data_Source player_Source;
 
     public GameObject bulletPrefab;
-    public GameObject hit_Particles;
 
     public event Action<Vector2> OnEnemyMove;
     public event Action OnEnemyAttack;
@@ -26,7 +25,7 @@ public class EnemyComponent : CharacterComponent
     private void Start()
     {
         //anim = GetComponent<Animator>();
-        //target = player_Source._player.transform;
+        target = player_Source._player.transform;
         rigidbody = GetComponent<Rigidbody>();
         deathLoop = false;
     }
@@ -38,30 +37,29 @@ public class EnemyComponent : CharacterComponent
 
         ready_To_Attack = true;
 
-        if (anim == null)
-        {
-            anim = GetComponent<Animator>();
-        }
-        if (!anim)
-        {
-            Debug.LogError(message: $"{name}: (logError){nameof(anim)} is null");
-            enabled = false;
-        }
+        //if (anim == null)
+        //{
+        //    anim = GetComponent<Animator>();
+        //}
+        //if (!anim)
+        //{
+        //    Debug.LogError(message: $"{name}: (logError){nameof(anim)} is null");
+        //    enabled = false;
+        //}
 
-        if (hit_Particles == null)
-        {
-            hit_Particles = GetComponent<GameObject>();
-        }
-        if (!hit_Particles)
-        {
-            Debug.LogError(message: $"{name}: (logError){nameof(hit_Particles)} is null");
-            enabled = false;
-        }
+        //if (hit_Particles == null)
+        //{
+        //    hit_Particles = GetComponent<GameObject>();
+        //}
+        //if (!hit_Particles)
+        //{
+        //    Debug.LogError(message: $"{name}: (logError){nameof(hit_Particles)} is null");
+        //    enabled = false;
+        //}
 
         if (target == null)
-        {
-            //target = player_Source._player.transform;
-        }
+            target = player_Source._player.transform;
+
         if (!target)
         {
             Debug.LogError(message: $"{name}: (logError){nameof(target)} is null");
@@ -69,9 +67,8 @@ public class EnemyComponent : CharacterComponent
         }
 
         if (rigidbody == null)
-        {
             rigidbody = GetComponent<Rigidbody>();
-        }
+
         if (!rigidbody)
         {
             Debug.LogError(message: $"{name}: (logError){nameof(rigidbody)} is null");
