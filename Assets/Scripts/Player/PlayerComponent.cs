@@ -45,8 +45,6 @@ public class PlayerComponent : CharacterComponent
         character_Health_Component._maxHealth = 100.0f;
         character_Health_Component._health = character_Health_Component._maxHealth;
         initialSpeed = speed;
-        anim = GetComponent<Animator>();
-        rigidbody = GetComponent<Rigidbody>();
     }
 
     private void OnDrawGizmos()

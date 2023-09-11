@@ -15,8 +15,6 @@ public class CharacterComponent : MonoBehaviour
    public float initialSpeed;
    public float jumpForce;
    public Vector3 movement;
-   public Animator anim;
-   public Rigidbody rigidbody;
    [Header("Character Jump Timers")]
    public float jumpBufferTime;
    public float jumpBufferTimeCounter;
@@ -32,26 +30,6 @@ public class CharacterComponent : MonoBehaviour
        if (!character_Health_Component)
        {
            Debug.LogError(message: $"{name}: (logError){nameof(character_Health_Component)} is null");
-           enabled = false;
-       }
-
-       if (rigidbody == null)
-       {
-           rigidbody = GetComponent<Rigidbody>();
-       }
-       if (!rigidbody)
-       {
-           Debug.LogError(message: $"{name}: (logError){nameof(rigidbody)} is null");
-           enabled = false;
-       }
-
-       if (anim == null)
-       {
-           anim = GetComponent<Animator>();
-       }
-       if (!anim)
-       {
-           Debug.LogError(message: $"{name}: (logError){nameof(anim)} is null");
            enabled = false;
        }
    }
@@ -74,8 +52,6 @@ public class CharacterComponent : MonoBehaviour
        this.speed = speed;
        this.initialSpeed = initialSpeed;
        this.jumpForce = jumpForce;
-       this.anim = anim;
-       this.rigidbody = rigidbody;
        this.jumpBufferTime = jumpBufferTime;
    }
    #endregion

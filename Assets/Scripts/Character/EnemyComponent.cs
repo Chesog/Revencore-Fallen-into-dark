@@ -21,14 +21,7 @@ public class EnemyComponent : CharacterComponent
     public event Action OnEnemyAttack;
     public event Action OnEnemyHit;
     public event Action OnEnemyDeath;
-
-    private void Start()
-    {
-        //anim = GetComponent<Animator>();
-        target = player_Source._player.transform;
-        rigidbody = GetComponent<Rigidbody>();
-        deathLoop = false;
-    }
+    
 
     private void OnEnable()
     {
@@ -36,43 +29,15 @@ public class EnemyComponent : CharacterComponent
         initialSpeed = speed;
 
         ready_To_Attack = true;
-
-        //if (anim == null)
-        //{
-        //    anim = GetComponent<Animator>();
-        //}
-        //if (!anim)
-        //{
-        //    Debug.LogError(message: $"{name}: (logError){nameof(anim)} is null");
-        //    enabled = false;
-        //}
-
-        //if (hit_Particles == null)
-        //{
-        //    hit_Particles = GetComponent<GameObject>();
-        //}
-        //if (!hit_Particles)
-        //{
-        //    Debug.LogError(message: $"{name}: (logError){nameof(hit_Particles)} is null");
-        //    enabled = false;
-        //}
-
+        
         if (target == null)
-            target = player_Source._player.transform;
-
+            if (player_Source._player)
+            {
+                target = player_Source._player.transform;
+            }
         if (!target)
         {
             Debug.LogError(message: $"{name}: (logError){nameof(target)} is null");
-            enabled = false;
-        }
-
-        if (rigidbody == null)
-            rigidbody = GetComponent<Rigidbody>();
-
-        if (!rigidbody)
-        {
-            Debug.LogError(message: $"{name}: (logError){nameof(rigidbody)} is null");
-            enabled = false;
         }
 
         deathLoop = false;
