@@ -94,12 +94,17 @@ public class DistanceEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(_bulletTag))
         {
-            _currentHealth -= 20;
-
-            if (_floatingTextPrefab)
-                ShowFloatingText();
-
+            TakeDamage(_player.damage);
+    
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        _currentHealth -= damage;
+
+        if (_floatingTextPrefab)
+            ShowFloatingText();
     }
 
     private void ShowFloatingText()

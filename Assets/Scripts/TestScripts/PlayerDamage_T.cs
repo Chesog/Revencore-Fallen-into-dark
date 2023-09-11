@@ -10,6 +10,7 @@ public class PlayerDamage_T : MonoBehaviour
     [SerializeField] private string enemyBulletTag = "EnemyBullet";
     [SerializeField] private GameObject floatingTextPrefab;
     [SerializeField] private Transform floatingTextSpawn;
+    public float damage = 20;
 
 
     private void Start()

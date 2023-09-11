@@ -63,13 +63,17 @@ public class Enemy_T : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag(bulletTag))
-        {
-            currentHealth -= 20;
-
-            if (floatingTextPrefab)
-                ShowFloatingText();
-
+        { 
+            TakeDamage(player.damage);
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+
+        if (floatingTextPrefab)
+            ShowFloatingText();
     }
 
     private void ShowFloatingText()
