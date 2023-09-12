@@ -6,7 +6,7 @@ public class EnemyBaseState : State
 {
     public EnemyComponent enemy;
 
-    public EnemyBaseState(string name, State_Machine state_Machine , EnemyComponent enemy) : base(name, state_Machine)
+    public EnemyBaseState(string name, State_Machine stateMachine , EnemyComponent enemy) : base(name, stateMachine)
     {
         this.enemy = enemy;
     }

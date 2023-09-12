@@ -21,6 +21,8 @@ public class EnemyStateMachine : State_Machine
         }
 
         _idleState = new EnemyIdleState(nameof(_idleState),this,enemy);
+        
+        base.OnEnable();
     }
 
     protected override State GetInitialState()

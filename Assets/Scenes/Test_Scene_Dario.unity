@@ -4068,6 +4068,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1933857428}
+    - target: {fileID: 4420720911596393439, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 164ab1b0eda2fb045874ba053d74958f, type: 3}
     - target: {fileID: 7141708433785194233, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4130,6 +4134,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3428974327954055427, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1231930905}
+    - targetCorrespondingSourceObject: {fileID: 3428974327954055427, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1231930908}
   m_SourcePrefab: {fileID: 100100000, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
 --- !u!43 &1217159722
 Mesh:
@@ -4364,6 +4371,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <_health>k__BackingField: 0
   <_maxHealth>k__BackingField: 0
+--- !u!95 &1231930908
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413285939}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eae98f544cc9d7f4da5288e528380066, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1242722078
 GameObject:
   m_ObjectHideFlags: 0
@@ -6943,6 +6971,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 1619263224}
+--- !u!4 &1933857441 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3078583972514884116, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
+  m_PrefabInstance: {fileID: 3195029495822534136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1975934883
 Mesh:
   m_ObjectHideFlags: 0
@@ -8092,6 +8125,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 724990219871379838, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 1933857441}
     - target: {fileID: 5652742791429255529, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
       propertyPath: pauseMenu
       value: 

@@ -17,13 +17,13 @@ public enum CharacterState
 public class State
 {
     public string name;
-    protected State_Machine state_Machine;
+    protected State_Machine stateMachine;
     protected Dictionary<string, State> transitions = new();
 
-    public State(string name, State_Machine state_Machine)
+    public State(string name, State_Machine stateMachine)
     {
         this.name = name;
-        this.state_Machine = state_Machine;
+        this.stateMachine = stateMachine;
     }
 
     /// <summary>
