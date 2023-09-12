@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyIdleState : EnemyBaseState
 {
+    private const string idleAnimation = "MinionIdle";
     public EnemyIdleState(string name, State_Machine stateMachine, EnemyComponent enemy) : base(name, stateMachine,enemy)
     {
         
@@ -10,6 +11,7 @@ public class EnemyIdleState : EnemyBaseState
     public override void OnEnter()
     {
         base.OnEnter();
+        Debug.Log($"Enter {name} State");
     }
 
     public override void UpdateLogic()
@@ -20,6 +22,8 @@ public class EnemyIdleState : EnemyBaseState
             float distance = Vector3.Distance(enemy.transform.position, enemy.target.position);
             if (distance <= enemy.lookRad || distance <= enemy.stopDistance)
                 FaceTarget();
+
+            playIdleAnimation();
         }
     }
 
@@ -30,12 +34,15 @@ public class EnemyIdleState : EnemyBaseState
 
     private void FaceTarget()
     {
-        //enemy.transform.LookAt(enemy.target.position);
-        
         if (enemy.target.position.x < enemy.transform.position.x)
             enemy.transform.forward = Vector3.forward;
         else if (enemy.target.position.x > enemy.transform.position.x)
             enemy.transform.forward = Vector3.back;
+    }
+
+    private void playIdleAnimation()
+    {
+        enemy.anim.Play(idleAnimation);
     }
 
     public override void AddStateTransitions(string transitionName, State transitionState)
@@ -45,6 +52,7 @@ public class EnemyIdleState : EnemyBaseState
 
     public override void OnExit()
     {
+        enemy.anim.StopPlayback();
         base.OnExit();
     }
 }

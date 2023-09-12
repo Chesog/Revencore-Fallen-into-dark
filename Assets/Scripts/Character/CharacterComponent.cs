@@ -18,6 +18,7 @@ public class CharacterComponent : MonoBehaviour
    [Header("Character Jump Timers")]
    public float jumpBufferTime;
    public float jumpBufferTimeCounter;
+   public Animator anim;
    #endregion
 
    #region UNITY_CALLS

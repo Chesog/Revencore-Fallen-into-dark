@@ -2,17 +2,71 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMoveState : MonoBehaviour
+public class EnemyMoveState : EnemyBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    private const string moveAnimation = "MinionHit";
+    
+    public EnemyMoveState(string name, State_Machine stateMachine, EnemyComponent enemy) : base(name, stateMachine,enemy)
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    public override void OnEnter()
     {
-        
+        base.OnEnter();
+        Debug.Log($"Enter {name} State");
+    }
+
+    public override void UpdateLogic()
+    {
+        base.UpdateLogic();
+        if (enemy != null)
+        {
+            float distance = Vector3.Distance(enemy.transform.position, enemy.target.position);
+            if (distance <= enemy.lookRad && distance > enemy.stopDistance)
+                MoveTowardsTarget();
+            if (distance <= enemy.lookRad || distance <= enemy.stopDistance)
+                FaceTarget();
+
+            playMoveAnimation();
+        }
+    }
+
+    public override void UpdatePhysics()
+    {
+        base.UpdatePhysics();
+    }
+
+    private void MoveTowardsTarget()
+    {
+        float distance = Vector3.Distance(enemy.transform.position, enemy.target.transform.position);
+        Vector3 direction = enemy.target.transform.position - enemy.transform.position;
+
+        if (distance > enemy.stopDistance)
+        {
+            enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, enemy.target.transform.position, enemy.speed * Time.deltaTime);
+        }
+    }
+
+    private void FaceTarget()
+    {
+        if (enemy.target.position.x < enemy.transform.position.x)
+            enemy.transform.forward = Vector3.forward;
+        else if (enemy.target.position.x > enemy.transform.position.x)
+            enemy.transform.forward = Vector3.back;
+    }
+
+    private void playMoveAnimation()
+    {
+        enemy.anim.Play(moveAnimation);
+    }
+
+    public override void AddStateTransitions(string transitionName, State transitionState)
+    {
+        base.AddStateTransitions(transitionName, transitionState);
+    }
+
+    public override void OnExit()
+    {
+        base.OnExit();
     }
 }
