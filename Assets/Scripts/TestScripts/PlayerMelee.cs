@@ -3,21 +3,30 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class PlayerMelee_T : MonoBehaviour
+public class PlayerMelee : MonoBehaviour
 {
+    #region EXPOSED_FIELDS
     [SerializeField] private float _attackRange = 2f;
     [SerializeField] private float _attackDamage = 10f;
-    [SerializeField] private float _attackXPosition;
+    #endregion
 
+    #region PRIVATE_FIELDS
+    private Vector3 sphereCenter;
+    #endregion
+
+    #region UNITY_CALLS
     private void Update()
     {
+        sphereCenter = transform.position + transform.right * _attackRange;
+
         if (Input.GetKeyDown(KeyCode.F))
             MeleeAttack();
     }
+    #endregion-
 
+    #region PRIVATE_METHODS
     private void MeleeAttack()
     {
-        Vector3 sphereCenter = transform.position + transform.forward * _attackRange;
         Collider[] hitEnemies = Physics.OverlapSphere(sphereCenter, _attackRange);
 
         foreach (Collider enemy in hitEnemies)
@@ -34,6 +43,7 @@ public class PlayerMelee_T : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, _attackRange);
+        Gizmos.DrawWireSphere(sphereCenter, _attackRange);
     }
+    #endregion
 }

@@ -6,8 +6,11 @@ using System;
 
 public class Enemy_T : MonoBehaviour
 {
+    #region EVENTS
     public static event Action Destroyed;
+    #endregion
 
+    #region EXPOSED_FIELDS
     [SerializeField] private string bulletTag = "Bullet";
     [SerializeField] private GameObject floatingTextPrefab;
     [SerializeField] private Transform floatingTextSpawn;
@@ -16,11 +19,16 @@ public class Enemy_T : MonoBehaviour
     [SerializeField] private float damage = 30f;
     [SerializeField] private float damageCooldown = 2f;
     [SerializeField] private float maxHealth = 100f;
+    #endregion
+
+    #region PRIVATE_FIELDS
     private float currentHealth;
     private float distance;
     private bool canTakeDamage = true;
     private float damageTimer = 0f;
+    #endregion
 
+    #region UNITY_CALLS
     void Start()
     {
         currentHealth = maxHealth;
@@ -67,7 +75,14 @@ public class Enemy_T : MonoBehaviour
             TakeDamage(player.damage);
         }
     }
+    private void OnDestroy()
+    {
+        Debug.Log("Mataste un enemigo melee!");
+        Destroyed?.Invoke();
+    }
+    #endregion
 
+    #region PUBLIC_METHODS
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
@@ -75,7 +90,9 @@ public class Enemy_T : MonoBehaviour
         if (floatingTextPrefab)
             ShowFloatingText();
     }
+    #endregion
 
+    #region PRIVATE_METHODS
     private void ShowFloatingText()
     {
        var go = Instantiate(floatingTextPrefab, floatingTextSpawn.position, Quaternion.identity, transform);
@@ -86,10 +103,5 @@ public class Enemy_T : MonoBehaviour
     {
         return currentHealth > 0;
     }
-
-    private void OnDestroy()
-    {
-        Debug.Log("Mataste un enemigo melee!");
-        Destroyed?.Invoke();
-    }
+    #endregion
 }
