@@ -24,11 +24,17 @@ public class EnemyStateMachine : State_Machine
         }
 
         enemyInput.OnEnemyMove += OnEnemyMove;
+        enemyInput.OnEnemyAttack += OnEnemyAttack;
 
         _idleState = new EnemyIdleState(nameof(_idleState),this,enemy);
-        _moveState = new EnemyMoveState(nameof(_idleState),this,enemy);
+        _moveState = new EnemyMoveState(nameof(_moveState),this,enemy);
         
         base.OnEnable();
+    }
+
+    private void OnEnemyAttack()
+    {
+        SetState(_idleState);
     }
 
     private void OnEnemyMove()
@@ -40,5 +46,11 @@ public class EnemyStateMachine : State_Machine
     {
         base.GetInitialState();
         return _idleState;
+    }
+
+    private void OnDestroy()
+    {
+        enemyInput.OnEnemyMove -= OnEnemyMove;
+        enemyInput.OnEnemyAttack -= OnEnemyAttack;
     }
 }

@@ -4324,15 +4324,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character_Health_Component: {fileID: 1231930905}
-  speed: 5
+  speed: 2.5
   initialSpeed: 0
   jumpForce: 1
   movement: {x: 0, y: 0, z: 0}
   jumpBufferTime: 0
   jumpBufferTimeCounter: 0
   anim: {fileID: 1231930908}
-  lookRad: 20
-  stopDistance: 5
+  lookRad: 10
+  stopDistance: 2
   timeBetweenAttacks: 6
   destroyTime: 0
   destroyTimer: 0
