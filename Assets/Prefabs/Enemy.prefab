@@ -9,9 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7141708433785194233}
-  - component: {fileID: 3705006775998116896}
   - component: {fileID: 4420720911596393439}
   - component: {fileID: 2922983371553717550}
+  - component: {fileID: 2288452418281936096}
+  - component: {fileID: 4897631695186766132}
+  - component: {fileID: 8555627197793900728}
+  - component: {fileID: 3402064572832749551}
+  - component: {fileID: 1531029026459380750}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -26,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3428974327954055427}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.0576572, y: -5.393928, z: 12.576676}
   m_LocalScale: {x: 0.1494402, y: 0.1494402, z: 0.1494402}
   m_ConstrainProportionsScale: 0
@@ -36,26 +40,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3705006775998116896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3428974327954055427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ae4a2ece706c024eb37157f25b5af70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletTag: Bullet
-  floatingTextPrefab: {fileID: 4983525774823111614, guid: 4d34383c5ebf67e42a2e3158f2e1e212, type: 3}
-  floatingTextSpawn: {fileID: 2318019474169141084}
-  player: {fileID: 0}
-  speed: 3
-  damage: 20
-  damageCooldown: 2
-  maxHealth: 100
 --- !u!212 &4420720911596393439
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -97,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0b674b9e5c6a0aa42a31afea3c353cb9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 164ab1b0eda2fb045874ba053d74958f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,6 +113,105 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.65, y: 10.979439, z: 3.1074324}
   m_Center: {x: 0, y: 1.5547233, z: 0.08821348}
+--- !u!114 &2288452418281936096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428974327954055427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a681bd7f1f39964c81c6ab3bf56ab11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStateEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStateExit:
+    m_PersistentCalls:
+      m_Calls: []
+  enemy: {fileID: 4897631695186766132}
+  enemyInput: {fileID: 1531029026459380750}
+--- !u!114 &4897631695186766132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428974327954055427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132c4ffbd5cf0404d830580170d1921f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character_Health_Component: {fileID: 8555627197793900728}
+  speed: 2.5
+  initialSpeed: 0
+  jumpForce: 1
+  movement: {x: 0, y: 0, z: 0}
+  jumpBufferTime: 0
+  jumpBufferTimeCounter: 0
+  anim: {fileID: 3402064572832749551}
+  lookRad: 10
+  stopDistance: 2
+  timeBetweenAttacks: 6
+  destroyTime: 0
+  destroyTimer: 0
+  ready_To_Attack: 0
+  deathLoop: 0
+  target: {fileID: 0}
+  bulletSpawn: {fileID: 0}
+  player_Source: {fileID: 11400000, guid: 5e67e42c21ea55c4b865b291844ebafc, type: 2}
+  bulletPrefab: {fileID: 0}
+--- !u!114 &8555627197793900728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428974327954055427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761dc94d435ff114395d9be30d8fa622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <_health>k__BackingField: 0
+  <_maxHealth>k__BackingField: 0
+--- !u!95 &3402064572832749551
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428974327954055427}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eae98f544cc9d7f4da5288e528380066, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1531029026459380750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428974327954055427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1077adf6e235a04fb784f6fcc7973c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 4897631695186766132}
 --- !u!1 &7216221411072093589
 GameObject:
   m_ObjectHideFlags: 0

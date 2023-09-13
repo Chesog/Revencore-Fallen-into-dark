@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf5dc6c511f68a24a941020fffbc29e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 3078583972514884116}
-  smoothTime: 0.25
+  _target: {fileID: 3078583972514884116}
+  _smoothTime: 0
 --- !u!1 &898679380513969885
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +341,7 @@ MonoBehaviour:
   enemyBulletTag: EnemyBullet
   floatingTextPrefab: {fileID: 0}
   floatingTextSpawn: {fileID: 0}
+  damage: 20
 --- !u!136 &3481991280449989278
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -438,6 +439,9 @@ GameObject:
   - component: {fileID: 1592740622464350111}
   - component: {fileID: 1686303152124303732}
   - component: {fileID: 1138335584444239559}
+  - component: {fileID: 3825071096087677086}
+  - component: {fileID: 7602803335210299876}
+  - component: {fileID: 169203582623086190}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Player
@@ -481,6 +485,7 @@ MonoBehaviour:
   enemyBulletTag: EnemyBullet
   floatingTextPrefab: {fileID: 1163772419922429017}
   floatingTextSpawn: {fileID: 4530384443235349637}
+  damage: 20
 --- !u!114 &8096894175649923855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,6 +618,65 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9.568852, y: 18.895483, z: 2}
   m_Center: {x: -0.00000019942641, y: -0.000000997132, z: 0}
+--- !u!114 &3825071096087677086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673954961807371981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68d07bfb8fd3a24b86a28b0e614e3dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character_Health_Component: {fileID: 7602803335210299876}
+  speed: 0
+  initialSpeed: 0
+  jumpForce: 0
+  movement: {x: 0, y: 0, z: 0}
+  jumpBufferTime: 0
+  jumpBufferTimeCounter: 0
+  anim: {fileID: 0}
+  input: {fileID: 169203582623086190}
+  player_Source: {fileID: 11400000, guid: 5e67e42c21ea55c4b865b291844ebafc, type: 2}
+  feet_Pivot: {fileID: 0}
+  camera: {fileID: 315075578839560001}
+  turn_Smooth_Velocity: 0
+  turnSmoothTime: 0
+  lastAngle: 0
+  maxDistance: 0
+  minJumpDistance: 0
+  coyoteTime: 0
+  coyoteTimerCounter: 0
+  isPlayer_Attacking: 0
+--- !u!114 &7602803335210299876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673954961807371981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761dc94d435ff114395d9be30d8fa622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <_health>k__BackingField: 0
+  <_maxHealth>k__BackingField: 0
+--- !u!114 &169203582623086190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673954961807371981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c176462e4a36f4ea4367d3f4ce7e11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 6677390696331851601}
 --- !u!1 &7346772389033337105
 GameObject:
   m_ObjectHideFlags: 0
