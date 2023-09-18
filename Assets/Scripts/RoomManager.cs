@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RoomController : MonoBehaviour
+public class RoomManager : MonoBehaviour
 {
     [System.Serializable]
     private struct Room
@@ -22,10 +22,6 @@ public class RoomController : MonoBehaviour
     [SerializeField] private string _playerTag = "Player";
     #endregion
 
-    #region PRIVATE_FIELDS
-    private bool _canMoveForward;
-    #endregion
-
     #region UNITY_CALLS
     private void Awake()
     {
@@ -35,17 +31,13 @@ public class RoomController : MonoBehaviour
     private void Start()
     {
         _image.enabled = false;
-
-        foreach (Room room in _rooms)
-        {
-            Debug.Log("Room Number: " + room.roomNumber + ", Wall: " + room.wall.name);
-        }
-
         _currentRoom = _rooms[0];
         _currentRoom._canMoveForward = false;
+        Debug.Log("Current Room: " + _currentRoom.roomNumber);
     }
     private void Update()
     {
+
         if (CanMoveForward())
         {
             _image.enabled = true;
@@ -60,8 +52,9 @@ public class RoomController : MonoBehaviour
         if (_player.position.x > _currentRoom.wall.transform.position.x)
         {
             _currentRoom.wall.SetActive(true);
-            _currentRoom = _rooms[1];
+            _currentRoom = _rooms[_currentRoom.roomNumber];
             _currentRoom._canMoveForward = false;
+            Debug.Log("Current Room: " + _currentRoom.roomNumber);
         }
     }
 
