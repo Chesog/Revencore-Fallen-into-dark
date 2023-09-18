@@ -1193,7 +1193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level1SceneName: Test_Scene
-  mainMenuSceneName: Test_Menu
+  mainMenuSceneName: Menu_Scene
 --- !u!4 &1836418988
 Transform:
   m_ObjectHideFlags: 0

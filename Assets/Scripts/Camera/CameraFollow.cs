@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow_T : MonoBehaviour
+public class CameraFollow : MonoBehaviour
 {
     #region EXPOSED_FIELDS
     [SerializeField] private Transform _target;

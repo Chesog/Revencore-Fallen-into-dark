@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemiesManager_T : MonoBehaviour
 {
+    #region EVENTS
+    public static event Action NoEnemies;
+    #endregion
+
     #region EXPOSED_FIELDS
     [SerializeField] private int enemiesToKill = 5;
     private int remainingEnemies;
@@ -25,7 +30,7 @@ public class EnemiesManager_T : MonoBehaviour
     {
         if (remainingEnemies <= 0)
         {
-            //Camera to the next stage
+            NoEnemies?.Invoke();
         }
     }
     private void OnDestroy()
