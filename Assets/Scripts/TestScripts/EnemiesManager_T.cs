@@ -10,8 +10,8 @@ public class EnemiesManager_T : MonoBehaviour
     #endregion
 
     #region EXPOSED_FIELDS
-    [SerializeField] private int enemiesToKill = 5;
-    private int remainingEnemies;
+    [SerializeField] private string enemyTag = "Enemy";
+    [SerializeField] private int remainingEnemies;
     #endregion
 
     #region UNITY_CALLS
@@ -23,7 +23,8 @@ public class EnemiesManager_T : MonoBehaviour
 
     private void Start()
     {
-        remainingEnemies = enemiesToKill;
+        GameObject[] enemyObjects = GameObject.FindGameObjectsWithTag(enemyTag);
+        remainingEnemies = enemyObjects.Length;
     }
 
     private void Update()

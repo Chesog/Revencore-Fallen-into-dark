@@ -9,6 +9,7 @@ public class RoomController : MonoBehaviour
     [SerializeField] private int _roomNumber;
     [SerializeField] private Image _image;
     [SerializeField] private string _playerTag = "Player";
+    [SerializeField] private GameObject room1Wall;
     #endregion
 
     #region PRIVATE_FIELDS
@@ -30,9 +31,11 @@ public class RoomController : MonoBehaviour
         if (CanMoveForward())
         {
             _image.enabled = true;
+            room1Wall.SetActive(false);
         }
         else
         {
+            room1Wall.SetActive(true);
             _image.enabled = false;
         }
     }
