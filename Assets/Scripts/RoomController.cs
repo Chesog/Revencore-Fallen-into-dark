@@ -1,15 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class RoomController : MonoBehaviour
 {
+    [System.Serializable]
+    private struct Room
+    {
+        public int roomNumber;
+        public GameObject wall;
+        public bool _canMoveForward;
+    }
+
     #region EXPOSED_FIELDS
-    [SerializeField] private int _roomNumber;
+    [SerializeField] private Room[] _rooms;
+    [SerializeField] private Room _currentRoom;
+    [SerializeField] private Transform _player;
     [SerializeField] private Image _image;
     [SerializeField] private string _playerTag = "Player";
-    [SerializeField] private GameObject room1Wall;
     #endregion
 
     #region PRIVATE_FIELDS
@@ -25,18 +35,33 @@ public class RoomController : MonoBehaviour
     private void Start()
     {
         _image.enabled = false;
+
+        foreach (Room room in _rooms)
+        {
+            Debug.Log("Room Number: " + room.roomNumber + ", Wall: " + room.wall.name);
+        }
+
+        _currentRoom = _rooms[0];
+        _currentRoom._canMoveForward = false;
     }
     private void Update()
     {
         if (CanMoveForward())
         {
             _image.enabled = true;
-            room1Wall.SetActive(false);
+            _currentRoom.wall.SetActive(false);
         }
         else
         {
-            room1Wall.SetActive(true);
+            _currentRoom.wall.SetActive(true);
             _image.enabled = false;
+        }
+
+        if (_player.position.x > _currentRoom.wall.transform.position.x)
+        {
+            _currentRoom.wall.SetActive(true);
+            _currentRoom = _rooms[1];
+            _currentRoom._canMoveForward = false;
         }
     }
 
@@ -58,23 +83,23 @@ public class RoomController : MonoBehaviour
     #region PUBLIC_METHODS
     public bool CanMoveForward()
     {
-        return _canMoveForward;
+        return _currentRoom._canMoveForward;
     }
     #endregion
 
     #region PRIVATE_METHODS
     private void SetCanMoveForward()
     {
-        _canMoveForward = true;
+        _currentRoom._canMoveForward = true;
     }
 
     private void PlayerChecks(Collider other)
     {
-        if (other.CompareTag(_playerTag) && _canMoveForward)
+        if (other.CompareTag(_playerTag) && _currentRoom._canMoveForward)
         {
             _image.enabled = true;
         }
-        else if (other.CompareTag(_playerTag) && !_canMoveForward)
+        else if (other.CompareTag(_playerTag) && !_currentRoom._canMoveForward)
         {
             _image.enabled = false;
         }
