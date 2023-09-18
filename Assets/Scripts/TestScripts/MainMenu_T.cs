@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class MainMenu_T : MonoBehaviour
 {
-    [SerializeField] private string level1SceneName;
-    //[SerializeField] private string creditsSceneName;
-    [SerializeField] private string mainMenuSceneName;
+    [SerializeField] private string level1SceneName = "Test_Scene";
+    [SerializeField] private string creditsSceneName = "Credits_Scene";
+    [SerializeField] private string mainMenuSceneName = "Menu_Scene";
 
     public void LoadScene(string sceneName)
     {
@@ -17,11 +17,11 @@ public class MainMenu_T : MonoBehaviour
         LoadScene(level1SceneName);
     }
 
-    //public void ShowCredits()
-    //{
-    //    LoadScene(creditsSceneName);
-    //}
-    
+    public void ShowCredits()
+    {
+        LoadScene(creditsSceneName);
+    }
+
     public void GoMainMenu()
     {
         LoadScene(mainMenuSceneName);
