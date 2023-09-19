@@ -12,6 +12,7 @@ public class EnemyStateMachine : State_Machine
     private EnemyIdleState _idleState;
     private EnemyMoveState _moveState;
     private EnemyHitState _hitState;
+    private EnemyAttackState _attackState;
     #endregion
 
     private void OnEnable()
@@ -31,6 +32,7 @@ public class EnemyStateMachine : State_Machine
         _idleState = new EnemyIdleState(nameof(_idleState),this,enemy);
         _moveState = new EnemyMoveState(nameof(_moveState),this,enemy);
         _hitState = new EnemyHitState(nameof(_hitState),this,enemy);
+        _attackState = new EnemyAttackState(nameof(_attackState),this,enemy);
 
         enemy.isHit = false;
         
@@ -48,7 +50,7 @@ public class EnemyStateMachine : State_Machine
     private void OnEnemyAttack()
     {
         if (!enemy.isHit)
-        SetState(_idleState);
+        SetState(_attackState);
     }
 
     private void OnEnemyMove()

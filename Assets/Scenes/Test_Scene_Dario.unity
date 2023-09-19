@@ -4089,10 +4089,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8555627197793900728, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
-      propertyPath: <_maxHealth>k__BackingField
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7928,10 +7924,6 @@ PrefabInstance:
     - target: {fileID: 558881331583698073, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3825071096087677086, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
-      propertyPath: damage
-      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5652742791429255529, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
       propertyPath: pauseMenu
