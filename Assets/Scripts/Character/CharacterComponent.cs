@@ -19,6 +19,7 @@ public class CharacterComponent : MonoBehaviour
    public float jumpBufferTime;
    public float jumpBufferTimeCounter;
    public Animator anim;
+   public float damage;
    #endregion
 
    #region UNITY_CALLS

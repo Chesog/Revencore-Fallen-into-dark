@@ -11,6 +11,7 @@ public class EnemyStateMachine : State_Machine
     #region PRIVATE_FIELDS
     private EnemyIdleState _idleState;
     private EnemyMoveState _moveState;
+    private EnemyHitState _hitState;
     #endregion
 
     private void OnEnable()
@@ -25,20 +26,34 @@ public class EnemyStateMachine : State_Machine
 
         enemyInput.OnEnemyMove += OnEnemyMove;
         enemyInput.OnEnemyAttack += OnEnemyAttack;
+        enemyInput.OnEnemyHit += OnEnemyHit;
 
         _idleState = new EnemyIdleState(nameof(_idleState),this,enemy);
         _moveState = new EnemyMoveState(nameof(_moveState),this,enemy);
+        _hitState = new EnemyHitState(nameof(_hitState),this,enemy);
+
+        enemy.isHit = false;
         
         base.OnEnable();
     }
 
+    private void OnEnemyHit()
+    {
+        if (enemy.character_Health_Component._health <= 0)
+            Destroy(this.gameObject);
+            
+        SetState(_hitState);
+    }
+
     private void OnEnemyAttack()
     {
+        if (!enemy.isHit)
         SetState(_idleState);
     }
 
     private void OnEnemyMove()
     {
+        if (!enemy.isHit)
         SetState(_moveState);
     }
 
@@ -52,5 +67,6 @@ public class EnemyStateMachine : State_Machine
     {
         enemyInput.OnEnemyMove -= OnEnemyMove;
         enemyInput.OnEnemyAttack -= OnEnemyAttack;
+        enemyInput.OnEnemyHit -= OnEnemyHit;
     }
 }

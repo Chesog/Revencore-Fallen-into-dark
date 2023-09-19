@@ -11,6 +11,7 @@ public class EnemyComponent : CharacterComponent
     public float destroyTimer;
     public bool ready_To_Attack;
     public bool deathLoop;
+    public bool isHit;
     public Transform target;
     public Transform bulletSpawn;
 
@@ -26,7 +27,7 @@ public class EnemyComponent : CharacterComponent
 
     private void OnEnable()
     {
-        character_Health_Component._maxHealth = 100f;
+        character_Health_Component._health = character_Health_Component._maxHealth;
         initialSpeed = speed;
 
         ready_To_Attack = true;

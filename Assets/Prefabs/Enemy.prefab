@@ -153,6 +153,7 @@ MonoBehaviour:
   jumpBufferTime: 0
   jumpBufferTimeCounter: 0
   anim: {fileID: 3402064572832749551}
+  damage: 0
   lookRad: 10
   stopDistance: 2
   timeBetweenAttacks: 6
@@ -160,6 +161,7 @@ MonoBehaviour:
   destroyTimer: 0
   ready_To_Attack: 0
   deathLoop: 0
+  isHit: 0
   target: {fileID: 0}
   bulletSpawn: {fileID: 0}
   player_Source: {fileID: 11400000, guid: 5e67e42c21ea55c4b865b291844ebafc, type: 2}
@@ -177,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <_health>k__BackingField: 0
-  <_maxHealth>k__BackingField: 0
+  <_maxHealth>k__BackingField: 100
 --- !u!95 &3402064572832749551
 Animator:
   serializedVersion: 5
@@ -212,6 +214,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemy: {fileID: 4897631695186766132}
+  bulletTag: Bullet
+  floatingTextPrefab: {fileID: 0}
+  floatingTextSpawn: {fileID: 0}
+  player: {fileID: 0}
+  speed: 3
+  damage: 30
+  damageCooldown: 2
+  maxHealth: 100
 --- !u!1 &7216221411072093589
 GameObject:
   m_ObjectHideFlags: 0

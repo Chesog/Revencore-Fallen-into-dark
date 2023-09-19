@@ -32,6 +32,7 @@ public class PlayerComponent : CharacterComponent
         character_Health_Component._health = character_Health_Component._maxHealth;
 
         feet_Pivot ??= GetComponent<Transform>();
+        player_Source._player.damage = 20.0f;
     }
 
     private void OnEnable()

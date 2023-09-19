@@ -638,6 +638,7 @@ MonoBehaviour:
   jumpBufferTime: 0
   jumpBufferTimeCounter: 0
   anim: {fileID: 0}
+  damage: 20
   input: {fileID: 169203582623086190}
   player_Source: {fileID: 11400000, guid: 5e67e42c21ea55c4b865b291844ebafc, type: 2}
   feet_Pivot: {fileID: 0}
