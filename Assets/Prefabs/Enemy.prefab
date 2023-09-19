@@ -215,8 +215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemy: {fileID: 4897631695186766132}
   bulletTag: Bullet
-  floatingTextPrefab: {fileID: 0}
-  floatingTextSpawn: {fileID: 0}
+  floatingTextPrefab: {fileID: 2431613509764346604}
+  floatingTextSpawn: {fileID: 2318019474169141084}
   player: {fileID: 0}
   speed: 3
   damage: 30
@@ -334,6 +334,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d34383c5ebf67e42a2e3158f2e1e212, type: 3}
+--- !u!1 &2431613509764346604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4983525774823111614, guid: 4d34383c5ebf67e42a2e3158f2e1e212, type: 3}
+  m_PrefabInstance: {fileID: 7248501626776766802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9172297530491867763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2007855371572992801, guid: 4d34383c5ebf67e42a2e3158f2e1e212, type: 3}
