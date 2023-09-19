@@ -2628,6 +2628,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1547749863}
+    - target: {fileID: 8172103719068755784, guid: 221cb7c4091f46c4f87cf02392a3668d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5505f8c01782e7346a935a912ae99765, type: 2}
     - target: {fileID: 8172103719068755894, guid: 221cb7c4091f46c4f87cf02392a3668d, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.2681837
@@ -8179,6 +8183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level1SceneName: Test_Scene
+  creditsSceneName: Credits_Scene
   mainMenuSceneName: Menu_Scene
 --- !u!4 &2068390653
 Transform:
