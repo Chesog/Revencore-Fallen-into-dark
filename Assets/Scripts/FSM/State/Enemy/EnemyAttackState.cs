@@ -18,6 +18,7 @@ public class EnemyAttackState : EnemyBaseState
     public override void UpdateLogic()
     {
         base.UpdateLogic();
+        //enemy.target.GetComponent<PlayerComponent>().
     }
 
     public override void UpdatePhysics()
