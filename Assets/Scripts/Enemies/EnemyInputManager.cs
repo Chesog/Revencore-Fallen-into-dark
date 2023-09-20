@@ -43,6 +43,11 @@ public class EnemyInputManager : MonoBehaviour
         }
     }
 
+    public void OnTakeDamage()
+    {
+        OnEnemyHit?.Invoke();
+    }
+
     private void OnDestroy()
     {
         OnEnemyDestroy?.Invoke();

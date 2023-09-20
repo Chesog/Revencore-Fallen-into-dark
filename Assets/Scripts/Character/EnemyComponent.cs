@@ -69,7 +69,7 @@ public class EnemyComponent : CharacterComponent
     /// <param name="damage"></param>
     public void TakeDamage(float damage)
     {
-        character_Health_Component.DecreaseHealth(damage);
+        //character_Health_Component.DecreaseHealth(damage);
     }
 
     private void OnDrawGizmos()

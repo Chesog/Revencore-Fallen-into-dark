@@ -22,7 +22,7 @@ public class PlayerMelee : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
             MeleeAttack();
     }
-    #endregion-
+    #endregion
 
     #region PRIVATE_METHODS
     private void MeleeAttack()
@@ -31,10 +31,11 @@ public class PlayerMelee : MonoBehaviour
 
         foreach (Collider enemy in hitEnemies)
         {
-            Enemy_T meleeEnemy = enemy.GetComponent<Enemy_T>();
+            EnemyInputManager meleeEnemy = enemy.GetComponent<EnemyInputManager>();
             DistanceEnemy distanceEnemy = enemy.GetComponent<DistanceEnemy>();
+
             if (meleeEnemy != null)
-                meleeEnemy.TakeDamage(_attackDamage);
+                meleeEnemy.OnTakeDamage();
             else if (distanceEnemy != null)
                 distanceEnemy.TakeDamage(_attackDamage);
         }
