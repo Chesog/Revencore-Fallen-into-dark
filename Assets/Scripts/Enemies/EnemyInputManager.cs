@@ -6,8 +6,6 @@ public class EnemyInputManager : MonoBehaviour
     #region EXPOSED_FIELDS
     [SerializeField] private EnemyComponent _enemy;
     [SerializeField] private string bulletTag = "Bullet";
-    [SerializeField] private GameObject floatingTextPrefab;
-    [SerializeField] private Transform floatingTextSpawn;
     [SerializeField] private PlayerDamage_T player;
     [SerializeField] private float speed = 3f;
     [SerializeField] private float damage = 30f;

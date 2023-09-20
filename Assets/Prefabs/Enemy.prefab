@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2922983371553717550}
   - component: {fileID: 2288452418281936096}
   - component: {fileID: 4897631695186766132}
+  - component: {fileID: 1207110143216228623}
   - component: {fileID: 8555627197793900728}
   - component: {fileID: 3402064572832749551}
   - component: {fileID: 1531029026459380750}
@@ -164,8 +165,23 @@ MonoBehaviour:
   isHit: 0
   target: {fileID: 0}
   bulletSpawn: {fileID: 0}
+  floatingTextPrefab: {fileID: 2431613509764346604}
+  floatingTextSpawn: {fileID: 2318019474169141084}
+  floatingTextHandleer: {fileID: 1207110143216228623}
   player_Source: {fileID: 11400000, guid: 5e67e42c21ea55c4b865b291844ebafc, type: 2}
   bulletPrefab: {fileID: 0}
+--- !u!114 &1207110143216228623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428974327954055427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f41309d25e32e4ba0d2829b7926b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8555627197793900728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,8 +231,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemy: {fileID: 4897631695186766132}
   bulletTag: Bullet
-  floatingTextPrefab: {fileID: 2431613509764346604}
-  floatingTextSpawn: {fileID: 2318019474169141084}
   player: {fileID: 0}
   speed: 3
   damage: 30

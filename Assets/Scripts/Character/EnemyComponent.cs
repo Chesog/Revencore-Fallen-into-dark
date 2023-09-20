@@ -14,6 +14,9 @@ public class EnemyComponent : CharacterComponent
     public bool isHit;
     public Transform target;
     public Transform bulletSpawn;
+    public GameObject floatingTextPrefab;
+    public Transform floatingTextSpawn;
+    public FloatingTextHandlerer floatingTextHandleer;
 
     public Player_Data_Source player_Source;
 

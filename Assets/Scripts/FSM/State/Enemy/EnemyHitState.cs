@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class EnemyHitState : EnemyBaseState
 {
@@ -20,6 +22,7 @@ public class EnemyHitState : EnemyBaseState
     {
         base.UpdateLogic();
         enemy.character_Health_Component.DecreaseHealth(enemy.target.GetComponent<PlayerComponent>().damage);
+        enemy.floatingTextHandleer.ShowFloatingText(enemy.floatingTextPrefab, enemy.floatingTextSpawn, enemy.character_Health_Component._health);
         enemy.isHit = false;
     }
 
