@@ -17,7 +17,7 @@ public class EnemiesManager_T : MonoBehaviour
     #region UNITY_CALLS
     private void Awake()
     {
-        Enemy_T.Destroyed += ReduceEnemy;
+        EnemyInputManager.OnEnemyDestroy += ReduceEnemy;
         DistanceEnemy.Destroyed += ReduceEnemy;
     }
 
@@ -36,7 +36,7 @@ public class EnemiesManager_T : MonoBehaviour
     }
     private void OnDestroy()
     {
-        Enemy_T.Destroyed -= ReduceEnemy;
+        EnemyInputManager.OnEnemyDestroy -= ReduceEnemy;
         DistanceEnemy.Destroyed -= ReduceEnemy;
     }
     #endregion

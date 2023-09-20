@@ -17,6 +17,7 @@ public class EnemyInputManager : MonoBehaviour
     public event Action OnEnemyMove;
     public event Action OnEnemyAttack;
     public event Action OnEnemyHit;
+    public static event Action OnEnemyDestroy;
 
     private void Update()
     {
@@ -35,12 +36,17 @@ public class EnemyInputManager : MonoBehaviour
                 OnEnemyAttack?.Invoke();
         }
     }
-    
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag(bulletTag))
         { 
             OnEnemyHit?.Invoke();
         }
+    }
+
+    private void OnDestroy()
+    {
+        OnEnemyDestroy?.Invoke();
     }
 }
