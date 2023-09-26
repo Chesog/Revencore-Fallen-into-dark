@@ -8105,6 +8105,8 @@ MonoBehaviour:
   level1SceneName: Test_Scene
   creditsSceneName: Credits_Scene
   mainMenuSceneName: Menu_Scene
+  optionsSceneName: Options_Scene
+  leaderboardSceneName: Leaderboard_Scene
 --- !u!4 &2068390653
 Transform:
   m_ObjectHideFlags: 0
@@ -8888,6 +8890,10 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1542715603}
+    - target: {fileID: 8096894175649923855, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 2130025788961453432, guid: ef03fdd2278574a46a36247a26362e44, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
