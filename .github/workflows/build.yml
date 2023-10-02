@@ -37,8 +37,16 @@ jobs:
         with:
           targetPlatform: StandaloneWindows
 
-      # Upload build to github
-      - uses: actions/upload-artifact@v3
+        #Build name
+      - name: Set build name
+        id: buildName
+        run: |
+        sudo apt-get update
+        echo "DATE=$(date +'%y%m%d')" >> $GITHUB_ENV
+
+        #Upload Artifact
+      - name: Create Artifact
+        uses: actions/upload-artifact@v3
         with:
-          name: Build
+          name: build_${{ env.DATE }}
           path: build
