@@ -12,8 +12,6 @@ public class PlayerComponent : CharacterComponent
     public Transform feet_Pivot;
     public Transform camera;
 
-    //public GameObject hit_Particles;
-
     public float turn_Smooth_Velocity;
     public float turnSmoothTime;
     public float lastAngle;
