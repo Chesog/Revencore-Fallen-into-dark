@@ -1387,8 +1387,8 @@ MonoBehaviour:
   _distanceEnemyPrefab: {fileID: 2079312061525422309, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
   _meleeInterval: 3.5
   _distanceInterval: 1
-  _maxMeleeEnemies: 5
   _maxDistanceEnemies: 5
+  _enemiesManager: {fileID: 1620715327}
 --- !u!4 &238374874
 Transform:
   m_ObjectHideFlags: 0
@@ -7678,8 +7678,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808f03f214cc30d40977565885d0de42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTag: Enemy
-  remainingEnemies: 0
+  _enemyTag: Enemy
+  _kills: 0
+  _necessaryKills: 10
 --- !u!4 &1620715328
 Transform:
   m_ObjectHideFlags: 0
