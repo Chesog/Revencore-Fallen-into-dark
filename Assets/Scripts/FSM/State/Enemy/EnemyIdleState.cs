@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyIdleState : EnemyBaseState
 {
-    private const string idleAnimation = "MinionIdle";
+    private const string idleAnimation = "MinionHit";
 
     public EnemyIdleState(string name, State_Machine stateMachine, EnemyComponent enemy) : base(name, stateMachine,
         enemy)

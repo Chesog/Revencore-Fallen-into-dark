@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMoveState : EnemyBaseState
 {
-    private const string moveAnimation = "MinionHit";
+    private const string moveAnimation = "MinionIdle";
     
     public EnemyMoveState(string name, State_Machine stateMachine, EnemyComponent enemy) : base(name, stateMachine,enemy)
     {
