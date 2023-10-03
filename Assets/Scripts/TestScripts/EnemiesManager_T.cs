@@ -2,50 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Serialization;
 
 public class EnemiesManager_T : MonoBehaviour
 {
     #region EVENTS
+
     public static event Action NoEnemies;
+
     #endregion
 
     #region EXPOSED_FIELDS
-    [SerializeField] private string enemyTag = "Enemy";
-    [SerializeField] private int remainingEnemies;
+
+    [SerializeField] private string _enemyTag = "Enemy";
+    [SerializeField] private int _kills = 0;
+
+    #endregion
+
+    #region PUBLIC_FIELDS
+
+    public int _necessaryKills = 10;
+
     #endregion
 
     #region UNITY_CALLS
+
     private void Awake()
     {
-        EnemyInputManager.OnEnemyDestroy += ReduceEnemy;
-        DistanceEnemy.Destroyed += ReduceEnemy;
-    }
-
-    private void Start()
-    {
-        GameObject[] enemyObjects = GameObject.FindGameObjectsWithTag(enemyTag);
-        remainingEnemies = enemyObjects.Length;
+        EnemyInputManager.OnEnemyDestroy += IncreaseKill;
+        DistanceEnemy.Destroyed += IncreaseKill;
     }
 
     private void Update()
     {
-        if (remainingEnemies <= 0)
+        if (_kills >= _necessaryKills)
         {
             NoEnemies?.Invoke();
         }
     }
+
     private void OnDestroy()
     {
-        EnemyInputManager.OnEnemyDestroy -= ReduceEnemy;
-        DistanceEnemy.Destroyed -= ReduceEnemy;
+        EnemyInputManager.OnEnemyDestroy -= IncreaseKill;
+        DistanceEnemy.Destroyed -= IncreaseKill;
     }
+
     #endregion
 
     #region PRIVATE_METHODS
-    private void ReduceEnemy()
-    {
-        remainingEnemies--;
-    }
-    #endregion
 
+    private void IncreaseKill()
+    {
+        _kills++;
+    }
+
+    #endregion
 }

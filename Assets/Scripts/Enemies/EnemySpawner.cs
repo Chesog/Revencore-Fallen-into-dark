@@ -14,13 +14,15 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private float _meleeInterval = 3.5f;
     [SerializeField] private float _distanceInterval = 10f;
-    [SerializeField] private int _maxMeleeEnemies = 5;
     [SerializeField] private int _maxDistanceEnemies = 5;
+
+    [SerializeField] private EnemiesManager_T _enemiesManager;
 
     #endregion
 
     #region PRIVATE_FIELDS
 
+    private int _maxMeleeEnemies;
     private int _count = 0;
 
     #endregion
@@ -29,6 +31,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        _maxMeleeEnemies = _enemiesManager._necessaryKills;
         StartCoroutine(spawnEnemy(_meleeInterval, _meleeEnemyPrefab, _maxMeleeEnemies));
     }
 
