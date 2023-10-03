@@ -17,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int _maxDistanceEnemies = 5;
 
     [SerializeField] private EnemiesManager_T _enemiesManager;
+    [SerializeField] private Transform[] _spawnPositions;
 
     #endregion
 
@@ -38,8 +39,12 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator spawnEnemy(float interval, GameObject enemy, int maxEnemies)
     {
         yield return new WaitForSeconds(interval);
-        GameObject newEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
+        
+        Transform randomSpawnPos = _spawnPositions[Random.Range(0, _spawnPositions.Length)];
+        
+        GameObject newEnemy = Instantiate(enemy, randomSpawnPos.position, Quaternion.identity);
         _count++;
+        
         if (_count < maxEnemies)
             StartCoroutine(spawnEnemy(interval, enemy, maxEnemies));
     }
