@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerStatemachine : State_Machine
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Player_Input_Manager _inputManager;
+    [SerializeField] private PlayerComponent _playerComponent;
+    private PlayerIdleState _idleState;
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        _idleState = new PlayerIdleState(nameof(_idleState),this,_playerComponent);
     }
 
     protected override State GetInitialState()
