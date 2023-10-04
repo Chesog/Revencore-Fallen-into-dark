@@ -12,6 +12,8 @@ public class CharacterComponent : MonoBehaviour
 
    #region PUBLIC_FIELDS
    public float speed;
+   public float zspeed;
+   public GameObject characterSprite;
    public float initialSpeed;
    public float jumpForce;
    public Vector3 movement;

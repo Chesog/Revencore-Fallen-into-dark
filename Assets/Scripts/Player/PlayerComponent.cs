@@ -12,6 +12,7 @@ public class PlayerComponent : CharacterComponent
     public Transform feet_Pivot;
     public Transform camera;
     public float _attackRange = 2f;
+    public Rigidbody rigidbody;
 
     public float turn_Smooth_Velocity;
     public float turnSmoothTime;

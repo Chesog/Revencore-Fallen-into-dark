@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMeleAttackState : PlayerBaseState
 {
     #region PRIVATE_FIELDS
-    private string PlayerMeleAnimationName = "";
+    private string PlayerMeleAnimationName = "Player_Mele_HIt";
     private Vector3 sphereCenter;
     #endregion
     
@@ -23,7 +23,7 @@ public class PlayerMeleAttackState : PlayerBaseState
     public override void UpdateLogic()
     {
         sphereCenter = _player.transform.position + _player.transform.right * _player._attackRange;
-        playIdleAnimation();
+        playMeleAttackAnimation();
         base.UpdateLogic();
     }
 
@@ -32,7 +32,7 @@ public class PlayerMeleAttackState : PlayerBaseState
         base.UpdatePhysics();
     }
 
-    private void playIdleAnimation()
+    private void playMeleAttackAnimation()
     {
         _player.anim.Play(PlayerMeleAnimationName);
     }

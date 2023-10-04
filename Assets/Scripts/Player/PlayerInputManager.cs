@@ -78,6 +78,10 @@ public class PlayerInputManager : MonoBehaviour
         OnPlayerMove?.Invoke(input.Get<Vector2>());
     }
 
+    public void OnMelee(InputValue input)
+    {
+        OnPlayerAttack?.Invoke(input.isPressed);
+    }
 
     /// <summary>
     /// Triggers The Jumping Event
