@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -15,16 +16,23 @@ public class RoomManager : MonoBehaviour
     }
 
     #region EXPOSED_FIELDS
+
     [SerializeField] private Room[] _rooms;
     [SerializeField] private Room _currentRoom;
     [SerializeField] private Transform _player;
     [SerializeField] private Image _image;
     [SerializeField] private string _playerTag = "Player";
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private PlayerInputManager _playerInputManager;
+    private bool pause;
+
     #endregion
 
     #region UNITY_CALLS
+
     private void Awake()
     {
+        _playerInputManager.OnPlayerPause += OnGamePause;
         EnemiesManager_T.NoEnemies += SetCanMoveForward;
     }
 
@@ -35,9 +43,9 @@ public class RoomManager : MonoBehaviour
         _currentRoom._canMoveForward = false;
         Debug.Log("Current Room: " + _currentRoom.roomNumber);
     }
+
     private void Update()
     {
-
         if (CanMoveForward())
         {
             _image.enabled = true;
@@ -58,6 +66,14 @@ public class RoomManager : MonoBehaviour
         }
     }
 
+    private void OnGamePause()
+    {
+        if (pause)
+            UnPauseGame();
+        else
+            PauseGame();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         PlayerChecks(other);
@@ -67,20 +83,39 @@ public class RoomManager : MonoBehaviour
     {
         PlayerChecks(other);
     }
+
     private void OnDestroy()
     {
         EnemiesManager_T.NoEnemies -= SetCanMoveForward;
     }
+
     #endregion
 
     #region PUBLIC_METHODS
+
     public bool CanMoveForward()
     {
         return _currentRoom._canMoveForward;
     }
+
+    public void PauseGame()
+    {
+        pauseMenu.SetActive(true);
+        pause = true;
+        Time.timeScale = 0.1f;
+    }
+
+    public void UnPauseGame()
+    {
+        pauseMenu.SetActive(false);
+        pause = false;
+        Time.timeScale = 1;
+    }
+
     #endregion
 
     #region PRIVATE_METHODS
+
     private void SetCanMoveForward()
     {
         _currentRoom._canMoveForward = true;
@@ -97,5 +132,6 @@ public class RoomManager : MonoBehaviour
             _image.enabled = false;
         }
     }
+
     #endregion
 }

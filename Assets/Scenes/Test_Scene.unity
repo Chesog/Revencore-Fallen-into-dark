@@ -1169,6 +1169,8 @@ MonoBehaviour:
   _player: {fileID: 1933857433}
   _image: {fileID: 531974093}
   _playerTag: Player
+  pauseMenu: {fileID: 1672725690}
+  _playerInputManager: {fileID: 819258206}
 --- !u!4 &179058109
 Transform:
   m_ObjectHideFlags: 0
@@ -3441,6 +3443,17 @@ Transform:
   m_Father: {fileID: 242402170}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &819258206 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 32693397576217926, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
+  m_PrefabInstance: {fileID: 3195029495822534136}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c176462e4a36f4ea4367d3f4ce7e11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &842258681
 Mesh:
   m_ObjectHideFlags: 0
@@ -7372,6 +7385,11 @@ Transform:
   m_Father: {fileID: 1712073277}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1672725690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8519213655038272253, guid: fb0ffd0249c039b4eb4e6e71b31070ac, type: 3}
+  m_PrefabInstance: {fileID: 1771193530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1673375651
 GameObject:
   m_ObjectHideFlags: 0
@@ -8012,7 +8030,7 @@ PrefabInstance:
     - target: {fileID: 2871535150595558221, guid: fb0ffd0249c039b4eb4e6e71b31070ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 179058108}
     - target: {fileID: 2871535150595558221, guid: fb0ffd0249c039b4eb4e6e71b31070ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -8023,7 +8041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2871535150595558221, guid: fb0ffd0249c039b4eb4e6e71b31070ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: T_Player_Movement, Assembly-CSharp
+      value: RoomManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2871535150595558221, guid: fb0ffd0249c039b4eb4e6e71b31070ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

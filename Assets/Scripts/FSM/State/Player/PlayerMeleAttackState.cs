@@ -16,8 +16,14 @@ public class PlayerMeleAttackState : PlayerBaseState
     public override void OnEnter()
     {
         sphereCenter = _player.transform.position + _player.transform.right * _player._attackRange;
+        _player.input.OnPlayerAttack += OnMeleeAttack;
         MeleeAttack();
         base.OnEnter();
+    }
+
+    private void OnMeleeAttack(bool obj)
+    {
+        MeleeAttack();
     }
 
     public override void UpdateLogic()
@@ -60,6 +66,7 @@ public class PlayerMeleAttackState : PlayerBaseState
 
     public override void OnExit()
     {
+        _player.input.OnPlayerAttack -= OnMeleeAttack;
         _player.anim.StopPlayback();
         base.OnExit();
     }
