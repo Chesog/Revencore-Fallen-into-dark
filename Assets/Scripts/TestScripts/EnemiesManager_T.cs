@@ -21,7 +21,8 @@ public class EnemiesManager_T : MonoBehaviour
 
     #region PUBLIC_FIELDS
 
-    public int _necessaryKills = 10;
+    public int _room1NecessaryKills = 10;
+    public int _room2NecessaryKills = 7;
 
     #endregion
 
@@ -35,7 +36,7 @@ public class EnemiesManager_T : MonoBehaviour
 
     private void Update()
     {
-        if (_kills >= _necessaryKills)
+        if (_kills >= _room1NecessaryKills)
         {
             NoEnemies?.Invoke();
         }
