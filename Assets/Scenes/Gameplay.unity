@@ -1220,7 +1220,7 @@ MonoBehaviour:
   _meleeInterval: 3.5
   _distanceInterval: 1
   _enemiesManager: {fileID: 1620715327}
-  _roomManager: {fileID: 0}
+  _roomManager: {fileID: 179058108}
   _room1SpawnPositions:
   - {fileID: 847027531}
   - {fileID: 901733908}
@@ -9892,6 +9892,10 @@ PrefabInstance:
       propertyPath: _movementController
       value: 
       objectReference: {fileID: 3195029495822534139}
+    - target: {fileID: 1467747419084665534, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
+      propertyPath: near clip plane
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2207404111697409586, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
       propertyPath: m_Constraints
       value: 112
