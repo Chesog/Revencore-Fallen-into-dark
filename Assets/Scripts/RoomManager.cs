@@ -111,6 +111,11 @@ public class RoomManager : MonoBehaviour
         pause = false;
         Time.timeScale = 1;
     }
+    
+    public int GetCurrentRoom()
+    {
+        return _currentRoom.roomNumber;
+    }
 
     #endregion
 
