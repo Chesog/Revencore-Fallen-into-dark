@@ -28,35 +28,42 @@ public class EnemyStateMachine : State_Machine
         enemyInput.OnEnemyMove += OnEnemyMove;
         enemyInput.OnEnemyAttack += OnEnemyAttack;
         enemyInput.OnEnemyHit += OnEnemyHit;
+        enemy.character_Health_Component.OnDecrease_Health += OnEnemyHit;
+        enemy.character_Health_Component.OnInsufficient_Health += OnInsuficientHealth;
 
-        _idleState = new EnemyIdleState(nameof(_idleState),this,enemy);
-        _moveState = new EnemyMoveState(nameof(_moveState),this,enemy);
-        _hitState = new EnemyHitState(nameof(_hitState),this,enemy);
-        _attackState = new EnemyAttackState(nameof(_attackState),this,enemy);
+
+        _idleState = new EnemyIdleState(nameof(_idleState), this, enemy);
+        _moveState = new EnemyMoveState(nameof(_moveState), this, enemy);
+        _hitState = new EnemyHitState(nameof(_hitState), this, enemy);
+        _attackState = new EnemyAttackState(nameof(_attackState), this, enemy);
 
         enemy.isHit = false;
-        
+
         base.OnEnable();
     }
 
     private void OnEnemyHit()
     {
+        if (enemy.character_Health_Component._health >= 0)
+            SetState(_hitState);
+    }
+
+    private void OnInsuficientHealth()
+    {
         if (enemy.character_Health_Component._health <= 0)
             Destroy(this.gameObject);
-            
-        SetState(_hitState);
     }
 
     private void OnEnemyAttack()
     {
         if (!enemy.isHit)
-        SetState(_attackState);
+            SetState(_attackState);
     }
 
     private void OnEnemyMove()
     {
         if (!enemy.isHit)
-        SetState(_moveState);
+            SetState(_moveState);
     }
 
     protected override State GetInitialState()

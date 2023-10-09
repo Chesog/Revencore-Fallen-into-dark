@@ -57,11 +57,11 @@ public class PlayerMeleAttackState : PlayerBaseState
 
         foreach (Collider enemy in hitEnemies)
         {
-            EnemyInputManager meleeEnemy = enemy.GetComponent<EnemyInputManager>();
+            //EnemyInputManager meleeEnemy = enemy.GetComponent<EnemyInputManager>();
             DistanceEnemy distanceEnemy = enemy.GetComponent<DistanceEnemy>();
 
-            if (meleeEnemy != null)
-                meleeEnemy.OnTakeDamage();
+            if (enemy != null && enemy.tag == "Enemy")
+                enemy.GetComponent<HealthComponent>().DecreaseHealth(_player.damage);
             else if (distanceEnemy != null)
                 distanceEnemy.TakeDamage(_player.damage);
         }

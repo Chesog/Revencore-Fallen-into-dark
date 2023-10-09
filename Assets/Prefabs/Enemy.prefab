@@ -148,6 +148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character_Health_Component: {fileID: 8555627197793900728}
   speed: 2.5
+  zspeed: 0
+  characterSprite: {fileID: 0}
   initialSpeed: 0
   jumpForce: 1
   movement: {x: 0, y: 0, z: 0}
