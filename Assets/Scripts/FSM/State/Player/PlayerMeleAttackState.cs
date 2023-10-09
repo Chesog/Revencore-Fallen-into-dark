@@ -29,7 +29,6 @@ public class PlayerMeleAttackState : PlayerBaseState
     public override void UpdateLogic()
     {
         sphereCenter = _player.transform.position + _player.transform.right * _player._attackRange;
-        playMeleAttackAnimation();
         base.UpdateLogic();
     }
 
@@ -57,6 +56,8 @@ public class PlayerMeleAttackState : PlayerBaseState
             else if (distanceEnemy != null)
                 distanceEnemy.TakeDamage(_player.damage);
         }
+
+        playMeleAttackAnimation();
     }
 
     public override void AddStateTransitions(string transitionName, State transitionState)
