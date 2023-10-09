@@ -17,9 +17,7 @@ public class PlayerMoveState : PlayerBaseState
 
     private void OnPlayerMove(Vector2 obj)
     {
-        _player.movement.x = obj.x * _player.speed;
-        _player.movement.z = obj.y * _player.zspeed;
-        _player.movement.y = _player.rigidbody.velocity.y;
+        _player._movementController.SetMovement(obj);
     }
 
     public override void UpdateLogic()
@@ -29,7 +27,7 @@ public class PlayerMoveState : PlayerBaseState
         if (_player.movement.x < 0)
             _player.characterSprite.transform.forward = Vector3.back;
 
-        _player.rigidbody.velocity = _player.movement;
+        _player._movementController.UpdateMovement();
         playMoveAnimation();
         base.UpdateLogic();
     }

@@ -8,6 +8,7 @@ public class PlayerComponent : CharacterComponent
 {
    public PlayerInputManager input;
    public Player_Data_Source player_Source;
+   public PlayerMovementController _movementController;
 
     public Transform feet_Pivot;
     public Transform camera;

@@ -17,8 +17,14 @@ public class PlayerMeleAttackState : PlayerBaseState
     {
         sphereCenter = _player.transform.position + _player.transform.right * _player._attackRange;
         _player.input.OnPlayerAttack += OnMeleeAttack;
+        _player.input.OnPlayerMove += OnPlayerMove;
         MeleeAttack();
         base.OnEnter();
+    }
+
+    private void OnPlayerMove(Vector2 obj)
+    {
+        _player._movementController.SetMovement(obj);
     }
 
     private void OnMeleeAttack(bool obj)
@@ -29,6 +35,9 @@ public class PlayerMeleAttackState : PlayerBaseState
     public override void UpdateLogic()
     {
         sphereCenter = _player.transform.position + _player.transform.right * _player._attackRange;
+        if (_player.movement != Vector3.zero)
+            _player._movementController.UpdateMovement();
+            
         base.UpdateLogic();
     }
 
