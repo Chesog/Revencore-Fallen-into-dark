@@ -8,7 +8,7 @@ public class EnemiesManager_T : MonoBehaviour
 {
     #region EVENTS
 
-    public static event Action NoEnemies;
+    public static event Action OnNoEnemies;
 
     #endregion
 
@@ -19,6 +19,12 @@ public class EnemiesManager_T : MonoBehaviour
 
     #endregion
 
+    #region PRIVATE_FIELDS
+
+    private int _currentRoom = 1;
+
+    #endregion
+    
     #region PUBLIC_FIELDS
 
     public int _room1NecessaryKills = 10;
@@ -32,13 +38,19 @@ public class EnemiesManager_T : MonoBehaviour
     {
         EnemyInputManager.OnEnemyDestroy += IncreaseKill;
         DistanceEnemy.Destroyed += IncreaseKill;
+        RoomManager.OnNewRoom += ResetKill;
     }
 
     private void Update()
     {
-        if (_kills >= _room1NecessaryKills)
+        if (_currentRoom == 1 && _kills >= _room1NecessaryKills)
         {
-            NoEnemies?.Invoke();
+            _currentRoom++;
+            OnNoEnemies?.Invoke();
+        }
+        else if (_currentRoom == 2 && _kills >= _room2NecessaryKills)
+        {
+            OnNoEnemies?.Invoke();
         }
     }
 
@@ -46,6 +58,7 @@ public class EnemiesManager_T : MonoBehaviour
     {
         EnemyInputManager.OnEnemyDestroy -= IncreaseKill;
         DistanceEnemy.Destroyed -= IncreaseKill;
+        RoomManager.OnNewRoom -= ResetKill;
     }
 
     #endregion
@@ -55,6 +68,15 @@ public class EnemiesManager_T : MonoBehaviour
     private void IncreaseKill()
     {
         _kills++;
+    }
+
+    #endregion
+
+    #region PUBLIC_METHODS
+
+    public void ResetKill()
+    {
+        _kills = 0;
     }
 
     #endregion

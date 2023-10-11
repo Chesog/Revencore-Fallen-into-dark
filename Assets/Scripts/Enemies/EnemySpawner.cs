@@ -28,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
     private int _maxMeleeEnemies;
     private int _maxDistanceEnemies;
     private int _count = 0;
+    private int _currentRoom = 0;
 
     #endregion
 
@@ -37,25 +38,39 @@ public class EnemySpawner : MonoBehaviour
     {
         _maxMeleeEnemies = _enemiesManager._room1NecessaryKills;
         _maxDistanceEnemies = _enemiesManager._room2NecessaryKills;
-        
-        if (_roomManager.GetCurrentRoom() == 1)
-            StartCoroutine(spawnEnemy(_meleeInterval, _meleeEnemyPrefab, _maxMeleeEnemies, _room1SpawnPositions));
-        else if(_roomManager.GetCurrentRoom() == 2)
-            StartCoroutine(spawnEnemy(_distanceInterval, _distanceEnemyPrefab, _maxDistanceEnemies, _room2SpawnPositions));
-        
+
+    }
+    
+    private void Update()
+    {
+        int newRoom = _roomManager.GetCurrentRoom();
+        if (newRoom != _currentRoom)
+        {
+            _currentRoom = newRoom;
+            _count = 0; 
+
+            if (_currentRoom == 1)
+            {
+                StartCoroutine(SpawnEnemy(_meleeInterval, _meleeEnemyPrefab, _maxMeleeEnemies, _room1SpawnPositions));
+            }
+            else if (_currentRoom == 2)
+            {
+                StartCoroutine(SpawnEnemy(_distanceInterval, _distanceEnemyPrefab, _maxDistanceEnemies, _room2SpawnPositions));
+            }
+        }
     }
 
-    private IEnumerator spawnEnemy(float interval, GameObject enemy, int maxEnemies, Transform[] spawners)
+    private IEnumerator SpawnEnemy(float interval, GameObject enemy, int maxEnemies, Transform[] spawners)
     {
         yield return new WaitForSeconds(interval);
 
-        Transform randomSpawnPos = spawners[Random.Range(0, _room1SpawnPositions.Length)];
+        Transform randomSpawnPos = spawners[Random.Range(0, spawners.Length)];
 
         GameObject newEnemy = Instantiate(enemy, randomSpawnPos.position, Quaternion.identity);
         _count++;
 
         if (_count < maxEnemies)
-            StartCoroutine(spawnEnemy(interval, enemy, maxEnemies, spawners));
+            StartCoroutine(SpawnEnemy(interval, enemy, maxEnemies, spawners));
     }
 
     #endregion
