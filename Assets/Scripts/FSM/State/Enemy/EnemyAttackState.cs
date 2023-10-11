@@ -6,7 +6,9 @@ using UnityEngine;
 public class EnemyAttackState : EnemyBaseState
 {
     private const string attackAnimation = "MinionHit";
+    Vector3 sphereCenter;
     public Action OnEnemyShoot;
+    public Action OnEnemyMeleeHit;
     
     public EnemyAttackState(string name, State_Machine stateMachine, EnemyComponent enemy) : base(name, stateMachine,enemy)
     {
@@ -14,16 +16,40 @@ public class EnemyAttackState : EnemyBaseState
     }
     public override void OnEnter()
     {
+        sphereCenter = enemy.transform.position + enemy.transform.forward * enemy.stopDistance;
         base.OnEnter();
     }
 
     public override void UpdateLogic()
     {
-        base.UpdateLogic();
+        sphereCenter = enemy.transform.position + enemy.transform.forward * enemy.stopDistance;
         //enemy.target.GetComponent<PlayerComponent>().
         if (enemy.IsRangedEnemy)
         {
             DistanceAttack();
+        }
+        else
+        {
+            MeleeAttack();
+        }
+        base.UpdateLogic();
+    }
+
+    private void MeleeAttack()
+    {
+
+        Collider[] hitEnemies = Physics.OverlapSphere(sphereCenter,enemy.stopDistance);
+
+        foreach (Collider obj in hitEnemies)
+        {
+            if (obj != null && obj.tag == "Player")
+            {
+                if (!enemy.IsAttacking)
+                {
+                    obj.GetComponentInParent<HealthComponent>().DecreaseHealth(enemy.damage);
+                    OnEnemyMeleeHit.Invoke();
+                }
+            }
         }
     }
 

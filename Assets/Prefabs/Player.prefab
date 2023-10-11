@@ -14,11 +14,11 @@ GameObject:
   - component: {fileID: 1067716849943479645}
   - component: {fileID: 9013334952753198053}
   - component: {fileID: 32693397576217926}
+  - component: {fileID: 3020038490705687198}
   - component: {fileID: 2207404111697409586}
-  - component: {fileID: 41468641313303315}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +39,7 @@ Transform:
   - {fileID: 3078583972514884116}
   - {fileID: 315075578839560001}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5556089390067047182
 MonoBehaviour:
@@ -104,19 +104,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character_Health_Component: {fileID: 9013334952753198053}
-  speed: 0
+  speed: 10
+  zspeed: 5
+  characterSprite: {fileID: 5673954961807371981}
   initialSpeed: 0
   jumpForce: 0
   movement: {x: 0, y: 0, z: 0}
   jumpBufferTime: 0
   jumpBufferTimeCounter: 0
-  anim: {fileID: 41468641313303315}
+  anim: {fileID: 6866815045698469197}
   damage: 20
   input: {fileID: 32693397576217926}
   player_Source: {fileID: 11400000, guid: 5e67e42c21ea55c4b865b291844ebafc, type: 2}
+  _movementController: {fileID: 3020038490705687198}
   feet_Pivot: {fileID: 0}
   camera: {fileID: 315075578839560001}
   _attackRange: 2
+  rigidbody: {fileID: 2207404111697409586}
   turn_Smooth_Velocity: 0
   turnSmoothTime: 0
   lastAngle: 0
@@ -152,6 +156,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 6677390696331851601}
+--- !u!114 &3020038490705687198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107700016129366970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1928546eb9b116448ae89dafb6f628c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerComponent: {fileID: 1067716849943479645}
 --- !u!54 &2207404111697409586
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -177,29 +194,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
---- !u!95 &41468641313303315
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107700016129366970}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dc1381bd575125649ae11d8ab5604836, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &502177978349187428
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +261,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 2
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -570,6 +566,7 @@ GameObject:
   - component: {fileID: 3078583972514884116}
   - component: {fileID: 1592740622464350111}
   - component: {fileID: 1138335584444239559}
+  - component: {fileID: 6866815045698469197}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Player
@@ -669,6 +666,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9.568852, y: 18.895483, z: 2}
   m_Center: {x: -0.00000019942641, y: -0.000000997132, z: 0}
+--- !u!95 &6866815045698469197
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673954961807371981}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dc1381bd575125649ae11d8ab5604836, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7346772389033337105
 GameObject:
   m_ObjectHideFlags: 0

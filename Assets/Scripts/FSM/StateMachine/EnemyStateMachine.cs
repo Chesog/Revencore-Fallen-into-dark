@@ -42,11 +42,17 @@ public class EnemyStateMachine : State_Machine
         enemy.character_Health_Component.OnDecrease_Health += OnEnemyHit;
         enemy.character_Health_Component.OnInsufficient_Health += OnInsuficientHealth;
         _attackState.OnEnemyShoot += OnEnemyShoot;
+        _attackState.OnEnemyMeleeHit += OnEnemyMeleeHit;
 
         enemy.isHit = false;
         enemy.IsAttacking = false;
 
         base.OnEnable();
+    }
+
+    private void OnEnemyMeleeHit()
+    {
+        StartCoroutine(ResetAttack());
     }
 
     private void OnEnemyShoot()
