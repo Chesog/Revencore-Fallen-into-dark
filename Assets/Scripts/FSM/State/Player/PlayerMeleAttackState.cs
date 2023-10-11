@@ -34,7 +34,7 @@ public class PlayerMeleAttackState : PlayerBaseState
 
     public override void UpdateLogic()
     {
-        sphereCenter = _player.transform.position + _player.transform.right * _player._attackRange;
+        sphereCenter = _player.characterSprite.transform.position + _player.characterSprite.transform.right * _player._attackRange;
         if (_player.movement != Vector3.zero)
             _player._movementController.UpdateMovement();
             
@@ -62,8 +62,6 @@ public class PlayerMeleAttackState : PlayerBaseState
 
             if (enemy != null && enemy.tag == "Enemy")
                 enemy.GetComponent<HealthComponent>().DecreaseHealth(_player.damage);
-            else if (distanceEnemy != null)
-                distanceEnemy.TakeDamage(_player.damage);
         }
 
         playMeleAttackAnimation();
