@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class EnemyStateMachine : State_Machine
@@ -6,6 +8,7 @@ public class EnemyStateMachine : State_Machine
     #region EXPOSED_FIELDS
     [SerializeField] private EnemyComponent enemy;
     [SerializeField] private EnemyInputManager enemyInput;
+    [SerializeField] private float _attackCooldown;
     #endregion
 
     #region PRIVATE_FIELDS
@@ -13,6 +16,8 @@ public class EnemyStateMachine : State_Machine
     private EnemyMoveState _moveState;
     private EnemyHitState _hitState;
     private EnemyAttackState _attackState;
+   
+
     #endregion
 
     private void OnEnable()
@@ -25,21 +30,38 @@ public class EnemyStateMachine : State_Machine
             enabled = false;
         }
 
-        enemyInput.OnEnemyMove += OnEnemyMove;
-        enemyInput.OnEnemyAttack += OnEnemyAttack;
-        enemyInput.OnEnemyHit += OnEnemyHit;
-        enemy.character_Health_Component.OnDecrease_Health += OnEnemyHit;
-        enemy.character_Health_Component.OnInsufficient_Health += OnInsuficientHealth;
-
 
         _idleState = new EnemyIdleState(nameof(_idleState), this, enemy);
         _moveState = new EnemyMoveState(nameof(_moveState), this, enemy);
         _hitState = new EnemyHitState(nameof(_hitState), this, enemy);
         _attackState = new EnemyAttackState(nameof(_attackState), this, enemy);
+        
+        enemyInput.OnEnemyMove += OnEnemyMove;
+        enemyInput.OnEnemyAttack += OnEnemyAttack;
+        enemyInput.OnEnemyHit += OnEnemyHit;
+        enemy.character_Health_Component.OnDecrease_Health += OnEnemyHit;
+        enemy.character_Health_Component.OnInsufficient_Health += OnInsuficientHealth;
+        _attackState.OnEnemyShoot += OnEnemyShoot;
 
         enemy.isHit = false;
+        enemy.IsAttacking = false;
 
         base.OnEnable();
+    }
+
+    private void OnEnemyShoot()
+    {
+        Quaternion rot = Quaternion.LookRotation(-transform.right);
+        GameObject projectile = Instantiate(enemy.bulletPrefab, enemy.bulletSpawn.position, rot);
+
+        enemy.IsAttacking = true;
+        StartCoroutine(ResetAttack());
+    }
+    
+    private IEnumerator ResetAttack()
+    {
+        yield return new WaitForSeconds(_attackCooldown);
+        enemy.IsAttacking = false;
     }
 
     private void OnEnemyHit()

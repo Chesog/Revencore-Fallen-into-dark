@@ -56,7 +56,14 @@ public class EnemyMoveState : EnemyBaseState
 
     private void playMoveAnimation()
     {
-        enemy.anim.Play(moveAnimation);
+        if (enemy.IsRangedEnemy)
+        {
+            
+        }
+        else
+        {
+            enemy.anim.Play(moveAnimation);
+        }
     }
 
     public override void AddStateTransitions(string transitionName, State transitionState)

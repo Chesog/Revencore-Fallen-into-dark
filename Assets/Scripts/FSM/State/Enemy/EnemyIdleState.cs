@@ -41,7 +41,13 @@ public class EnemyIdleState : EnemyBaseState
 
     private void playIdleAnimation()
     {
-        enemy.anim.Play(idleAnimation);
+        if (enemy.IsRangedEnemy)
+        {
+        }
+        else
+        {
+            enemy.anim.Play(idleAnimation);
+        }
     }
 
     public override void AddStateTransitions(string transitionName, State transitionState)

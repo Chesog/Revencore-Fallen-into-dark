@@ -17,6 +17,8 @@ public class EnemyComponent : CharacterComponent
     public GameObject floatingTextPrefab;
     public Transform floatingTextSpawn;
     public FloatingTextHandlerer floatingTextHandleer;
+    public bool IsRangedEnemy;
+    public bool IsAttacking;
 
     public Player_Data_Source player_Source;
 
