@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using UnityEngine.Serialization;
 
@@ -14,6 +15,7 @@ public class EnemiesManager_T : MonoBehaviour
 
     #region EXPOSED_FIELDS
 
+    [SerializeField] private GameObject _winningPanel;
     [SerializeField] private string _enemyTag = "Enemy";
     [SerializeField] private int _kills = 0;
 
@@ -29,6 +31,7 @@ public class EnemiesManager_T : MonoBehaviour
 
     public int _room1NecessaryKills = 10;
     public int _room2NecessaryKills = 7;
+    public int _room3NecessaryKills = 17;
 
     #endregion
 
@@ -39,18 +42,28 @@ public class EnemiesManager_T : MonoBehaviour
         EnemyInputManager.OnEnemyDestroy += IncreaseKill;
         DistanceEnemy.Destroyed += IncreaseKill;
         RoomManager.OnNewRoom += ResetKill;
+        RoomManager.OnNewRoom += IncreaseCurrentRoom;
+    }
+
+    private void Start()
+    {
+        _room3NecessaryKills = _room2NecessaryKills + _room1NecessaryKills;
+        _winningPanel.SetActive(false);
     }
 
     private void Update()
     {
         if (_currentRoom == 1 && _kills >= _room1NecessaryKills)
         {
-            _currentRoom++;
             OnNoEnemies?.Invoke();
         }
         else if (_currentRoom == 2 && _kills >= _room2NecessaryKills)
         {
             OnNoEnemies?.Invoke();
+        }
+        else if (_currentRoom == 3 && _kills >= _room3NecessaryKills)
+        {
+            ShowVictoryPanel();
         }
     }
 
@@ -59,6 +72,7 @@ public class EnemiesManager_T : MonoBehaviour
         EnemyInputManager.OnEnemyDestroy -= IncreaseKill;
         DistanceEnemy.Destroyed -= IncreaseKill;
         RoomManager.OnNewRoom -= ResetKill;
+        RoomManager.OnNewRoom -= IncreaseCurrentRoom;
     }
 
     #endregion
@@ -68,6 +82,16 @@ public class EnemiesManager_T : MonoBehaviour
     private void IncreaseKill()
     {
         _kills++;
+    }
+    private void IncreaseCurrentRoom()
+    {
+        _currentRoom++;
+    }
+
+    private void ShowVictoryPanel()
+    {
+        _winningPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     #endregion

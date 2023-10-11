@@ -20,6 +20,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private RoomManager _roomManager;
     [SerializeField] private Transform[] _room1SpawnPositions;
     [SerializeField] private Transform[] _room2SpawnPositions;
+    [SerializeField] private Transform[] _room3SpawnPositions;
 
     #endregion
 
@@ -56,6 +57,10 @@ public class EnemySpawner : MonoBehaviour
             else if (_currentRoom == 2)
             {
                 StartCoroutine(SpawnEnemy(_distanceInterval, _distanceEnemyPrefab, _maxDistanceEnemies, _room2SpawnPositions));
+            }
+            else if (_currentRoom == 3)
+            {
+                StartCoroutine(SpawnEnemy(_meleeInterval, _meleeEnemyPrefab, _enemiesManager._room3NecessaryKills, _room3SpawnPositions));
             }
         }
     }
