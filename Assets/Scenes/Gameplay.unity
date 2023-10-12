@@ -6455,6 +6455,33 @@ Transform:
   m_Father: {fileID: 1623763783}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1894683507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 377290161978956120, guid: efa29a5029b28264a8a85e576933da41, type: 3}
+  m_PrefabInstance: {fileID: 2133759235}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1894683511
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894683507}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2198981952250768247, guid: efa29a5029b28264a8a85e576933da41, type: 3}
 --- !u!4 &1933857433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3078583972514884116, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
@@ -6762,6 +6789,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -3346490045331736321, guid: efa29a5029b28264a8a85e576933da41, type: 3}
       insertIndex: -1
       addedObject: {fileID: 784268054}
+    - targetCorrespondingSourceObject: {fileID: 377290161978956120, guid: efa29a5029b28264a8a85e576933da41, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1894683511}
     - targetCorrespondingSourceObject: {fileID: -6203928244913692323, guid: efa29a5029b28264a8a85e576933da41, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1792746212}
@@ -7003,6 +7033,14 @@ PrefabInstance:
     - target: {fileID: 2207404111697409586, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
       propertyPath: m_Constraints
       value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313131918128684669, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313131918128684669, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 41468641313303315, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
