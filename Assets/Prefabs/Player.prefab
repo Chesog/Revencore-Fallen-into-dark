@@ -731,7 +731,7 @@ GameObject:
   - component: {fileID: 3294694153530779058}
   - component: {fileID: 3952573148497169966}
   m_Layer: 0
-  m_Name: Face
+  m_Name: Face (Cube)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -767,7 +767,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8188704673460592378}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
