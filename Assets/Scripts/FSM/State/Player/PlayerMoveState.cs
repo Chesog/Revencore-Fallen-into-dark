@@ -39,7 +39,7 @@ public class PlayerMoveState : PlayerBaseState
 
     private void playMoveAnimation()
     {
-        _player.anim.Play(PlayerMoveAnimationName);
+        _player.anim.SetFloat("Movement_X/Z", _player.movement.magnitude - _player.movement.y);
     }
 
     public override void AddStateTransitions(string transitionName, State transitionState)
