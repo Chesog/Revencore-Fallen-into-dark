@@ -1,9 +1,11 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyInputManager : MonoBehaviour
 {
     #region EXPOSED_FIELDS
+    [SerializeField] private RoomManager roomManager;
     [SerializeField] private EnemyComponent _enemy;
     [SerializeField] private string bulletTag = "Bullet";
     [SerializeField] private PlayerDamage_T player;
@@ -11,15 +13,38 @@ public class EnemyInputManager : MonoBehaviour
     [SerializeField] private float damage = 30f;
     [SerializeField] private float damageCooldown = 2f;
     [SerializeField] private float maxHealth = 100f;
+    private bool isPaused;
     #endregion
     public event Action OnEnemyMove;
     public event Action OnEnemyAttack;
     public event Action OnEnemyHit;
+
+    public event Action OnGamePause;
+    public event Action OnGameUnPause;
     public static event Action OnEnemyDestroy;
+
+    private void OnEnable()
+    {
+        roomManager = FindObjectOfType<RoomManager>();
+        roomManager.OnPause += OnPause;
+        roomManager.OnUnPause += OnUnPause;
+    }
+    
+    private void OnUnPause()
+    {
+        isPaused = false;
+        OnGameUnPause?.Invoke();
+    }
+
+    private void OnPause()
+    {
+        isPaused = true;
+        OnGamePause?.Invoke();
+    }
 
     private void Update()
     {
-        MovementCheck();
+        if (!isPaused) {MovementCheck(); }
     }
 
     public void MovementCheck()

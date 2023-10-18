@@ -39,6 +39,8 @@ public class EnemyStateMachine : State_Machine
         enemyInput.OnEnemyMove += OnEnemyMove;
         enemyInput.OnEnemyAttack += OnEnemyAttack;
         enemyInput.OnEnemyHit += OnEnemyHit;
+        enemyInput.OnGamePause += OnGamePause;
+        
         enemy.character_Health_Component.OnDecrease_Health += OnEnemyHit;
         enemy.character_Health_Component.OnInsufficient_Health += OnInsuficientHealth;
         _attackState.OnEnemyShoot += OnEnemyShoot;
@@ -48,6 +50,11 @@ public class EnemyStateMachine : State_Machine
         enemy.IsAttacking = false;
 
         base.OnEnable();
+    }
+
+    private void OnGamePause()
+    {
+        SetState(_idleState);
     }
 
     private void OnEnemyMeleeHit()
@@ -105,5 +112,6 @@ public class EnemyStateMachine : State_Machine
         enemyInput.OnEnemyMove -= OnEnemyMove;
         enemyInput.OnEnemyAttack -= OnEnemyAttack;
         enemyInput.OnEnemyHit -= OnEnemyHit;
+        enemyInput.OnGamePause -= OnGamePause;
     }
 }

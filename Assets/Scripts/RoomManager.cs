@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -11,6 +12,8 @@ public class RoomManager : MonoBehaviour
     #region EVENTS
 
     public static event Action OnNewRoom;
+    public event Action OnPause; 
+    public event Action OnUnPause; 
 
     #endregion
     
@@ -110,14 +113,14 @@ public class RoomManager : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         pause = true;
-        Time.timeScale = 0.1f;
+        OnPause?.Invoke();
     }
 
     public void UnPauseGame()
     {
         pauseMenu.SetActive(false);
         pause = false;
-        Time.timeScale = 1;
+        OnUnPause?.Invoke();
     }
     
     public int GetCurrentRoom()
