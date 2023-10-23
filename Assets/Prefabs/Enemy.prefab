@@ -39,7 +39,7 @@ Transform:
   - {fileID: 9172297530491867763}
   - {fileID: 2318019474169141084}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4420720911596393439
 SpriteRenderer:
@@ -134,7 +134,7 @@ MonoBehaviour:
       m_Calls: []
   enemy: {fileID: 4897631695186766132}
   enemyInput: {fileID: 1531029026459380750}
-  _attackCooldown: 0
+  _attackCooldown: 5
 --- !u!114 &4897631695186766132
 MonoBehaviour:
   m_ObjectHideFlags: 0

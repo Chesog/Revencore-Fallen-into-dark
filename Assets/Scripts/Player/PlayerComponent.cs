@@ -29,7 +29,6 @@ public class PlayerComponent : CharacterComponent
     private void Awake()
     {
         player_Source._player = this;
-        character_Health_Component._maxHealth = 100.0f;
         character_Health_Component._health = character_Health_Component._maxHealth;
 
         feet_Pivot ??= GetComponent<Transform>();
@@ -38,7 +37,6 @@ public class PlayerComponent : CharacterComponent
 
     private void OnEnable()
     {
-        character_Health_Component._maxHealth = 100.0f;
         character_Health_Component._health = character_Health_Component._maxHealth;
         initialSpeed = speed;
     }

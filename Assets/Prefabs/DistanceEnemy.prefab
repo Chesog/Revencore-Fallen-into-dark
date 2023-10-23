@@ -45,7 +45,7 @@ Transform:
   - {fileID: 5398486277578416916}
   - {fileID: 7341089523833600507}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3686249587914454159
 MonoBehaviour:
@@ -107,7 +107,7 @@ MonoBehaviour:
       m_Calls: []
   enemy: {fileID: 3686249587914454159}
   enemyInput: {fileID: 8450996657853111492}
-  _attackCooldown: 0
+  _attackCooldown: 5
 --- !u!114 &8450996657853111492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   bulletTag: Bullet
   player: {fileID: 0}
   speed: 3
-  damage: 30
+  damage: 2
   damageCooldown: 2
   maxHealth: 200
 --- !u!114 &5931959279297762436
