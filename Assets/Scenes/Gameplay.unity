@@ -5990,8 +5990,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _meleeEnemyPrefab: {fileID: 3428974327954055427, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
   _distanceEnemyPrefab: {fileID: 2079312061525422309, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
-  _meleeInterval: 3.5
-  _distanceInterval: 3.5
+  _meleeInterval: 2
+  _distanceInterval: 2
   _enemiesManager: {fileID: 1620715327}
   _roomManager: {fileID: 179058108}
   _room1SpawnPositions:
