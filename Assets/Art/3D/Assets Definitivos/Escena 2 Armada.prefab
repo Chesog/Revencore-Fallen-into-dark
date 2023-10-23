@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3995284746046461413}
   - component: {fileID: 129448621580151887}
   - component: {fileID: 4288693660996868188}
+  - component: {fileID: 5919471005504416200}
   m_Layer: 0
   m_Name: SM_molino
   m_TagString: Untagged
@@ -83,6 +84,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5919471005504416200
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16872481524973985}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.2035103, y: 6.609642, z: 4.0434766}
+  m_Center: {x: 0.024520278, y: -0.00000035762787, z: 0.08492309}
 --- !u!1 &398816112447824709
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +199,7 @@ GameObject:
   - component: {fileID: 4309809239194744092}
   - component: {fileID: 5133097361311817343}
   - component: {fileID: 4294918752197101162}
+  - component: {fileID: 3300627042620060659}
   m_Layer: 0
   m_Name: SM_scarecrow_1
   m_TagString: Untagged
@@ -249,6 +272,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &3300627042620060659
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408471008603478230}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.4750783
+  m_Height: 6.534473
+  m_Direction: 1
+  m_Center: {x: 0.0000010739319, y: -0.07034635, z: 0.03448317}
 --- !u!1 &1219474190525385757
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +420,7 @@ Transform:
   - {fileID: 5791662629550328146}
   - {fileID: 764399378030103591}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1618011754960369045
 GameObject:
@@ -478,6 +524,7 @@ GameObject:
   - component: {fileID: 6765635493826576186}
   - component: {fileID: 1916285085069138487}
   - component: {fileID: 2919770113399744906}
+  - component: {fileID: 1991201397859714446}
   m_Layer: 0
   m_Name: SM_camioneta
   m_TagString: Untagged
@@ -550,6 +597,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1991201397859714446
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551769551047209323}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.4985914, y: 2.115082, z: 3.7317405}
+  m_Center: {x: 0.00071427296, y: -0.00000060955193, z: 0.25198048}
 --- !u!1 &2747683276933526016
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,6 +629,7 @@ GameObject:
   - component: {fileID: 6912657062194812221}
   - component: {fileID: 1740813238369672918}
   - component: {fileID: 3890286714061371097}
+  - component: {fileID: 2161484450749176660}
   m_Layer: 0
   m_Name: SM_casa2
   m_TagString: Untagged
@@ -633,6 +702,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2161484450749176660
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2747683276933526016}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.25209, y: 10.22004, z: 10.466332}
+  m_Center: {x: 0.59949094, y: -0.0018179277, z: 0.36754325}
 --- !u!1 &3421556611213292220
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +817,7 @@ GameObject:
   - component: {fileID: 7710735005020739549}
   - component: {fileID: 1276595273628791235}
   - component: {fileID: 7604134349821180764}
+  - component: {fileID: 6600872433934569997}
   m_Layer: 0
   m_Name: SM_vallas
   m_TagString: Untagged
@@ -799,6 +890,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6600872433934569997
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5131215340755101425}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5473152293874024911, guid: 5127ad34bc0160e4690bef5298749bda, type: 3}
 --- !u!1 &5169777869002442560
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +923,7 @@ GameObject:
   - component: {fileID: 2272572157765976306}
   - component: {fileID: 1903825565329271251}
   - component: {fileID: 5555260539533220024}
+  - component: {fileID: 1427493433877094738}
   m_Layer: 0
   m_Name: SM_granero_pCube6
   m_TagString: Untagged
@@ -882,6 +996,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1427493433877094738
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169777869002442560}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 18.372797, y: 11.2104845, z: 15.970343}
+  m_Center: {x: 0.44149506, y: 0, z: 0.75706154}
 --- !u!1 &5186836488875222884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,6 +1194,7 @@ GameObject:
   - component: {fileID: 8696912462109567088}
   - component: {fileID: 1294365559793226340}
   - component: {fileID: 7226966210536753425}
+  - component: {fileID: 967817887981293436}
   m_Layer: 0
   m_Name: SM_henoYRastrillo
   m_TagString: Untagged
@@ -1131,3 +1267,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &967817887981293436
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7098377345319421694}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.2481565, y: 2.5254161, z: 4.8865747}
+  m_Center: {x: -0.00000023841858, y: 0.0066605806, z: -0.020398736}
