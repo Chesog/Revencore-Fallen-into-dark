@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         _maxMeleeEnemies = _enemiesManager._room1NecessaryKills;
-        _maxDistanceEnemies = _enemiesManager._room2NecessaryKills;
+        _maxDistanceEnemies = _enemiesManager._room3NecessaryKills;
 
     }
     
@@ -54,11 +54,11 @@ public class EnemySpawner : MonoBehaviour
             {
                 StartCoroutine(SpawnEnemy(_meleeInterval, _meleeEnemyPrefab, _maxMeleeEnemies, _room1SpawnPositions));
             }
-            else if (_currentRoom == 2)
+            else if (_currentRoom == 3)
             {
                 StartCoroutine(SpawnEnemy(_distanceInterval, _distanceEnemyPrefab, _maxDistanceEnemies, _room2SpawnPositions));
             }
-            else if (_currentRoom == 3)
+            else if (_currentRoom == 5)
             {
                 StartCoroutine(SpawnEnemy(_meleeInterval, _meleeEnemyPrefab, _enemiesManager._room3NecessaryKills, _room3SpawnPositions));
             }

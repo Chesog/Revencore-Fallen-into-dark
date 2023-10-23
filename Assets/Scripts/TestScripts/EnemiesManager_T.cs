@@ -30,8 +30,10 @@ public class EnemiesManager_T : MonoBehaviour
     #region PUBLIC_FIELDS
 
     public int _room1NecessaryKills = 10;
-    public int _room2NecessaryKills = 7;
-    public int _room3NecessaryKills = 17;
+    public int _room2NecessaryKills = 0;
+    public int _room3NecessaryKills = 7;
+    public int _room4NecessaryKills = 0;
+    public int _room5NecessaryKills = 10;
 
     #endregion
 
@@ -47,7 +49,7 @@ public class EnemiesManager_T : MonoBehaviour
 
     private void Start()
     {
-        _room3NecessaryKills = _room2NecessaryKills + _room1NecessaryKills;
+        _room5NecessaryKills = _room3NecessaryKills + _room1NecessaryKills;
         _winningPanel.SetActive(false);
     }
 
@@ -62,6 +64,14 @@ public class EnemiesManager_T : MonoBehaviour
             OnNoEnemies?.Invoke();
         }
         else if (_currentRoom == 3 && _kills >= _room3NecessaryKills)
+        {
+            OnNoEnemies?.Invoke();
+        }
+        else if (_currentRoom == 4 && _kills >= _room4NecessaryKills)
+        {
+            OnNoEnemies?.Invoke();
+        }
+        else if (_currentRoom == 5 && _kills >= _room5NecessaryKills)
         {
             ShowVictoryPanel();
         }
