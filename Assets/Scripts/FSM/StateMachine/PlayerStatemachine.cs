@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStatemachine : State_Machine
 {
@@ -21,8 +22,21 @@ public class PlayerStatemachine : State_Machine
         _inputManager.OnPlayerMove += OnPlayerMove;
         _inputManager.OnPlayerAttack += OnPlayerAttack;
         _inputManager.OnPlayerPause += OnPlayerPause;
+        _playerComponent.character_Health_Component.OnInsufficient_Health += OnplayerInsufficientHeath;
 
         base.OnEnable();
+    }
+
+    private void OnplayerInsufficientHeath()
+    {
+        if (_playerComponent.character_Health_Component._health <= 0)
+        {
+            Destroy(this.gameObject);
+            SceneManager.LoadScene("Gameplay");
+        }
+
+    
+        
     }
 
     private void OnEnable()

@@ -45380,22 +45380,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DistanceEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 3686249587914454159, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
-      propertyPath: hitAnimationName
-      value: "Spitter_Da\xF1o"
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686249587914454159, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
-      propertyPath: idleAnimationName
-      value: Spitter_Idle
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686249587914454159, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
-      propertyPath: moveAnimationName
-      value: Spitter_Caminata
-      objectReference: {fileID: 0}
-    - target: {fileID: 3686249587914454159, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
-      propertyPath: attackAnimationName
-      value: Spitter_Escupitajo
-      objectReference: {fileID: 0}
     - target: {fileID: 4518963830658956322, guid: 4136b96efe04cea4d97e85c3fcc63b79, type: 3}
       propertyPath: m_RootOrder
       value: -1
