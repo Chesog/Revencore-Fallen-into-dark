@@ -6,7 +6,6 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class EnemyHitState : EnemyBaseState
 {
-    private const string moveAnimation = "MinionHit";
     
     public EnemyHitState(string name, State_Machine stateMachine, EnemyComponent enemy) : base(name, stateMachine,enemy)
     {
@@ -24,6 +23,7 @@ public class EnemyHitState : EnemyBaseState
         enemy.character_Health_Component.DecreaseHealth(enemy.target.GetComponent<PlayerComponent>().damage);
         enemy.floatingTextHandleer.ShowFloatingText(enemy.floatingTextPrefab, enemy.floatingTextSpawn, enemy.character_Health_Component._health);
         enemy.isHit = false;
+        playHitAnimation();
     }
 
     public override void UpdatePhysics()
@@ -31,9 +31,9 @@ public class EnemyHitState : EnemyBaseState
         base.UpdatePhysics();
     }
     
-    private void playMoveAnimation()
+    private void playHitAnimation()
     {
-       // enemy.anim.Play(moveAnimation);
+       enemy.anim.Play(enemy.hitAnimationName);
     }
 
     public override void AddStateTransitions(string transitionName, State transitionState)

@@ -19,6 +19,11 @@ public class EnemyComponent : CharacterComponent
     public FloatingTextHandlerer floatingTextHandleer;
     public bool IsRangedEnemy;
     public bool IsAttacking;
+    
+    public string idleAnimationName;
+    public string attackAnimationName;
+    public string hitAnimationName;
+    public string moveAnimationName;
 
     public Player_Data_Source player_Source;
 
@@ -46,6 +51,11 @@ public class EnemyComponent : CharacterComponent
         {
             StartCoroutine(SearchForPlayerEverySecond());
             //Debug.LogError(message: $"{name}: (logError){nameof(target)} is null");
+        }
+
+        if (anim == null)
+        {
+            anim = GetComponent<Animator>();
         }
 
         deathLoop = false;

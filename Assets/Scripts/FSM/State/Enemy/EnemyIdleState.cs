@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class EnemyIdleState : EnemyBaseState
 {
-    private const string idleAnimation = "MinionHit";
 
     public EnemyIdleState(string name, State_Machine stateMachine, EnemyComponent enemy) : base(name, stateMachine,
         enemy)
@@ -41,13 +40,7 @@ public class EnemyIdleState : EnemyBaseState
 
     private void playIdleAnimation()
     {
-        if (enemy.IsRangedEnemy)
-        {
-        }
-        else
-        {
-            enemy.anim.Play(idleAnimation);
-        }
+        enemy.anim.Play(enemy.idleAnimationName);
     }
 
     public override void AddStateTransitions(string transitionName, State transitionState)

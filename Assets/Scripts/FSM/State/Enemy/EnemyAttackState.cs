@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnemyAttackState : EnemyBaseState
 {
-    private const string attackAnimation = "MinionHit";
     Vector3 sphereCenter;
     public Action OnEnemyShoot;
     public Action OnEnemyMeleeHit;
@@ -48,6 +47,7 @@ public class EnemyAttackState : EnemyBaseState
                 {
                     obj.GetComponentInParent<HealthComponent>().DecreaseHealth(enemy.damage);
                     OnEnemyMeleeHit.Invoke();
+                    playAttackAnimation();
                 }
             }
         }
@@ -77,6 +77,7 @@ public class EnemyAttackState : EnemyBaseState
             if (!enemy.IsAttacking)
             {
                 OnEnemyShoot.Invoke();
+                playAttackAnimation();
             }
 
         }
@@ -95,7 +96,7 @@ public class EnemyAttackState : EnemyBaseState
     
     private void playAttackAnimation()
     {
-        // enemy.anim.Play(moveAnimation);
+        enemy.anim.Play(enemy.attackAnimationName);
     }
 
     public override void AddStateTransitions(string transitionName, State transitionState)

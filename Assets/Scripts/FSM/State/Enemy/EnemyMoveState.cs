@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyMoveState : EnemyBaseState
 {
-    private const string moveAnimation = "MinionIdle";
-    
     public EnemyMoveState(string name, State_Machine stateMachine, EnemyComponent enemy) : base(name, stateMachine,enemy)
     {
         
@@ -56,14 +54,7 @@ public class EnemyMoveState : EnemyBaseState
 
     private void playMoveAnimation()
     {
-        if (enemy.IsRangedEnemy)
-        {
-            
-        }
-        else
-        {
-            enemy.anim.Play(moveAnimation);
-        }
+        enemy.anim.Play(enemy.moveAnimationName);
     }
 
     public override void AddStateTransitions(string transitionName, State transitionState)

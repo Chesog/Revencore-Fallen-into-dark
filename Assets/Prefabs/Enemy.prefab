@@ -173,6 +173,10 @@ MonoBehaviour:
   floatingTextHandleer: {fileID: 1207110143216228623}
   IsRangedEnemy: 0
   IsAttacking: 0
+  idleAnimationName: Minion_Idle
+  attackAnimationName: Minion_Golpe
+  hitAnimationName: "Minion_Da\xF1o"
+  moveAnimationName: Minion_Caminata
   player_Source: {fileID: 11400000, guid: 5e67e42c21ea55c4b865b291844ebafc, type: 2}
   bulletPrefab: {fileID: 0}
 --- !u!114 &1207110143216228623
