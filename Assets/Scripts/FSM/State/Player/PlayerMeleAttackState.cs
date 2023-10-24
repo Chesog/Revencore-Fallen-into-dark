@@ -61,9 +61,16 @@ public class PlayerMeleAttackState : PlayerBaseState
             DistanceEnemy distanceEnemy = enemy.GetComponent<DistanceEnemy>();
 
             if (enemy != null && enemy.tag == "Enemy")
+            {
                 enemy.GetComponent<HealthComponent>().DecreaseHealth(_player.damage);
+                
+                Knockback knockback = enemy.GetComponent<Knockback>();
+                if(knockback != null)
+                    knockback.PlayKnockback(_player.transform);
+            }
         }
-
+        
+        
         playMeleAttackAnimation();
     }
 
