@@ -14,9 +14,12 @@ public class PlayerMovementController : MonoBehaviour
 
     public void SetMovement(Vector2 newMov)
     {
-        _playerComponent.movement.x = newMov.x * _playerComponent.speed;
-        _playerComponent.movement.z = newMov.y * _playerComponent.zspeed;
-        _playerComponent.movement.y = _playerComponent.rigidbody.velocity.y;
+        if (!_playerComponent.isDead)
+        {
+            _playerComponent.movement.x = newMov.x * _playerComponent.speed;
+            _playerComponent.movement.z = newMov.y * _playerComponent.zspeed;
+            _playerComponent.movement.y = _playerComponent.rigidbody.velocity.y;
+        }
     }
 
     public void UpdateMovement()

@@ -1,8 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.IO.LowLevel.Unsafe;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,8 +9,7 @@ public class PlayerStatemachine : State_Machine
     private PlayerIdleState _idleState;
     private PlayerMeleAttackState _attackState;
     private PlayerMoveState _moveState;
-    private float currentTime = 0.0f;
-    private float maxTime = 2.0f;
+    private float invulneravilityTime = 1.5f;
 
     private void Start()
     {
@@ -32,8 +27,17 @@ public class PlayerStatemachine : State_Machine
 
     private void OnplayerDecreaseHeath()
     {
-        if (_playerComponent.isPlayer_Damaged)
-            _playerComponent.isPlayer_Damaged = false;
+        if (!_playerComponent.isPlayer_Damaged)
+        {
+            _playerComponent.isPlayer_Damaged = true;
+            StartCoroutine(InvulerabilityFrame());
+        }
+    }
+
+    private IEnumerator InvulerabilityFrame()
+    {
+        yield return new WaitForSeconds(invulneravilityTime);
+        _playerComponent.isPlayer_Damaged = false;
     }
 
     private void OnplayerInsufficientHeath()
@@ -65,39 +69,25 @@ public class PlayerStatemachine : State_Machine
 
     private void OnPlayerPause()
     {
-        SetState(_idleState);
+        if (!_playerComponent.isDead)
+            SetState(_idleState);
     }
 
     private void OnPlayerAttack(bool obj)
     {
-        SetState(_attackState);
+        if (!_playerComponent.isDead)
+            SetState(_attackState);
     }
 
     private void OnPlayerMove(Vector2 obj)
     {
-        SetState(_moveState);
+        if (!_playerComponent.isDead)
+            SetState(_moveState);
     }
 
     protected override State GetInitialState()
     {
         return _idleState;
-    }
-
-    private void Update()
-    {
-        if (_playerComponent.isPlayer_Damaged)
-        {
-            
-            if (currentTime > maxTime)
-            {
-                _playerComponent.isPlayer_Damaged = false;
-                currentTime = 0.0f;
-            }
-            else
-            {
-                currentTime += Time.deltaTime;
-            }
-        }
     }
 
     private void OnDisable()

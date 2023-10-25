@@ -62,6 +62,7 @@ public class EnemyStateMachine : State_Machine
 
     private void OnEnemyMeleeHit()
     {
+        enemy.IsAttacking = true;
         StartCoroutine(ResetAttack());
     }
 

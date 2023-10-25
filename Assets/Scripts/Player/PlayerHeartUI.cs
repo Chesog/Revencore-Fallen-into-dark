@@ -24,18 +24,24 @@ public class PlayerHeartUI : MonoBehaviour
 
     private void OnPlayerDecreaseHealth()
     {
+        int fullHearts = (int)(_Source._player.character_Health_Component._health / 2);
+        bool hasHalfHeart = _Source._player.character_Health_Component._health % 2 == 1;
+
         for (int i = 0; i < heartContainer.Length; i++)
         {
-            if (i < _Source._player.character_Health_Component._health / 2) 
+            if (i < fullHearts)
             {
+                // Draw full heart
                 heartContainer[i].sprite = heartStates[0];
             }
-            else if (i < Mathf.Ceil(_Source._player.character_Health_Component._health / 2.0f))
+            else if (i == fullHearts && hasHalfHeart)
             {
+                // Draw half heart
                 heartContainer[i].sprite = heartStates[1];
             }
             else
             {
+                // Draw empty heart
                 heartContainer[i].sprite = heartStates[2];
             }
         }

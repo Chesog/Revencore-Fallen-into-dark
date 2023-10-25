@@ -22,6 +22,7 @@ public class CharacterComponent : MonoBehaviour
    public float jumpBufferTimeCounter;
    public Animator anim;
    public float damage;
+   public bool isDead;
    #endregion
 
    #region UNITY_CALLS
@@ -36,6 +37,8 @@ public class CharacterComponent : MonoBehaviour
            Debug.LogError(message: $"{name}: (logError){nameof(character_Health_Component)} is null");
            enabled = false;
        }
+
+       isDead = false;
    }
    #endregion
 
