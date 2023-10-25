@@ -54,7 +54,8 @@ public class EnemyMoveState : EnemyBaseState
 
     private void playMoveAnimation()
     {
-        enemy.anim.Play(enemy.moveAnimationName);
+        //enemy.anim.Play(enemy.moveAnimationName);
+        enemy.anim.SetFloat("Movement",enemy.movement.magnitude - enemy.movement.y);
     }
 
     public override void AddStateTransitions(string transitionName, State transitionState)
