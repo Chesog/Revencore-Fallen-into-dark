@@ -42,11 +42,8 @@ public class PlayerStatemachine : State_Machine
 
     private void OnplayerInsufficientHeath()
     {
-        if (_playerComponent.character_Health_Component._health <= 0)
-        {
-            Destroy(this.gameObject);
-            SceneManager.LoadScene("Gameplay");
-        }
+        _playerComponent.anim.Play("Player_Muerte");
+        _playerComponent.isDead = true;
     }
 
     private void OnEnable()

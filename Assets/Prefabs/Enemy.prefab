@@ -135,7 +135,7 @@ MonoBehaviour:
       m_Calls: []
   enemy: {fileID: 4897631695186766132}
   enemyInput: {fileID: 1531029026459380750}
-  _attackCooldown: 5
+  _attackCooldown: 2
 --- !u!114 &4897631695186766132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +159,7 @@ MonoBehaviour:
   jumpBufferTimeCounter: 0
   anim: {fileID: 3402064572832749551}
   damage: 1
+  isDead: 0
   lookRad: 25
   stopDistance: 2
   timeBetweenAttacks: 6

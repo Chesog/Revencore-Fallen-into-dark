@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,11 +13,11 @@ public class RoomManager : MonoBehaviour
     #region EVENTS
 
     public static event Action OnNewRoom;
-    public event Action OnPause; 
-    public event Action OnUnPause; 
+    public event Action OnPause;
+    public event Action OnUnPause;
 
     #endregion
-    
+
     [System.Serializable]
     private struct Room
     {
@@ -33,7 +34,9 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private Image _arrowImage;
     [SerializeField] private string _playerTag = "Player";
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject _losePanel;
     [SerializeField] private PlayerInputManager _playerInputManager;
+    [SerializeField] private Player_Data_Source _playerData;
     private bool pause;
 
     #endregion
@@ -44,10 +47,21 @@ public class RoomManager : MonoBehaviour
     {
         _playerInputManager.OnPlayerPause += OnGamePause;
         EnemiesManager_T.OnNoEnemies += SetCanMoveForward;
+        
+    }
+    
+    private void OnInsuficientHealth()
+    {
+        _losePanel.SetActive(true);
     }
 
     private void Start()
     {
+        if(_playerData == null)
+            _playerData = FindObjectOfType<Player_Data_Source>();
+
+        _playerData._player.character_Health_Component.OnInsufficient_Health += OnInsuficientHealth;
+        
         _arrowImage.enabled = false;
         _currentRoom = _rooms[0];
         _currentRoom._canMoveForward = false;
@@ -77,12 +91,20 @@ public class RoomManager : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        
+    }
+
     private void OnGamePause()
     {
-        if (pause)
-            UnPauseGame();
-        else
-            PauseGame();
+        if (!_playerData._player.isDead)
+        {
+            if (pause)
+                UnPauseGame();
+            else
+                PauseGame();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -98,6 +120,7 @@ public class RoomManager : MonoBehaviour
     private void OnDestroy()
     {
         EnemiesManager_T.OnNoEnemies -= SetCanMoveForward;
+        _playerData._player.character_Health_Component.OnInsufficient_Health += OnInsuficientHealth;
     }
 
     #endregion
@@ -122,7 +145,7 @@ public class RoomManager : MonoBehaviour
         pause = false;
         OnUnPause?.Invoke();
     }
-    
+
     public int GetCurrentRoom()
     {
         return _currentRoom.roomNumber;
