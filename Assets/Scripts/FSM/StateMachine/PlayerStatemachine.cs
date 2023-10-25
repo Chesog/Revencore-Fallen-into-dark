@@ -13,6 +13,8 @@ public class PlayerStatemachine : State_Machine
     private PlayerIdleState _idleState;
     private PlayerMeleAttackState _attackState;
     private PlayerMoveState _moveState;
+    private float currentTime = 0.0f;
+    private float maxTime = 2.0f;
 
     private void Start()
     {
@@ -23,8 +25,15 @@ public class PlayerStatemachine : State_Machine
         _inputManager.OnPlayerAttack += OnPlayerAttack;
         _inputManager.OnPlayerPause += OnPlayerPause;
         _playerComponent.character_Health_Component.OnInsufficient_Health += OnplayerInsufficientHeath;
+        _playerComponent.character_Health_Component.OnDecrease_Health += OnplayerDecreaseHeath;
 
         base.OnEnable();
+    }
+
+    private void OnplayerDecreaseHeath()
+    {
+        if (_playerComponent.isPlayer_Damaged)
+            _playerComponent.isPlayer_Damaged = false;
     }
 
     private void OnplayerInsufficientHeath()
@@ -34,9 +43,6 @@ public class PlayerStatemachine : State_Machine
             Destroy(this.gameObject);
             SceneManager.LoadScene("Gameplay");
         }
-
-    
-        
     }
 
     private void OnEnable()
@@ -75,6 +81,23 @@ public class PlayerStatemachine : State_Machine
     protected override State GetInitialState()
     {
         return _idleState;
+    }
+
+    private void Update()
+    {
+        if (_playerComponent.isPlayer_Damaged)
+        {
+            
+            if (currentTime > maxTime)
+            {
+                _playerComponent.isPlayer_Damaged = false;
+                currentTime = 0.0f;
+            }
+            else
+            {
+                currentTime += Time.deltaTime;
+            }
+        }
     }
 
     private void OnDisable()

@@ -1,22 +1,25 @@
 using System;
 using System.Collections;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyStateMachine : State_Machine
 {
     #region EXPOSED_FIELDS
+
     [SerializeField] private EnemyComponent enemy;
     [SerializeField] private EnemyInputManager enemyInput;
     [SerializeField] private float _attackCooldown;
+
     #endregion
 
     #region PRIVATE_FIELDS
+
     private EnemyIdleState _idleState;
     private EnemyMoveState _moveState;
     private EnemyHitState _hitState;
     private EnemyAttackState _attackState;
-   
 
     #endregion
 
@@ -35,12 +38,12 @@ public class EnemyStateMachine : State_Machine
         _moveState = new EnemyMoveState(nameof(_moveState), this, enemy);
         _hitState = new EnemyHitState(nameof(_hitState), this, enemy);
         _attackState = new EnemyAttackState(nameof(_attackState), this, enemy);
-        
+
         enemyInput.OnEnemyMove += OnEnemyMove;
         enemyInput.OnEnemyAttack += OnEnemyAttack;
         enemyInput.OnEnemyHit += OnEnemyHit;
         enemyInput.OnGamePause += OnGamePause;
-        
+
         enemy.character_Health_Component.OnDecrease_Health += OnEnemyHit;
         enemy.character_Health_Component.OnInsufficient_Health += OnInsuficientHealth;
         _attackState.OnEnemyShoot += OnEnemyShoot;
@@ -70,7 +73,7 @@ public class EnemyStateMachine : State_Machine
         enemy.IsAttacking = true;
         StartCoroutine(ResetAttack());
     }
-    
+
     private IEnumerator ResetAttack()
     {
         yield return new WaitForSeconds(_attackCooldown);
@@ -113,5 +116,17 @@ public class EnemyStateMachine : State_Machine
         enemyInput.OnEnemyAttack -= OnEnemyAttack;
         enemyInput.OnEnemyHit -= OnEnemyHit;
         enemyInput.OnGamePause -= OnGamePause;
+    }
+
+    private void OnDrawGizmos()
+    {
+        
+        if (!enemy.IsAttacking)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(enemy.sphereCenter, enemy.stopDistance);
+        }
+        else
+            Gizmos.color = Color.black;
     }
 }

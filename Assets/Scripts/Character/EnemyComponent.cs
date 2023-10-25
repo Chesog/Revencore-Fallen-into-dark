@@ -24,6 +24,7 @@ public class EnemyComponent : CharacterComponent
     public string attackAnimationName;
     public string hitAnimationName;
     public string moveAnimationName;
+    public Vector3 sphereCenter;
 
     public Player_Data_Source player_Source;
 

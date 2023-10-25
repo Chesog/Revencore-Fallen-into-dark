@@ -178,6 +178,7 @@ MonoBehaviour:
   attackAnimationName: Minion_Golpe
   hitAnimationName: "Minion_Da\xF1o"
   moveAnimationName: Minion_Caminata
+  sphereCenter: {x: 0, y: 0, z: 0}
   player_Source: {fileID: 11400000, guid: 5e67e42c21ea55c4b865b291844ebafc, type: 2}
   bulletPrefab: {fileID: 0}
 --- !u!114 &1207110143216228623
@@ -259,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5192a293f9766714293ba244380825e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 16
+  strength: 5
   delay: 0.15
 --- !u!1 &7216221411072093589
 GameObject:

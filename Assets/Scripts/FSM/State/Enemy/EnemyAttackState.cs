@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnemyAttackState : EnemyBaseState
 {
-    Vector3 sphereCenter;
     public Action OnEnemyShoot;
     public Action OnEnemyMeleeHit;
     
@@ -15,14 +14,13 @@ public class EnemyAttackState : EnemyBaseState
     }
     public override void OnEnter()
     {
-        sphereCenter = enemy.transform.position + enemy.transform.forward * enemy.stopDistance;
+        enemy.sphereCenter = enemy.transform.position + enemy.transform.forward * enemy.stopDistance;
         base.OnEnter();
     }
 
     public override void UpdateLogic()
     {
-        sphereCenter = enemy.transform.position + enemy.transform.forward * enemy.stopDistance;
-        //enemy.target.GetComponent<PlayerComponent>().
+        enemy.sphereCenter = enemy.transform.position + enemy.transform.forward * enemy.stopDistance;
         if (enemy.IsRangedEnemy)
         {
             DistanceAttack();
@@ -37,11 +35,11 @@ public class EnemyAttackState : EnemyBaseState
     private void MeleeAttack()
     {
 
-        Collider[] hitEnemies = Physics.OverlapSphere(sphereCenter,enemy.stopDistance);
+        Collider[] hitEnemies = Physics.OverlapSphere(enemy.sphereCenter,enemy.stopDistance + 0.5f);
 
         foreach (Collider obj in hitEnemies)
         {
-            if (obj != null && obj.tag == "Player")
+            if (obj != null && obj.tag == "Player" && !enemy.target.GetComponentInParent<PlayerComponent>().isPlayer_Damaged)
             {
                 if (!enemy.IsAttacking)
                 {

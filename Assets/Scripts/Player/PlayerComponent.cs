@@ -25,6 +25,7 @@ public class PlayerComponent : CharacterComponent
     public float coyoteTimerCounter;
 
     public bool isPlayer_Attacking;
+    public bool isPlayer_Damaged;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class PlayerComponent : CharacterComponent
 
         feet_Pivot ??= GetComponent<Transform>();
         player_Source._player.damage = 20.0f;
+        isPlayer_Damaged = false;
     }
 
     private void OnEnable()
