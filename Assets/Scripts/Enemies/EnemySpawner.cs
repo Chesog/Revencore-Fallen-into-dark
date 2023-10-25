@@ -60,7 +60,7 @@ public class EnemySpawner : MonoBehaviour
             }
             else if (_currentRoom == 5)
             {
-                StartCoroutine(SpawnEnemy(_meleeInterval, _meleeEnemyPrefab, _enemiesManager._room3NecessaryKills, _room3SpawnPositions));
+                StartCoroutine(SpawnEnemy(_meleeInterval, _meleeEnemyPrefab, _enemiesManager._room5NecessaryKills, _room3SpawnPositions));
             }
         }
     }

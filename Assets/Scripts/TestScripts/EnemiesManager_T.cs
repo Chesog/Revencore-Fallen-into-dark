@@ -49,7 +49,6 @@ public class EnemiesManager_T : MonoBehaviour
 
     private void Start()
     {
-        _room5NecessaryKills = _room3NecessaryKills + _room1NecessaryKills;
         _winningPanel.SetActive(false);
     }
 
