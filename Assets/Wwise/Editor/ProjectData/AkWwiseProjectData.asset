@@ -331,45 +331,23 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: b643be897d840946a3ad05bc8fe29e1d
     GuidInternal: 
-    m_lastTime: -8585034096903569320
-    List: []
-  EventWwu:
-  - PhysicalPath: Events\Ambience.wwu
-    PathAndIcons:
-    - ElementName: Events
-      ObjectType: 5
-      guid: 00000000000000000000000000000000
-    - ElementName: Default Work Unit
-      ObjectType: 12
-      guid: 72cf8d0ae1cf3a448c0a900f11162b19
-    - ElementName: Ambience
-      ObjectType: 12
-      guid: 678db9793490444a86ff96aae195a9c0
-    ParentPath: Events\Default Work Unit\Ambience
-    guid: 678db9793490444a86ff96aae195a9c0
-    GuidInternal: 
-    m_lastTime: -8585034096363577189
+    m_lastTime: -8585033711033280627
     List:
-    - name: AmbiencePlay
-      guid: 1f7ea17783b7034ca0cbcb037d94321b
-      id: 1305708715
+    - name: Main
+      guid: a9807ba26ab22948bfad5687f5dd5ddf
+      id: 3161908922
       PathAndIcons:
-      - ElementName: Events
+      - ElementName: SoundBanks
         ObjectType: 5
         guid: 00000000000000000000000000000000
       - ElementName: Default Work Unit
         ObjectType: 12
-        guid: 72cf8d0ae1cf3a448c0a900f11162b19
-      - ElementName: Ambience
-        ObjectType: 12
-        guid: 678db9793490444a86ff96aae195a9c0
-      - ElementName: AmbiencePlay
-        ObjectType: 3
-        guid: 1f7ea17783b7034ca0cbcb037d94321b
-      Path: Events\Default Work Unit\Ambience\AmbiencePlay
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+        guid: b643be897d840946a3ad05bc8fe29e1d
+      - ElementName: Main
+        ObjectType: 7
+        guid: a9807ba26ab22948bfad5687f5dd5ddf
+      Path: SoundBanks\Default Work Unit\Main
+  EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Events
@@ -381,8 +359,42 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 72cf8d0ae1cf3a448c0a900f11162b19
     GuidInternal: 
-    m_lastTime: -8585034096908769231
-    List: []
+    m_lastTime: -8585032323984907278
+    List:
+    - name: AmbiencePlay
+      guid: 1f7ea17783b7034ca0cbcb037d94321b
+      id: 1305708715
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 72cf8d0ae1cf3a448c0a900f11162b19
+      - ElementName: AmbiencePlay
+        ObjectType: 3
+        guid: 1f7ea17783b7034ca0cbcb037d94321b
+      Path: Events\Default Work Unit\AmbiencePlay
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_BGM_AudioManager
+      guid: 70ded58bcd3c5c4694c4c66e8ea55583
+      id: 4144776676
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 72cf8d0ae1cf3a448c0a900f11162b19
+      - ElementName: Play_BGM_AudioManager
+        ObjectType: 3
+        guid: 70ded58bcd3c5c4694c4c66e8ea55583
+      Path: Events\Default Work Unit\Play_BGM_AudioManager
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -423,8 +435,172 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: a014d6473f23ba49bb5e3296f8ec57a4
     GuidInternal: 
-    m_lastTime: -8585034096903559314
-    List: []
+    m_lastTime: -8585032323954219259
+    List:
+    - name: Scene_State
+      guid: 672b6b446acd644fad4ed57203b70ebd
+      id: 2358111289
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a014d6473f23ba49bb5e3296f8ec57a4
+      - ElementName: Scene_State
+        ObjectType: 9
+        guid: 672b6b446acd644fad4ed57203b70ebd
+      Path: States\Default Work Unit\Scene_State
+      values:
+      - name: Boss
+        guid: 5881c2b56089c745a0991c0c346cabea
+        id: 1560169506
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a014d6473f23ba49bb5e3296f8ec57a4
+        - ElementName: Scene_State
+          ObjectType: 9
+          guid: 672b6b446acd644fad4ed57203b70ebd
+        - ElementName: Boss
+          ObjectType: 8
+          guid: 5881c2b56089c745a0991c0c346cabea
+      - name: Menu
+        guid: c60f064b0e7f8a40ba48cff65fa0c360
+        id: 2607556080
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a014d6473f23ba49bb5e3296f8ec57a4
+        - ElementName: Scene_State
+          ObjectType: 9
+          guid: 672b6b446acd644fad4ed57203b70ebd
+        - ElementName: Menu
+          ObjectType: 8
+          guid: c60f064b0e7f8a40ba48cff65fa0c360
+      - name: None
+        guid: 0af68a0189ecad4db04647526baf64f7
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a014d6473f23ba49bb5e3296f8ec57a4
+        - ElementName: Scene_State
+          ObjectType: 9
+          guid: 672b6b446acd644fad4ed57203b70ebd
+        - ElementName: None
+          ObjectType: 8
+          guid: 0af68a0189ecad4db04647526baf64f7
+      - name: Stage_1
+        guid: a635f4470da3224ebeb4c686245e7bb7
+        id: 4175426381
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a014d6473f23ba49bb5e3296f8ec57a4
+        - ElementName: Scene_State
+          ObjectType: 9
+          guid: 672b6b446acd644fad4ed57203b70ebd
+        - ElementName: Stage_1
+          ObjectType: 8
+          guid: a635f4470da3224ebeb4c686245e7bb7
+      - name: Stage_2
+        guid: 712c5b9588f7a94b91f10bd70f1a8121
+        id: 4175426382
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a014d6473f23ba49bb5e3296f8ec57a4
+        - ElementName: Scene_State
+          ObjectType: 9
+          guid: 672b6b446acd644fad4ed57203b70ebd
+        - ElementName: Stage_2
+          ObjectType: 8
+          guid: 712c5b9588f7a94b91f10bd70f1a8121
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Win_Lose_State
+      guid: d67ff400423d6949856aade1cf9a1ece
+      id: 1853248901
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a014d6473f23ba49bb5e3296f8ec57a4
+      - ElementName: Win_Lose_State
+        ObjectType: 9
+        guid: d67ff400423d6949856aade1cf9a1ece
+      Path: States\Default Work Unit\Win_Lose_State
+      values:
+      - name: Lose
+        guid: 26d53ff967ac1e4db3b1b6f2e5c2b455
+        id: 221232726
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a014d6473f23ba49bb5e3296f8ec57a4
+        - ElementName: Win_Lose_State
+          ObjectType: 9
+          guid: d67ff400423d6949856aade1cf9a1ece
+        - ElementName: Lose
+          ObjectType: 8
+          guid: 26d53ff967ac1e4db3b1b6f2e5c2b455
+      - name: None
+        guid: 9aa01a52f46c804e8b641495767dcdfb
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a014d6473f23ba49bb5e3296f8ec57a4
+        - ElementName: Win_Lose_State
+          ObjectType: 9
+          guid: d67ff400423d6949856aade1cf9a1ece
+        - ElementName: None
+          ObjectType: 8
+          guid: 9aa01a52f46c804e8b641495767dcdfb
+      - name: Win
+        guid: 35bdb4f31a267e4f9415eb6bc511c1f7
+        id: 979765101
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a014d6473f23ba49bb5e3296f8ec57a4
+        - ElementName: Win_Lose_State
+          ObjectType: 9
+          guid: d67ff400423d6949856aade1cf9a1ece
+        - ElementName: Win
+          ObjectType: 8
+          guid: 35bdb4f31a267e4f9415eb6bc511c1f7
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     PathAndIcons:
@@ -454,7 +630,7 @@ MonoBehaviour:
     m_lastTime: -8585034096903559314
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0b0000000c000000
+  ExpandedWaapiItemIds: 010000000500000006000000090000000a0000000b0000000d0000000e000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
