@@ -8906,6 +8906,7 @@ GameObject:
   - component: {fileID: 2925203966807756048}
   - component: {fileID: 9166973267294086203}
   - component: {fileID: 5343001789577435578}
+  - component: {fileID: 9166973267294086204}
   m_Layer: 0
   m_Name: SM_tumba4__1_
   m_TagString: Untagged
@@ -10068,14 +10069,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2747783088136334159}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.311108, y: 5.3151407, z: -5.0964985}
+  m_LocalRotation: {x: -0.025736373, y: -0, z: -0, w: 0.9996688}
+  m_LocalPosition: {x: -3.3111076, y: 5.29, z: -3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1496713034382855912}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -2.949, y: 0, z: 0}
 --- !u!23 &503829518987224065
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13064,6 +13065,7 @@ GameObject:
   - component: {fileID: 1059995844634997925}
   - component: {fileID: 1308027248665163363}
   - component: {fileID: 4877207500086337695}
+  - component: {fileID: 4877207500086337696}
   m_Layer: 0
   m_Name: SM_tumba3
   m_TagString: Untagged
@@ -21869,14 +21871,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169276821219086608}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 161.53, y: -8.582464, z: 15.383543}
+  m_LocalRotation: {x: -0.0013606865, y: 0.0020435438, z: -0.048018616, w: 0.99884343}
+  m_LocalPosition: {x: 161.46, y: -9.41, z: 15.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7190853552391874762}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.144, y: 0.241, z: -5.505}
 --- !u!1 &2928936545594676870
 GameObject:
   m_ObjectHideFlags: 0
@@ -21888,6 +21890,7 @@ GameObject:
   - component: {fileID: 6951957299628733163}
   - component: {fileID: 799120187631505697}
   - component: {fileID: 7229431353167812590}
+  - component: {fileID: 7229431353167812591}
   m_Layer: 0
   m_Name: SM_tumba1__1_
   m_TagString: Untagged
@@ -23718,6 +23721,7 @@ GameObject:
   - component: {fileID: 1174677658979592909}
   - component: {fileID: 3658127204154020055}
   - component: {fileID: 2983890289812317428}
+  - component: {fileID: 3658127204154020056}
   m_Layer: 0
   m_Name: SM_tumba2
   m_TagString: Untagged
@@ -25613,6 +25617,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3270344324355970766}
   m_Mesh: {fileID: 1413723806184546395, guid: 98a1ab577c6ec384a941743f1f6477e7, type: 3}
+--- !u!65 &3658127204154020056
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3270344324355970766}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.1482224, y: 1.9580598, z: 1.9676696}
+  m_Center: {x: 0.069470584, y: -0.000000059604645, z: 0.038009107}
 --- !u!23 &3662436918548139015
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32395,6 +32420,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4877207500086337696
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160691100360988343}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0547266, y: 1.7800125, z: 2.2088397}
+  m_Center: {x: 0.0732241, y: 0.000000059604645, z: -0.0183146}
 --- !u!23 &4889365668956368028
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33543,6 +33589,7 @@ GameObject:
   - component: {fileID: 5495518818892335418}
   - component: {fileID: 4383430790176358449}
   - component: {fileID: 8521464146263298047}
+  - component: {fileID: 8521464146263298048}
   m_Layer: 0
   m_Name: SM_tumba4
   m_TagString: Untagged
@@ -35208,14 +35255,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5140550943967397181}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 158.72, y: -8.932464, z: 0.18355042}
+  m_LocalRotation: {x: -0.015092686, y: 0.0073735965, z: -0.061068773, w: 0.99799216}
+  m_LocalPosition: {x: 158.72, y: -9.37, z: 0.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7190853552391874762}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.675, y: 0.949, z: -7.017}
 --- !u!4 &5501410309617826478
 Transform:
   m_ObjectHideFlags: 0
@@ -43783,6 +43830,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7229431353167812591
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2928936545594676870}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0951562, y: 1.6372285, z: 2.1178534}
+  m_Center: {x: 0.02298963, y: 0.000000059604645, z: 0.0053241253}
 --- !u!4 &7245880857970368985
 Transform:
   m_ObjectHideFlags: 0
@@ -51519,6 +51587,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8521464146263298048
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5140550943967397181}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9905859, y: 1.600636, z: 2.0335398}
+  m_Center: {x: 0.048714697, y: -0.023428828, z: 0.046412464}
 --- !u!4 &8522000500109128583
 Transform:
   m_ObjectHideFlags: 0
@@ -52927,6 +53016,7 @@ GameObject:
   - component: {fileID: 6655828415036051446}
   - component: {fileID: 8832339270951273758}
   - component: {fileID: 3506681072275522231}
+  - component: {fileID: 8832339270951273759}
   m_Layer: 0
   m_Name: SM_tumba1
   m_TagString: Untagged
@@ -53564,6 +53654,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8728263122342009569}
   m_Mesh: {fileID: -6297337014672490382, guid: 98a1ab577c6ec384a941743f1f6477e7, type: 3}
+--- !u!65 &8832339270951273759
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8728263122342009569}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0951366, y: 1.6372285, z: 2.1178527}
+  m_Center: {x: 0.022987723, y: 0.000000059604645, z: 0.0053235292}
 --- !u!33 &8833341547470382032
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -55165,6 +55276,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169276821219086608}
   m_Mesh: {fileID: 1631304524203536442, guid: 98a1ab577c6ec384a941743f1f6477e7, type: 3}
+--- !u!65 &9166973267294086204
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169276821219086608}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9905857, y: 1.6006359, z: 2.0335405}
+  m_Center: {x: 0.048747387, y: -0.0234327, z: 0.046410292}
 --- !u!1 &9168244632320645832
 GameObject:
   m_ObjectHideFlags: 0
