@@ -19,5 +19,6 @@ public class HealthPotion : MonoBehaviour, IInteractable
     public void Interact(CharacterComponent user)
     {
         user.character_Health_Component.IncreaseHealth(healValue);
+        Destroy(this.gameObject);
     }
 }

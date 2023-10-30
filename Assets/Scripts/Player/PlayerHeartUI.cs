@@ -11,7 +11,8 @@ public class PlayerHeartUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _Source._player.character_Health_Component.OnDecrease_Health += OnPlayerDecreaseHealth;
+        _Source._player.character_Health_Component.OnDecrease_Health += OnPlayerUpdateHealth;
+        _Source._player.character_Health_Component.OnIncrease_Health += OnPlayerUpdateHealth;
         if (_Source._player.character_Health_Component._health == _Source._player.character_Health_Component._maxHealth) 
         {
             for (int i = 0; i < heartContainer.Length; i++)
@@ -22,7 +23,7 @@ public class PlayerHeartUI : MonoBehaviour
 
     }
 
-    private void OnPlayerDecreaseHealth()
+    private void OnPlayerUpdateHealth()
     {
         int fullHearts = (int)(_Source._player.character_Health_Component._health / 2);
         bool hasHalfHeart = _Source._player.character_Health_Component._health % 2 == 1;
@@ -49,7 +50,7 @@ public class PlayerHeartUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        _Source._player.character_Health_Component.OnDecrease_Health -= OnPlayerDecreaseHealth;
+        _Source._player.character_Health_Component.OnDecrease_Health -= OnPlayerUpdateHealth;
         if (_Source._player.character_Health_Component._health <= 0)
         {
             for (int i = 0; i < heartContainer.Length; i++)

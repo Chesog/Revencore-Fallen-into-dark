@@ -10,6 +10,7 @@ public class HealthComponent : MonoBehaviour
     
     #region EVENTS
     public event Action OnDecrease_Health;
+    public event Action OnIncrease_Health;
     public event Action OnInsufficient_Health;
     #endregion
 
@@ -44,7 +45,7 @@ public class HealthComponent : MonoBehaviour
 
         if (_health > _maxHealth)
             _health = _maxHealth;
-
+        OnIncrease_Health?.Invoke();
         CheckHealth();
     }
 
