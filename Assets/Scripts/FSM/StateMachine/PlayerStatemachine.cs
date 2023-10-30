@@ -19,10 +19,27 @@ public class PlayerStatemachine : State_Machine
         _inputManager.OnPlayerMove += OnPlayerMove;
         _inputManager.OnPlayerAttack += OnPlayerAttack;
         _inputManager.OnPlayerPause += OnPlayerPause;
+        _inputManager.OnPlayerPickUp += OnPlayerInteract;
         _playerComponent.character_Health_Component.OnInsufficient_Health += OnplayerInsufficientHeath;
         _playerComponent.character_Health_Component.OnDecrease_Health += OnplayerDecreaseHeath;
 
         base.OnEnable();
+    }
+
+    private void OnPlayerInteract()
+    {
+        Vector3 sphereCenter = _playerComponent.characterSprite.transform.position +
+                               _playerComponent.characterSprite.transform.right * _playerComponent._attackRange;
+        Collider[] hitEntities = Physics.OverlapSphere(sphereCenter, _playerComponent._attackRange);
+        if (hitEntities != null)
+        {
+            foreach (Collider potion in hitEntities)
+            {
+                var healthPotion = potion?.GetComponent<HealthPotion>();
+                if (healthPotion != null)
+                    healthPotion.Interact(_playerComponent);
+            }
+        }
     }
 
     private void OnplayerDecreaseHeath()
