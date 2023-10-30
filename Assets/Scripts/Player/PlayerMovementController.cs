@@ -25,5 +25,12 @@ public class PlayerMovementController : MonoBehaviour
     public void UpdateMovement()
     {
         _playerComponent.rigidbody.velocity = _playerComponent.movement;
+        
+        RaycastHit hit;
+        Vector3 raycastOrigin = transform.position + Vector3.up * 0.1f;
+
+        if (Physics.Raycast(raycastOrigin, Vector3.down, out hit, 2.0f))
+        {_playerComponent.transform.position = hit.point + Vector3.up *1.5f;
+        }
     }
 }
