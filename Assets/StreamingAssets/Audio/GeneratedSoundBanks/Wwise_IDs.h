@@ -14,7 +14,18 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID AMBIENCEPLAY = 1305708715U;
+        static const AkUniqueID ATTACKHIT = 1155402680U;
+        static const AkUniqueID ATTACKWHOOSH = 2644573743U;
+        static const AkUniqueID ENEMYMINIONATTACK = 3685648097U;
+        static const AkUniqueID ENEMYSPAWN = 3453203440U;
+        static const AkUniqueID ENEMYSPITTERATTACK = 2347568998U;
+        static const AkUniqueID MENUNEGATIVE = 1513208197U;
+        static const AkUniqueID MENUPOSITIVE = 2496648897U;
+        static const AkUniqueID MOUSEHOVER = 3478063044U;
         static const AkUniqueID PLAY_BGM_AUDIOMANAGER = 4144776676U;
+        static const AkUniqueID PLAYERHIT = 3831688773U;
+        static const AkUniqueID POWERUPHP = 1273576127U;
+        static const AkUniqueID POWERUPRANGED = 1154804782U;
     } // namespace EVENTS
 
     namespace STATES

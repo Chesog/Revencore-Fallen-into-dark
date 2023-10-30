@@ -331,7 +331,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: b643be897d840946a3ad05bc8fe29e1d
     GuidInternal: 
-    m_lastTime: -8585033711033280627
+    m_lastTime: -8585029086447693001
     List:
     - name: Main
       guid: a9807ba26ab22948bfad5687f5dd5ddf
@@ -395,6 +395,219 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+  - PhysicalPath: Events\Gameplay.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Gameplay
+      ObjectType: 12
+      guid: 74b644f45f961a45a6daf86056789653
+    ParentPath: Events\Gameplay
+    guid: 74b644f45f961a45a6daf86056789653
+    GuidInternal: 
+    m_lastTime: -8585029086448064392
+    List:
+    - name: AttackHit
+      guid: 533e9ca719e21548b87904638460c0ea
+      id: 1155402680
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Gameplay
+        ObjectType: 12
+        guid: 74b644f45f961a45a6daf86056789653
+      - ElementName: AttackHit
+        ObjectType: 3
+        guid: 533e9ca719e21548b87904638460c0ea
+      Path: Events\Gameplay\AttackHit
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: AttackWhoosh
+      guid: 7600be6f23ca27439d10c1c89a8658bc
+      id: 2644573743
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Gameplay
+        ObjectType: 12
+        guid: 74b644f45f961a45a6daf86056789653
+      - ElementName: AttackWhoosh
+        ObjectType: 3
+        guid: 7600be6f23ca27439d10c1c89a8658bc
+      Path: Events\Gameplay\AttackWhoosh
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: EnemyMinionAttack
+      guid: 36f82844ab79984ea24effbe064e269b
+      id: 3685648097
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Gameplay
+        ObjectType: 12
+        guid: 74b644f45f961a45a6daf86056789653
+      - ElementName: EnemyMinionAttack
+        ObjectType: 3
+        guid: 36f82844ab79984ea24effbe064e269b
+      Path: Events\Gameplay\EnemyMinionAttack
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: EnemySpawn
+      guid: a23259ea92ed594589a5c47921502a16
+      id: 3453203440
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Gameplay
+        ObjectType: 12
+        guid: 74b644f45f961a45a6daf86056789653
+      - ElementName: EnemySpawn
+        ObjectType: 3
+        guid: a23259ea92ed594589a5c47921502a16
+      Path: Events\Gameplay\EnemySpawn
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: EnemySpitterAttack
+      guid: bd79030284a5b5429e6d9e9701ed0029
+      id: 2347568998
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Gameplay
+        ObjectType: 12
+        guid: 74b644f45f961a45a6daf86056789653
+      - ElementName: EnemySpitterAttack
+        ObjectType: 3
+        guid: bd79030284a5b5429e6d9e9701ed0029
+      Path: Events\Gameplay\EnemySpitterAttack
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: PlayerHit
+      guid: 27a259fb0bfea34883f7b0b4e3ecb141
+      id: 3831688773
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Gameplay
+        ObjectType: 12
+        guid: 74b644f45f961a45a6daf86056789653
+      - ElementName: PlayerHit
+        ObjectType: 3
+        guid: 27a259fb0bfea34883f7b0b4e3ecb141
+      Path: Events\Gameplay\PlayerHit
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: PowerUpHP
+      guid: 0172e8e18470654a80edb86833e7a28b
+      id: 1273576127
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Gameplay
+        ObjectType: 12
+        guid: 74b644f45f961a45a6daf86056789653
+      - ElementName: PowerUpHP
+        ObjectType: 3
+        guid: 0172e8e18470654a80edb86833e7a28b
+      Path: Events\Gameplay\PowerUpHP
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: PowerUpRanged
+      guid: 6fae983e666ef04ba726e1860cbee926
+      id: 1154804782
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Gameplay
+        ObjectType: 12
+        guid: 74b644f45f961a45a6daf86056789653
+      - ElementName: PowerUpRanged
+        ObjectType: 3
+        guid: 6fae983e666ef04ba726e1860cbee926
+      Path: Events\Gameplay\PowerUpRanged
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+  - PhysicalPath: Events\UI.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: UI
+      ObjectType: 12
+      guid: bf0976bf18e93249a3658589cb71e58b
+    ParentPath: Events\UI
+    guid: bf0976bf18e93249a3658589cb71e58b
+    GuidInternal: 
+    m_lastTime: -8585029086448034365
+    List:
+    - name: MenuNegative
+      guid: 2420efd29d077d4fad9381cc202eb6e4
+      id: 1513208197
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: UI
+        ObjectType: 12
+        guid: bf0976bf18e93249a3658589cb71e58b
+      - ElementName: MenuNegative
+        ObjectType: 3
+        guid: 2420efd29d077d4fad9381cc202eb6e4
+      Path: Events\UI\MenuNegative
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MenuPositive
+      guid: 1852a7e43007ba4596d1469b233d18fb
+      id: 2496648897
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: UI
+        ObjectType: 12
+        guid: bf0976bf18e93249a3658589cb71e58b
+      - ElementName: MenuPositive
+        ObjectType: 3
+        guid: 1852a7e43007ba4596d1469b233d18fb
+      Path: Events\UI\MenuPositive
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MouseHover
+      guid: ad2c5bbc97dd69438a881d8c25a15c82
+      id: 3478063044
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: UI
+        ObjectType: 12
+        guid: bf0976bf18e93249a3658589cb71e58b
+      - ElementName: MouseHover
+        ObjectType: 3
+        guid: ad2c5bbc97dd69438a881d8c25a15c82
+      Path: Events\UI\MouseHover
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -630,7 +843,7 @@ MonoBehaviour:
     m_lastTime: -8585034096903559314
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 010000000500000006000000090000000a0000000b0000000d0000000e000000
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
