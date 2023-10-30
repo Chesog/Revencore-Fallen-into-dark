@@ -46,6 +46,10 @@ public class EnemyAttackState : EnemyBaseState
                     obj.GetComponentInParent<HealthComponent>().DecreaseHealth(enemy.damage);
                     OnEnemyMeleeHit.Invoke();
                     playAttackAnimation();
+
+                    Knockback knockback = obj.GetComponentInParent<Knockback>();
+                    if (knockback != null)
+                        knockback.PlayKnockback(enemy.transform);
                 }
             }
         }

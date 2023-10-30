@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 32693397576217926}
   - component: {fileID: 3020038490705687198}
   - component: {fileID: 2207404111697409586}
+  - component: {fileID: 3092565698474917849}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -39,7 +40,7 @@ Transform:
   - {fileID: 3078583972514884116}
   - {fileID: 315075578839560001}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5556089390067047182
 MonoBehaviour:
@@ -114,6 +115,7 @@ MonoBehaviour:
   jumpBufferTimeCounter: 0
   anim: {fileID: 6866815045698469197}
   damage: 20
+  isDead: 0
   input: {fileID: 32693397576217926}
   player_Source: {fileID: 11400000, guid: 5e67e42c21ea55c4b865b291844ebafc, type: 2}
   _movementController: {fileID: 3020038490705687198}
@@ -129,6 +131,7 @@ MonoBehaviour:
   coyoteTime: 0
   coyoteTimerCounter: 0
   isPlayer_Attacking: 0
+  isPlayer_Damaged: 0
 --- !u!114 &9013334952753198053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +199,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &3092565698474917849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107700016129366970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5192a293f9766714293ba244380825e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 5
+  delay: 0.15
 --- !u!1 &502177978349187428
 GameObject:
   m_ObjectHideFlags: 0
