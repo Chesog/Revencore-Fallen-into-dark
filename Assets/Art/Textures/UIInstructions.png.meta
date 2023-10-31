@@ -110,10 +110,10 @@ TextureImporter:
       name: UIInstructions_0
       rect:
         serializedVersion: 2
-        x: 14
+        x: 20
         y: 3119
-        width: 1745
-        height: 963
+        width: 1743
+        height: 969
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,13 +128,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIInstructions_3
+      name: UIInstructions_1
       rect:
         serializedVersion: 2
-        x: 1824
-        y: 3158
-        width: 272
-        height: 305
+        x: 1790
+        y: 3850
+        width: 345
+        height: 199
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,8 +142,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8295e3a68fd091046be83e350d2485de
+      spriteID: 6fec26d3ef312c842a6949cccb67c4c6
+      internalID: -1658633375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIInstructions_3
+      rect:
+        serializedVersion: 2
+        x: 2217
+        y: 3849
+        width: 98
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e45d8a27e1048247815e19780b367d0
       internalID: -1836703458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIInstructions_7
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 3217
+        width: 299
+        height: 550
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f789eb97a2162d42999f6f18f13a788
+      internalID: -828280762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIInstructions_8
+      rect:
+        serializedVersion: 2
+        x: 2161
+        y: 3219
+        width: 286
+        height: 501
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbbd86cee371a0b458cf3da77f627f27
+      internalID: -1597798292
       vertices: []
       indices: 
       edges: []
@@ -164,6 +227,9 @@ TextureImporter:
       UIInstructions_10: 837781800
       UIInstructions_11: -126900810
       UIInstructions_12: -1096354368
+      UIInstructions_13: 903484705
+      UIInstructions_14: 1210441476
+      UIInstructions_15: 1313571885
       UIInstructions_2: -1314496731
       UIInstructions_3: -1836703458
       UIInstructions_4: -2117566385
