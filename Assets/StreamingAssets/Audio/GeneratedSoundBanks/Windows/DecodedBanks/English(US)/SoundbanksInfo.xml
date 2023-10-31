@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>D:\Audio y Producción\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\</ProjectRoot>
+		<SourceFilesRoot>D:\Audio y Producción\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Audio y Producción\GitHub\TSDV_4C_Desarollo_3\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\DecodedBanks\English(US)\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\Audio y Producción\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="505167952">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX" Hash="327604301">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1305708715" Name="AmbiencePlay" ObjectPath="\Events\Default Work Unit\AmbiencePlay" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="114299105" Language="SFX">
+							<ShortName>sfx_TeroChirps-007.wav</ShortName>
+							<Path>SFX\sfx_TeroChirps-007_10C4C929.wem</Path>
+						</File>
+						<File Id="118143105" Language="SFX">
+							<ShortName>sfx_TeroChirps-006.wav</ShortName>
+							<Path>SFX\sfx_TeroChirps-006_10C4C929.wem</Path>
+						</File>
+						<File Id="121706397" Language="SFX">
+							<ShortName>sfxAmbChimes-003.wav</ShortName>
+							<Path>SFX\sfxAmbChimes-003_10C4C929.wem</Path>
+						</File>
+						<File Id="131031847" Language="SFX">
+							<ShortName>sfxAmbWhistlingWind-007.wav</ShortName>
+							<Path>SFX\sfxAmbWhistlingWind-007_10C4C929.wem</Path>
+						</File>
+						<File Id="161273651" Language="SFX">
+							<ShortName>sfx_TeroChirps-002.wav</ShortName>
+							<Path>SFX\sfx_TeroChirps-002_10C4C929.wem</Path>
+						</File>
+						<File Id="191515800" Language="SFX">
+							<ShortName>sfxambSolarWind.wav</ShortName>
+							<Path>SFX\sfxambSolarWind_D79FB2B7.wem</Path>
+						</File>
+						<File Id="221780587" Language="SFX">
+							<ShortName>sfxAmbChimes-002.wav</ShortName>
+							<Path>SFX\sfxAmbChimes-002_10C4C929.wem</Path>
+						</File>
+						<File Id="287636987" Language="SFX">
+							<ShortName>sfx_TeroChirps-005.wav</ShortName>
+							<Path>SFX\sfx_TeroChirps-005_10C4C929.wem</Path>
+						</File>
+						<File Id="411500483" Language="SFX">
+							<ShortName>sfxAmbWhistlingWind-003.wav</ShortName>
+							<Path>SFX\sfxAmbWhistlingWind-003_10C4C929.wem</Path>
+						</File>
+						<File Id="435000505" Language="SFX">
+							<ShortName>sfxAmbWhistlingWind-001.wav</ShortName>
+							<Path>SFX\sfxAmbWhistlingWind-001_10C4C929.wem</Path>
+						</File>
+						<File Id="511037264" Language="SFX">
+							<ShortName>sfxAmbWhistlingWind-004.wav</ShortName>
+							<Path>SFX\sfxAmbWhistlingWind-004_10C4C929.wem</Path>
+						</File>
+						<File Id="558935191" Language="SFX">
+							<ShortName>sfx_TeroChirps-003.wav</ShortName>
+							<Path>SFX\sfx_TeroChirps-003_10C4C929.wem</Path>
+						</File>
+						<File Id="645381670" Language="SFX">
+							<ShortName>sfxAmbWhistlingWind-006.wav</ShortName>
+							<Path>SFX\sfxAmbWhistlingWind-006_10C4C929.wem</Path>
+						</File>
+						<File Id="670544707" Language="SFX">
+							<ShortName>sfx_TeroChirps-004.wav</ShortName>
+							<Path>SFX\sfx_TeroChirps-004_10C4C929.wem</Path>
+						</File>
+						<File Id="725646991" Language="SFX">
+							<ShortName>sfxAmbWhistlingWind-002.wav</ShortName>
+							<Path>SFX\sfxAmbWhistlingWind-002_10C4C929.wem</Path>
+						</File>
+						<File Id="729115484" Language="SFX">
+							<ShortName>sfxAmbChimes-001.wav</ShortName>
+							<Path>SFX\sfxAmbChimes-001_10C4C929.wem</Path>
+						</File>
+						<File Id="823869073" Language="SFX">
+							<ShortName>sfx_TeroChirps-001.wav</ShortName>
+							<Path>SFX\sfx_TeroChirps-001_10C4C929.wem</Path>
+						</File>
+						<File Id="859371496" Language="SFX">
+							<ShortName>sfx_TeroChirps-008.wav</ShortName>
+							<Path>SFX\sfx_TeroChirps-008_10C4C929.wem</Path>
+						</File>
+						<File Id="876525685" Language="SFX">
+							<ShortName>sfxAmbChimes-004.wav</ShortName>
+							<Path>SFX\sfxAmbChimes-004_10C4C929.wem</Path>
+						</File>
+						<File Id="1072658680" Language="SFX">
+							<ShortName>sfxAmbWhistlingWind-005.wav</ShortName>
+							<Path>SFX\sfxAmbWhistlingWind-005_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1155402680" Name="AttackHit" ObjectPath="\Events\Gameplay\AttackHit" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2644573743" Name="AttackWhoosh" ObjectPath="\Events\Gameplay\AttackWhoosh" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3685648097" Name="EnemyMinionAttack" ObjectPath="\Events\Gameplay\EnemyMinionAttack" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3453203440" Name="EnemySpawn" ObjectPath="\Events\Gameplay\EnemySpawn" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2347568998" Name="EnemySpitterAttack" ObjectPath="\Events\Gameplay\EnemySpitterAttack" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1513208197" Name="MenuNegative" ObjectPath="\Events\UI\MenuNegative" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2496648897" Name="MenuPositive" ObjectPath="\Events\UI\MenuPositive" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3478063044" Name="MouseHover" ObjectPath="\Events\UI\MouseHover" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="4144776676" Name="Play_BGM_AudioManager" ObjectPath="\Events\Default Work Unit\Play_BGM_AudioManager" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="159786757" Language="SFX">
+							<ShortName>Demo Menu v2.1.wav</ShortName>
+							<Path>SFX\Demo Menu v2.1_D79FB2B7.wem</Path>
+						</File>
+						<File Id="339304261" Language="SFX">
+							<ShortName>Revencore_-_Main_Menu.wav</ShortName>
+							<Path>SFX\Revencore_-_Main_Menu_D79FB2B7.wem</Path>
+						</File>
+						<File Id="724197914" Language="SFX">
+							<ShortName>Revecore Menu v2 - Parte B.wav</ShortName>
+							<Path>SFX\Revecore Menu v2 - Parte B_D79FB2B7.wem</Path>
+						</File>
+						<File Id="763201542" Language="SFX">
+							<ShortName>Revencore_Demo_Bossfight_v1.wav</ShortName>
+							<Path>SFX\Revencore_Demo_Bossfight_v1_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{47F435A6-A30D-4E22-BEB4-C686245E7BB7}">
+							<Media>
+								<File Id="724197914"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{955B2C71-F788-4BA9-91F1-0BD70F1A8121}">
+							<Media>
+								<File Id="339304261"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{4B060FC6-7F0E-408A-BA48-CFF65FA0C360}">
+							<Media>
+								<File Id="159786757"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{B5C28158-8960-45C7-A099-1C0C346CABEA}">
+							<Media>
+								<File Id="763201542"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="3831688773" Name="PlayerHit" ObjectPath="\Events\Gameplay\PlayerHit" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1273576127" Name="PowerUpHP" ObjectPath="\Events\Gameplay\PowerUpHP" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1154804782" Name="PowerUpRanged" ObjectPath="\Events\Gameplay\PowerUpRanged" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+			</IncludedEvents>
+			<StateGroups>
+				<StateGroup Id="2358111289" Name="Scene_State" ObjectPath="\States\Default Work Unit\Scene_State" GUID="{446B2B67-CD6A-4F64-AD4E-D57203B70EBD}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Scene_State\None" GUID="{018AF60A-EC89-4DAD-B046-47526BAF64F7}"/>
+						<State Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Scene_State\Menu" GUID="{4B060FC6-7F0E-408A-BA48-CFF65FA0C360}"/>
+						<State Id="4175426381" Name="Stage_1" ObjectPath="\States\Default Work Unit\Scene_State\Stage_1" GUID="{47F435A6-A30D-4E22-BEB4-C686245E7BB7}"/>
+						<State Id="4175426382" Name="Stage_2" ObjectPath="\States\Default Work Unit\Scene_State\Stage_2" GUID="{955B2C71-F788-4BA9-91F1-0BD70F1A8121}"/>
+						<State Id="1560169506" Name="Boss" ObjectPath="\States\Default Work Unit\Scene_State\Boss" GUID="{B5C28158-8960-45C7-A099-1C0C346CABEA}"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
