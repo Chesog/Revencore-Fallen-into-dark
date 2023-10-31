@@ -21,11 +21,13 @@ namespace AK
         static const AkUniqueID ENEMYSPITTERATTACK = 2347568998U;
         static const AkUniqueID MENUNEGATIVE = 1513208197U;
         static const AkUniqueID MENUPOSITIVE = 2496648897U;
+        static const AkUniqueID MENUTOGGLE = 3876141876U;
         static const AkUniqueID MOUSEHOVER = 3478063044U;
         static const AkUniqueID PLAY_BGM_AUDIOMANAGER = 4144776676U;
         static const AkUniqueID PLAYERHIT = 3831688773U;
         static const AkUniqueID POWERUPHP = 1273576127U;
         static const AkUniqueID POWERUPRANGED = 1154804782U;
+        static const AkUniqueID STARTGAME = 1521187885U;
     } // namespace EVENTS
 
     namespace STATES
