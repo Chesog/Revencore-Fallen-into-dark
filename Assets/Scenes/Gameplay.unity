@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1653270597}
-  m_IndirectSpecularColor: {r: 0.014324088, g: 0.0574275, b: 0.10544753, a: 1}
+  m_IndirectSpecularColor: {r: 0.014326355, g: 0.057431918, b: 0.105450705, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18338,29 +18338,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1673375652}
     m_Modifications:
-    - target: {fileID: 1310350226455885151, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
-      propertyPath: delay
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1310350226455885151, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
-      propertyPath: strength
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1821109111162915725, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3428974327954055427, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3428974327954055427, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3705006775998116896, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
-      propertyPath: player
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7141708433785194233, guid: c9a162bd9f93ac1479f238aad9964fdf, type: 3}
       propertyPath: m_RootOrder
