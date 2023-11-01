@@ -23,6 +23,7 @@ public class CharacterComponent : MonoBehaviour
    public Animator anim;
    public float damage;
    public bool isDead;
+   public bool isRanged_Attacking;
    #endregion
 
    #region UNITY_CALLS
@@ -39,6 +40,7 @@ public class CharacterComponent : MonoBehaviour
        }
 
        isDead = false;
+       isRanged_Attacking = false;
    }
    #endregion
 

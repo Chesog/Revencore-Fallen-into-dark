@@ -44,7 +44,7 @@ public class EnemyAttackState : EnemyBaseState
                 if (!enemy.IsAttacking)
                 {
                     obj.GetComponentInParent<HealthComponent>().DecreaseHealth(enemy.damage);
-                    OnEnemyMeleeHit.Invoke();
+                    OnEnemyMeleeHit?.Invoke();
                     playAttackAnimation();
 
                     Knockback knockback = obj.GetComponentInParent<Knockback>();
@@ -78,7 +78,7 @@ public class EnemyAttackState : EnemyBaseState
 
             if (!enemy.IsAttacking)
             {
-                OnEnemyShoot.Invoke();
+                OnEnemyShoot?.Invoke();
                 playAttackAnimation();
             }
 

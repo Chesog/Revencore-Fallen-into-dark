@@ -14,18 +14,12 @@ public class PlayerComponent : CharacterComponent
     public Transform camera;
     public float _attackRange = 2f;
     public Rigidbody rigidbody;
-
-    public float turn_Smooth_Velocity;
-    public float turnSmoothTime;
-    public float lastAngle;
-    public float maxDistance;
-    public float minJumpDistance;
-    [Header("Character Coyote Time Setup")]
-    public float coyoteTime;
-    public float coyoteTimerCounter;
-
     public bool isPlayer_Attacking;
     public bool isPlayer_Damaged;
+    
+    public Transform shootingPoint;
+    public GameObject bulletPrefab;
+    public Quaternion rot;
 
     private void Awake()
     {

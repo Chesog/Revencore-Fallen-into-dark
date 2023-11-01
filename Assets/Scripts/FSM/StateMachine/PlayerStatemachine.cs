@@ -1,6 +1,8 @@
 using System.Collections;
+using UnityEditor.VersionControl;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
+using Task = System.Threading.Tasks.Task;
 
 public class PlayerStatemachine : State_Machine
 {
@@ -10,6 +12,9 @@ public class PlayerStatemachine : State_Machine
     private PlayerMeleAttackState _attackState;
     private PlayerMoveState _moveState;
     private float invulneravilityTime = 1.5f;
+    private float rangedMaxTime = 10.0f;
+    private bool attackCalled;
+    private IEnumerator resetRangedAttack;
 
     private void Start()
     {
@@ -20,8 +25,12 @@ public class PlayerStatemachine : State_Machine
         _inputManager.OnPlayerAttack += OnPlayerAttack;
         _inputManager.OnPlayerPause += OnPlayerPause;
         _inputManager.OnPlayerPickUp += OnPlayerInteract;
+        _attackState.OnPlayerShoot += OnplayerShoot;
         _playerComponent.character_Health_Component.OnInsufficient_Health += OnplayerInsufficientHeath;
         _playerComponent.character_Health_Component.OnDecrease_Health += OnplayerDecreaseHeath;
+
+        resetRangedAttack = ResetAttack();
+        attackCalled = false;
 
         base.OnEnable();
     }
@@ -35,9 +44,12 @@ public class PlayerStatemachine : State_Machine
         {
             foreach (Collider potion in hitEntities)
             {
-                var healthPotion = potion?.GetComponent<HealthPotion>();
+                HealthPotion healthPotion = potion?.GetComponent<HealthPotion>();
+                ShotPotion shotPotion = potion?.GetComponent<ShotPotion>();
                 if (healthPotion != null)
                     healthPotion.Interact(_playerComponent);
+                if (shotPotion != null)
+                    shotPotion.Interact(_playerComponent);
             }
         }
     }
@@ -77,8 +89,33 @@ public class PlayerStatemachine : State_Machine
         _inputManager.OnPlayerMove += OnPlayerMove;
         _inputManager.OnPlayerAttack += OnPlayerAttack;
         _inputManager.OnPlayerPause += OnPlayerPause;
+        _attackState.OnPlayerShoot += OnplayerShoot;
 
         base.OnEnable();
+    }
+
+    private void OnplayerShoot()
+    {
+        if (transform.rotation.y == 0f)
+            _playerComponent.rot = Quaternion.EulerRotation(transform.rotation.x, transform.rotation.y + 89.5f,
+                transform.rotation.z);
+        else
+            _playerComponent.rot = Quaternion.EulerRotation(transform.rotation.x, transform.rotation.y - 90.5f,
+                transform.rotation.z);
+        GameObject projectile = Instantiate(_playerComponent.bulletPrefab, _playerComponent.shootingPoint.position,
+            _playerComponent.rot);
+
+        if (!attackCalled)
+            StartCoroutine(resetRangedAttack);
+    }
+
+    private IEnumerator ResetAttack()
+    {
+        attackCalled = true;
+        yield return new WaitForSeconds(rangedMaxTime);
+        _playerComponent.isRanged_Attacking = false;
+        attackCalled = false;
+        yield return null;
     }
 
     private void OnPlayerPause()
@@ -106,6 +143,9 @@ public class PlayerStatemachine : State_Machine
 
     private void OnDisable()
     {
+        _inputManager.OnPlayerPickUp -= OnPlayerInteract;
+        _playerComponent.character_Health_Component.OnInsufficient_Health -= OnplayerInsufficientHeath;
+        _playerComponent.character_Health_Component.OnDecrease_Health -= OnplayerDecreaseHeath;
         _inputManager.OnPlayerMove -= OnPlayerMove;
         _inputManager.OnPlayerAttack -= OnPlayerAttack;
         _inputManager.OnPlayerPause -= OnPlayerPause;
