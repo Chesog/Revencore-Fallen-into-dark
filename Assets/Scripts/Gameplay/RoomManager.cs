@@ -46,7 +46,7 @@ public class RoomManager : MonoBehaviour
     private void Awake()
     {
         _playerInputManager.OnPlayerPause += OnGamePause;
-        EnemiesManager_T.OnNoEnemies += SetCanMoveForward;
+        EnemiesManager.OnNoEnemies += SetCanMoveForward;
         
     }
     
@@ -114,7 +114,7 @@ public class RoomManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        EnemiesManager_T.OnNoEnemies -= SetCanMoveForward;
+        EnemiesManager.OnNoEnemies -= SetCanMoveForward;
         _playerData._player.character_Health_Component.OnInsufficient_Health += OnInsuficientHealth;
     }
 

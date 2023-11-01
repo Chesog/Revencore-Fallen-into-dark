@@ -8,7 +8,11 @@ using Random = UnityEngine.Random;
 
 public class Boss : MonoBehaviour
 {
+    #region EVENTS
+
     public static event Action OnDestroyed;
+
+    #endregion
 
     #region EXPOSED_FIELDS
 
@@ -24,7 +28,13 @@ public class Boss : MonoBehaviour
 
     #endregion
 
+    #region PRIVATE_FIELDS
+
     private float _lastBombDropTime = -2f;
+
+    #endregion
+
+    #region UNITY_CALLS
 
     private void OnEnable()
     {
@@ -62,6 +72,21 @@ public class Boss : MonoBehaviour
         OnDestroyed?.Invoke();
     }
 
+    private IEnumerator SpawnEnemy(float interval, GameObject enemy, Transform playerTransform)
+    {
+        yield return new WaitForSeconds(interval);
+
+        Vector3 randomPosition = Random.insideUnitSphere * _enemySpawnRadius;
+        randomPosition += playerTransform.position;
+        randomPosition.y = playerTransform.position.y;
+
+        GameObject newEnemy = Instantiate(enemy, randomPosition, Quaternion.identity);
+    }
+
+    #endregion
+
+    #region PRIVATE_METHODS
+
     private void Attack()
     {
         if (_characterHealthComponent._health > 2 * _characterHealthComponent._maxHealth / 3)
@@ -97,14 +122,5 @@ public class Boss : MonoBehaviour
         Instantiate(_bombPrefab, randomPosition, Quaternion.identity);
     }
 
-    private IEnumerator SpawnEnemy(float interval, GameObject enemy, Transform playerTransform)
-    {
-        yield return new WaitForSeconds(interval);
-
-        Vector3 randomPosition = Random.insideUnitSphere * _enemySpawnRadius;
-        randomPosition += playerTransform.position;
-        randomPosition.y = playerTransform.position.y;
-
-        GameObject newEnemy = Instantiate(enemy, randomPosition, Quaternion.identity);
-    }
+    #endregion
 }

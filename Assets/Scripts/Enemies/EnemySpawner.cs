@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float _meleeInterval = 3.5f;
     [SerializeField] private float _distanceInterval = 10f;
 
-    [SerializeField] private EnemiesManager_T _enemiesManager;
+    [SerializeField] private EnemiesManager _enemiesManager;
     [SerializeField] private RoomManager _roomManager;
     [SerializeField] private Transform[] _room1SpawnPositions;
     [SerializeField] private Transform[] _room2SpawnPositions;

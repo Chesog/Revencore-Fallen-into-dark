@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System;
 using UnityEngine.Serialization;
 
-public class EnemiesManager_T : MonoBehaviour
+public class EnemiesManager : MonoBehaviour
 {
     #region EVENTS
 

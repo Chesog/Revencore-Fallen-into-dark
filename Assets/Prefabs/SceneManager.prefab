@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3477710493268163598
 MonoBehaviour:
@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349e015e674388f43a34e7a89ab54a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level1SceneName: Test_Scene
-  creditsSceneName: Credits_Scene
-  mainMenuSceneName: Menu_Scene
+  _level1SceneName: Gameplay
+  _creditsSceneName: Credits_Scene
+  _mainMenuSceneName: Menu_Scene
+  _optionsSceneName: Options_Scene
+  _leaderboardSceneName: Leaderboard_Scene
