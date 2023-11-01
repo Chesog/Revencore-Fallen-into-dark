@@ -13,6 +13,10 @@ public class MainMenu_T : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    public void ReloadScene()
+    {
+        LoadScene(SceneManager.GetActiveScene().name);
+    }
 
     public void PlayLevel1()
     {

@@ -97,8 +97,11 @@ public class EnemiesManager_T : MonoBehaviour
 
     private void ShowVictoryPanel()
     {
-        _winningPanel.SetActive(true);
-        Time.timeScale = 0f;
+        if (_winningPanel != null)
+        {
+            _winningPanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 
     #endregion
