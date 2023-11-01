@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class Boss : MonoBehaviour
     [SerializeField] private float _enemySpawnCooldown = 2f;
     [SerializeField] private float _enemySpawnRadius = 5f;
     [SerializeField] private RoomManager _roomManager;
+    [SerializeField] private Slider _healthBar;
+    [SerializeField] private GameObject _sliderParent;
 
     #endregion
 
@@ -48,17 +51,26 @@ public class Boss : MonoBehaviour
             Debug.LogError(message: $"{name}: (logError){nameof(_characterHealthComponent)} is null");
             enabled = false;
         }
+        else
+        {
+            _characterHealthComponent.OnHealthChanged += UpdateHealthBar;
+        }
     }
 
     private void Start()
     {
+        _sliderParent.SetActive(false);
         _lastBombDropTime = -_bombCooldown;
+        _healthBar.maxValue = _characterHealthComponent._maxHealth;
+        _healthBar.value = _characterHealthComponent._maxHealth;
     }
 
     private void Update()
     {
         if (_roomManager.GetCurrentRoom() == 5)
         {
+            _sliderParent.SetActive(true);
+
             if (Time.time >= _lastBombDropTime + _bombCooldown)
             {
                 Attack();
@@ -69,6 +81,7 @@ public class Boss : MonoBehaviour
 
     private void OnDestroy()
     {
+        _characterHealthComponent.OnHealthChanged -= UpdateHealthBar;
         OnDestroyed?.Invoke();
     }
 
@@ -120,6 +133,11 @@ public class Boss : MonoBehaviour
         randomPosition.y = _playerData._player.transform.position.y + 10;
 
         Instantiate(_bombPrefab, randomPosition, Quaternion.identity);
+    }
+
+    private void UpdateHealthBar()
+    {
+        _healthBar.value = _characterHealthComponent._health;
     }
 
     #endregion

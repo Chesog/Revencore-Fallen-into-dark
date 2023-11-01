@@ -12,6 +12,7 @@ public class HealthComponent : MonoBehaviour
     public event Action OnDecrease_Health;
     public event Action OnIncrease_Health;
     public event Action OnInsufficient_Health;
+    public event Action OnHealthChanged;
     #endregion
 
     #region UNITY_CALLS
@@ -54,6 +55,7 @@ public class HealthComponent : MonoBehaviour
     /// </summary>
     public void CheckHealth()
     {
+        OnHealthChanged?.Invoke();
         if (_health <= 0)
             OnInsufficient_Health?.Invoke();
     }
