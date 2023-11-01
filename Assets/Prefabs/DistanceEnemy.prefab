@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 6015497888506346064}
   - component: {fileID: 1058525004197542862}
   - component: {fileID: 4159769894979522345}
+  - component: {fileID: 5256394787783478061}
   m_Layer: 0
   m_Name: DistanceEnemy
   m_TagString: Enemy
@@ -45,7 +46,7 @@ Transform:
   - {fileID: 5398486277578416916}
   - {fileID: 7341089523833600507}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3686249587914454159
 MonoBehaviour:
@@ -70,6 +71,8 @@ MonoBehaviour:
   jumpBufferTimeCounter: 0
   anim: {fileID: 4159769894979522345}
   damage: 25
+  isDead: 0
+  isRanged_Attacking: 0
   lookRad: 20
   stopDistance: 10
   timeBetweenAttacks: 6
@@ -89,6 +92,7 @@ MonoBehaviour:
   attackAnimationName: Spitter_Escupitajo
   hitAnimationName: "Spitter_Da\xF1o"
   moveAnimationName: Spitter_Caminata
+  sphereCenter: {x: 0, y: 0, z: 0}
   player_Source: {fileID: 11400000, guid: 5e67e42c21ea55c4b865b291844ebafc, type: 2}
   bulletPrefab: {fileID: 5449274703226503303, guid: 59c384be1a78f4d45b77df38e3e71924, type: 3}
 --- !u!114 &1257593877819204548
@@ -181,6 +185,8 @@ MonoBehaviour:
   jumpBufferTimeCounter: 0
   anim: {fileID: 0}
   damage: 25
+  isDead: 0
+  isRanged_Attacking: 0
   lookRad: 20
   stopDistance: 10
   timeBetweenAttacks: 6
@@ -200,6 +206,7 @@ MonoBehaviour:
   attackAnimationName: 
   hitAnimationName: 
   moveAnimationName: 
+  sphereCenter: {x: 0, y: 0, z: 0}
   player_Source: {fileID: 11400000, guid: 5e67e42c21ea55c4b865b291844ebafc, type: 2}
   bulletPrefab: {fileID: 5449274703226503303, guid: 59c384be1a78f4d45b77df38e3e71924, type: 3}
 --- !u!114 &8673210047289411279
@@ -363,6 +370,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &5256394787783478061
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079312061525422309}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3936527645642477263
 GameObject:
   m_ObjectHideFlags: 0
