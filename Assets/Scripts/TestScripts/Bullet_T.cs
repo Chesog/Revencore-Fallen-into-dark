@@ -6,6 +6,7 @@ public class Bullet_T : MonoBehaviour
 {
     #region EXPOSED_FIELDS
     [SerializeField] private float _speed;
+    [SerializeField] private float _bulletDamage;
     [SerializeField] private string _enemyTag = "Enemy";
     [SerializeField] private string _playerTag = "Player";
     #endregion
@@ -26,7 +27,10 @@ public class Bullet_T : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == _enemyTag || collision.collider.tag == _playerTag)
+        {
+            collision.collider.GetComponent<HealthComponent>().DecreaseHealth(_bulletDamage);
             Destroy(gameObject);
+        }
     }
     #endregion
 }

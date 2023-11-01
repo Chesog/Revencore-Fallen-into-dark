@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 15
+  _bulletDamage: 2
   _enemyTag: Enemy
   _playerTag: Player
 --- !u!54 &-4658408002619234474
