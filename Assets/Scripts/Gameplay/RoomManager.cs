@@ -91,11 +91,6 @@ public class RoomManager : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        
-    }
-
     private void OnGamePause()
     {
         if (!_playerData._player.isDead)

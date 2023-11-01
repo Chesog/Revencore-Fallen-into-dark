@@ -58,10 +58,6 @@ public class EnemySpawner : MonoBehaviour
             {
                 StartCoroutine(SpawnEnemy(_distanceInterval, _distanceEnemyPrefab, _maxDistanceEnemies, _room2SpawnPositions));
             }
-            else if (_currentRoom == 5)
-            {
-                StartCoroutine(SpawnEnemy(_meleeInterval, _meleeEnemyPrefab, _enemiesManager._room5NecessaryKills, _room3SpawnPositions));
-            }
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class DistanceEnemy : MonoBehaviour
 {
     #region EVENTS
-    public static event Action Destroyed;
+    public static event Action OnDestroyed;
     #endregion
 
     #region EXPOSED_FIELDS
@@ -75,7 +75,7 @@ public class DistanceEnemy : MonoBehaviour
     private void OnDestroy()
     {
         Debug.Log("Mataste un enemigo a distancia!");
-        Destroyed?.Invoke();
+        OnDestroyed?.Invoke();
     }
 
     #endregion

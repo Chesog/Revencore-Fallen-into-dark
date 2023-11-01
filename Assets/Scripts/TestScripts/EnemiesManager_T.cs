@@ -33,7 +33,6 @@ public class EnemiesManager_T : MonoBehaviour
     public int _room2NecessaryKills = 0;
     public int _room3NecessaryKills = 7;
     public int _room4NecessaryKills = 0;
-    public int _room5NecessaryKills = 10;
 
     #endregion
 
@@ -42,7 +41,8 @@ public class EnemiesManager_T : MonoBehaviour
     private void Awake()
     {
         EnemyInputManager.OnEnemyDestroy += IncreaseKill;
-        DistanceEnemy.Destroyed += IncreaseKill;
+        DistanceEnemy.OnDestroyed += IncreaseKill;
+        Boss.OnDestroyed += ShowVictoryPanel;
         RoomManager.OnNewRoom += ResetKill;
         RoomManager.OnNewRoom += IncreaseCurrentRoom;
     }
@@ -70,16 +70,14 @@ public class EnemiesManager_T : MonoBehaviour
         {
             OnNoEnemies?.Invoke();
         }
-        else if (_currentRoom == 5 && _kills >= _room5NecessaryKills)
-        {
-            ShowVictoryPanel();
-        }
+        
     }
 
     private void OnDestroy()
     {
         EnemyInputManager.OnEnemyDestroy -= IncreaseKill;
-        DistanceEnemy.Destroyed -= IncreaseKill;
+        DistanceEnemy.OnDestroyed -= IncreaseKill;
+        Boss.OnDestroyed -= IncreaseKill;
         RoomManager.OnNewRoom -= ResetKill;
         RoomManager.OnNewRoom -= IncreaseCurrentRoom;
     }
