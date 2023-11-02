@@ -24,6 +24,7 @@ public class EnemyHitState : EnemyBaseState
         enemy.floatingTextHandleer.ShowFloatingText(enemy.floatingTextPrefab, enemy.floatingTextSpawn, enemy.character_Health_Component._health);
         enemy.isHit = false;
         playHitAnimation();
+        playHitSound();
     }
 
     public override void UpdatePhysics()
@@ -34,6 +35,11 @@ public class EnemyHitState : EnemyBaseState
     private void playHitAnimation()
     {
        enemy.anim.Play(enemy.hitAnimationName);
+    }
+
+    private void playHitSound()
+    {
+        AkSoundEngine.PostEvent("HeroAttackHit",enemy.gameObject);
     }
 
     public override void AddStateTransitions(string transitionName, State transitionState)
