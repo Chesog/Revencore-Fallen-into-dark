@@ -60,6 +60,15 @@ public class EnemyComponent : CharacterComponent
         }
 
         deathLoop = false;
+
+        if (IsRangedEnemy)
+        {
+            // Spawn Spitter
+        }
+        else
+        {
+            // Spawn Minion
+        }
     }
 
     private IEnumerator SearchForPlayerEverySecond()
