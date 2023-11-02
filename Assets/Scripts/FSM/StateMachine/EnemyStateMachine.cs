@@ -90,7 +90,20 @@ public class EnemyStateMachine : State_Machine
     private void OnInsuficientHealth()
     {
         if (enemy.character_Health_Component._health <= 0)
+        {
+            if (enemy.IsRangedEnemy)
+            {
+                
+            }
+            else
+            {
+                
+            }
+
             Destroy(this.gameObject);
+        }
+
+        
     }
 
     private void OnEnemyAttack()

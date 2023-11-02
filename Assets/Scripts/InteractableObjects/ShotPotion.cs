@@ -15,6 +15,7 @@ public class ShotPotion : MonoBehaviour,IInteractable
     public void Interact(CharacterComponent user)
     {
         user.isRanged_Attacking = true;
+        //SFX
         Destroy(this.gameObject);
     }
 }

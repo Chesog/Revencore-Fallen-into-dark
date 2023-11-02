@@ -24,10 +24,12 @@ public class EnemyAttackState : EnemyBaseState
         if (enemy.IsRangedEnemy)
         {
             DistanceAttack();
+            DistanceAttackSound();
         }
         else
         {
             MeleeAttack();
+            MeleeAttackSound();
         }
         base.UpdateLogic();
     }
@@ -53,6 +55,15 @@ public class EnemyAttackState : EnemyBaseState
                 }
             }
         }
+    }
+
+    private void DistanceAttackSound()
+    {
+        
+    }
+    private void MeleeAttackSound()
+    {
+        
     }
 
     private void DistanceAttack()
