@@ -1681,10 +1681,10 @@ Material:
     - _StencilWriteMask: 255
     - _TextureHeight: 1024
     - _TextureWidth: 1024
-    - _UnderlayDilate: 0.17
-    - _UnderlayOffsetX: 0.49
-    - _UnderlayOffsetY: 0
-    - _UnderlaySoftness: 0.146
+    - _UnderlayDilate: 0.165
+    - _UnderlayOffsetX: -0.164
+    - _UnderlayOffsetY: 0.574
+    - _UnderlaySoftness: 0.237
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
     - _WeightBold: 0.75
@@ -1693,11 +1693,11 @@ Material:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
+    - _GlowColor: {r: 0.047169805, g: 0.020086005, b: 0.015352436, a: 0.5}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
-    - _UnderlayColor: {r: 0.0754717, g: 0.02741189, b: 0.02741189, a: 1}
+    - _UnderlayColor: {r: 0.03773582, g: 0, b: 0, a: 0.84313726}
   m_BuildTextureStacks: []

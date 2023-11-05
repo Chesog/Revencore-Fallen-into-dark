@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.87961686, g: 0.87602353, b: 0.9622642, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -610,23 +610,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1795747169039561494, guid: 2317f5d4b3be95c47a0e13ede222261b, type: 3}
       propertyPath: m_Color.g
-      value: 0.8726415
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1795747169039561494, guid: 2317f5d4b3be95c47a0e13ede222261b, type: 3}
       propertyPath: m_Color.r
-      value: 0.8726415
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3115587956635931460, guid: 2317f5d4b3be95c47a0e13ede222261b, type: 3}
       propertyPath: m_Color.b
-      value: 0.9622642
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3115587956635931460, guid: 2317f5d4b3be95c47a0e13ede222261b, type: 3}
       propertyPath: m_Color.g
-      value: 0.87602353
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3115587956635931460, guid: 2317f5d4b3be95c47a0e13ede222261b, type: 3}
       propertyPath: m_Color.r
-      value: 0.87961686
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4678252747627953140, guid: 2317f5d4b3be95c47a0e13ede222261b, type: 3}
       propertyPath: m_Color.a
@@ -674,11 +674,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8005916765017053032, guid: 2317f5d4b3be95c47a0e13ede222261b, type: 3}
       propertyPath: m_Color.g
-      value: 0.8720519
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8005916765017053032, guid: 2317f5d4b3be95c47a0e13ede222261b, type: 3}
       propertyPath: m_Color.r
-      value: 0.8537736
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8889801764261020757, guid: 2317f5d4b3be95c47a0e13ede222261b, type: 3}
       propertyPath: m_Color.b
@@ -686,11 +686,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8889801764261020757, guid: 2317f5d4b3be95c47a0e13ede222261b, type: 3}
       propertyPath: m_Color.g
-      value: 0.8820755
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8889801764261020757, guid: 2317f5d4b3be95c47a0e13ede222261b, type: 3}
       propertyPath: m_Color.r
-      value: 0.8902082
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -970,11 +970,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349e015e674388f43a34e7a89ab54a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level1SceneName: Test_Scene
-  creditsSceneName: Credits_Scene
-  mainMenuSceneName: Menu_Scene
-  optionsSceneName: Options_Scene
-  leaderboardSceneName: Leaderboard_Scene
+  _level1SceneName: Test_Scene
+  _creditsSceneName: Credits_Scene
+  _mainMenuSceneName: Menu_Scene
+  _optionsSceneName: Options_Scene
+  _leaderboardSceneName: Leaderboard_Scene
 --- !u!4 &1878596319
 Transform:
   m_ObjectHideFlags: 0
