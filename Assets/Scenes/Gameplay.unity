@@ -34700,7 +34700,7 @@ CapsuleCollider:
   m_Radius: 4.555
   m_Height: 17.91
   m_Direction: 1
-  m_Center: {x: 0, y: 0.0000014305115, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1934506820
 GameObject:
   m_ObjectHideFlags: 0
@@ -48631,6 +48631,10 @@ PrefabInstance:
       propertyPath: m_ReceiveShadows
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3078583972514884116, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3092565698474917849, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
       propertyPath: delay
       value: 0.15
@@ -48646,6 +48650,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 41468641313303315, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
     - {fileID: 3482636190854837637, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
+    - {fileID: 3020038490705687198, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
+    - {fileID: 1138335584444239559, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5390062794450390081, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
     m_AddedGameObjects: []

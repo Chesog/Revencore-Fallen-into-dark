@@ -15,8 +15,12 @@ public class PlayerMovementController : MonoBehaviour
         {
             _playerComponent.movement.x = newMov.x * _playerComponent.speed;
             _playerComponent.movement.z = newMov.y * _playerComponent.zspeed;
-            //_playerComponent.movement.y = _playerComponent.rigidbody.velocity.y;
-            _playerComponent.movement.y = 0.0f;
+            _playerComponent.movement.y = _playerComponent.movement.y ;
+           // _playerComponent.movement.y = _playerComponent.rigidbody.velocity.y;
+        }
+        else
+        {
+            _playerComponent.movement = Vector3.zero;
         }
     }
 
