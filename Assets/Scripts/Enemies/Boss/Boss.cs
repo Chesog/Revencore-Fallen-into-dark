@@ -19,6 +19,7 @@ public class Boss : MonoBehaviour
 
     [SerializeField] private HealthComponent _characterHealthComponent;
     [SerializeField] private Player_Data_Source _playerData;
+    [SerializeField] private Animator anim;
     [SerializeField] private GameObject _bombPrefab;
     [SerializeField] private float _bombRadius = 5f;
     [SerializeField] private float _bombCooldown = 2f;
@@ -34,7 +35,7 @@ public class Boss : MonoBehaviour
     #region PRIVATE_FIELDS
 
     private float _lastBombDropTime = -2f;
-
+    
     #endregion
 
     #region UNITY_CALLS
@@ -106,15 +107,18 @@ public class Boss : MonoBehaviour
         {
             Debug.Log("Boss stage: 1");
             DropBombs();
+            anim.Play("Boss_Roar");
         }
         else if (_characterHealthComponent._health > _characterHealthComponent._maxHealth / 3)
         {
             Debug.Log("Boss stage: 2");
+            anim.Play("Boss_Summoning");
             StartCoroutine(SpawnEnemy(_enemySpawnCooldown, _enemyPrefab, _playerData._player.transform));
         }
         else if (_characterHealthComponent._health > 0)
         {
             Debug.Log("Boss stage: 3");
+            anim.Play("Boss_RoarSumm");
             DropBombs();
             StartCoroutine(SpawnEnemy(_enemySpawnCooldown - (_enemySpawnCooldown * 0.5f), _enemyPrefab,
                 _playerData._player.transform));
@@ -122,7 +126,8 @@ public class Boss : MonoBehaviour
         else
         {
             Debug.Log("Boss Defeated");
-            Destroy(gameObject);
+            anim.Play("Boss_Death");
+            Destroy(gameObject, 1f);
         }
     }
 
