@@ -93,12 +93,14 @@ public class PlayerStatemachine : State_Machine
 
     private void OnplayerShoot()
     {
-        if (transform.rotation.y == 0f)
-            _playerComponent.rot = Quaternion.EulerRotation(transform.rotation.x, transform.rotation.y + 89.5f,
-                transform.rotation.z);
+        if (_playerComponent.characterSprite.transform.rotation.y == 0f)
+            _playerComponent.rot = Quaternion.EulerRotation(_playerComponent.characterSprite.transform.rotation.x,
+                _playerComponent.characterSprite.transform.rotation.y + 89.5f,
+                _playerComponent.characterSprite.transform.rotation.z);
         else
-            _playerComponent.rot = Quaternion.EulerRotation(transform.rotation.x, transform.rotation.y - 90.5f,
-                transform.rotation.z);
+            _playerComponent.rot = Quaternion.EulerRotation(_playerComponent.characterSprite.transform.rotation.x,
+                _playerComponent.characterSprite.transform.rotation.y - 90.5f,
+                _playerComponent.characterSprite.transform.rotation.z);
         GameObject projectile = Instantiate(_playerComponent.bulletPrefab, _playerComponent.shootingPoint.position,
             _playerComponent.rot);
 
