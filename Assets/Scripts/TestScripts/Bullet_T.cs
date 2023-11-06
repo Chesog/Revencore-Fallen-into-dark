@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,13 @@ public class Bullet_T : MonoBehaviour
         _rb.velocity = transform.forward * _speed;
 
         Destroy(gameObject, 2.5f);
+    }
+
+    private void FixedUpdate()
+    {
+        Quaternion newRot = gameObject.transform.rotation;
+        newRot.y += _speed;
+        gameObject.transform.rotation = newRot;
     }
 
     private void OnCollisionEnter(Collision collision)

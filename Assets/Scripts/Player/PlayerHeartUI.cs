@@ -2,6 +2,12 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum HeartStates
+{
+    FULLHEART,
+    HALFHEART,
+    EMPTYHEART
+}
 public class PlayerHeartUI : MonoBehaviour
 {
     [SerializeField] Player_Data_Source _Source;

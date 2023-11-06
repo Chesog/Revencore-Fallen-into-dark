@@ -15779,6 +15779,7 @@ GameObject:
   - component: {fileID: 782330190}
   - component: {fileID: 782330192}
   - component: {fileID: 782330191}
+  - component: {fileID: 782330193}
   m_Layer: 5
   m_Name: PlayerHearth
   m_TagString: Untagged
@@ -15844,6 +15845,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782330189}
   m_CullTransparentMesh: 1
+--- !u!95 &782330193
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782330189}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8577df1a7ea5afa4f8c94d580873e175, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &783563648
 GameObject:
   m_ObjectHideFlags: 0
@@ -63359,6 +63381,10 @@ PrefabInstance:
       value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 2091202133964717629, guid: cd847fe9e6bc6154a836dbbad2e9acea, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 7206409085237852415}
+    - target: {fileID: 2091202133964717629, guid: cd847fe9e6bc6154a836dbbad2e9acea, type: 3}
       propertyPath: _healthBar
       value: 
       objectReference: {fileID: 375815339}
@@ -63379,6 +63405,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd847fe9e6bc6154a836dbbad2e9acea, type: 3}
+--- !u!95 &7206409085237852415 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5574003283414939744, guid: cd847fe9e6bc6154a836dbbad2e9acea, type: 3}
+  m_PrefabInstance: {fileID: 7206409085237852414}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7208637959845715683
 GameObject:
   m_ObjectHideFlags: 0

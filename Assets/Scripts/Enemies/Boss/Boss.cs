@@ -56,6 +56,9 @@ public class Boss : MonoBehaviour
         {
             _characterHealthComponent.OnHealthChanged += UpdateHealthBar;
         }
+
+        if (anim == null)
+            anim = GetComponent<Animator>();
     }
 
     private void Start()
