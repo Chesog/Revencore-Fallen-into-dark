@@ -26,11 +26,17 @@ public class Bullet_T : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == _enemyTag || collision.collider.tag == _playerTag)
+        if (collision.collider.tag == _enemyTag)
         {
             collision.collider.GetComponent<HealthComponent>().DecreaseHealth(_bulletDamage);
-            Destroy(gameObject);
         }
+
+        if (collision.collider.tag == _playerTag)
+        {
+            collision.collider.GetComponentInParent<HealthComponent>().DecreaseHealth(_bulletDamage);
+        }
+        
+        Destroy(gameObject);
     }
     #endregion
 }
