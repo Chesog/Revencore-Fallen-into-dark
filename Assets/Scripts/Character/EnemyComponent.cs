@@ -63,11 +63,11 @@ public class EnemyComponent : CharacterComponent
 
         if (IsRangedEnemy)
         {
-            // Spawn Spitter
+            AkSoundEngine.PostEvent("EnemySpitterSpawn", gameObject); // Spawn sfx Spitter
         }
         else
         {
-            // Spawn Minion
+            AkSoundEngine.PostEvent("EnemyMinionSpawn", gameObject); // Spawn sfx Minion
         }
     }
 

@@ -93,11 +93,11 @@ public class EnemyStateMachine : State_Machine
         {
             if (enemy.IsRangedEnemy)
             {
-                
+                AkSoundEngine.PostEvent("EnemySpitterDeath", gameObject); // sfx
             }
             else
             {
-                
+                AkSoundEngine.PostEvent("EnemyMinionDeath", gameObject); // sfx
             }
 
             Destroy(this.gameObject);

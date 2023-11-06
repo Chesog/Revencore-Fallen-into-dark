@@ -24,12 +24,12 @@ public class EnemyAttackState : EnemyBaseState
         if (enemy.IsRangedEnemy)
         {
             DistanceAttack();
-            DistanceAttackSound();
+            
         }
         else
         {
             MeleeAttack();
-            MeleeAttackSound();
+           
         }
         base.UpdateLogic();
     }
@@ -48,6 +48,7 @@ public class EnemyAttackState : EnemyBaseState
                     obj.GetComponentInParent<HealthComponent>().DecreaseHealth(enemy.damage);
                     OnEnemyMeleeHit?.Invoke();
                     playAttackAnimation();
+                    MeleeAttackSound();
 
                     Knockback knockback = obj.GetComponentInParent<Knockback>();
                     if (knockback != null)
@@ -59,11 +60,11 @@ public class EnemyAttackState : EnemyBaseState
 
     private void DistanceAttackSound()
     {
-        
+        AkSoundEngine.PostEvent("EnemySpitterAttack", enemy.gameObject); // sfx
     }
     private void MeleeAttackSound()
     {
-        
+        AkSoundEngine.PostEvent("EnemyMinionAttack", enemy.gameObject); // sfx
     }
 
     private void DistanceAttack()
@@ -91,6 +92,7 @@ public class EnemyAttackState : EnemyBaseState
             {
                 OnEnemyShoot?.Invoke();
                 playAttackAnimation();
+                DistanceAttackSound();
             }
 
         }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour
@@ -36,6 +37,10 @@ public class Bomb : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        AkSoundEngine.PostEvent("BossBombTrail", gameObject); // sfx bomba cayendo
+    }
     #endregion
 
     #region PRIVATE_METHODS
@@ -43,7 +48,8 @@ public class Bomb : MonoBehaviour
     private void Explode()
     {
         PlayEffect();
-
+        UnityEngine.Debug.Log("explosion");
+        AkSoundEngine.PostEvent("BossBombExplode", gameObject);// sfx explosion de bomba
         Collider[] colliders = Physics.OverlapSphere(transform.position, _explosionRadius);
 
         foreach (Collider collider in colliders)
@@ -66,6 +72,7 @@ public class Bomb : MonoBehaviour
     {
         GameObject effectInstance = Instantiate(_effectPrefab, transform.position, Quaternion.identity);
         Destroy(effectInstance, 1.0f);
+        
     }
 
     #endregion

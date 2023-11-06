@@ -15,7 +15,7 @@ public class ShotPotion : MonoBehaviour,IInteractable
     public void Interact(CharacterComponent user)
     {
         user.isRanged_Attacking = true;
-        //SFX
+        AkSoundEngine.PostEvent("PowerUpRanged", gameObject);//SFX
         Destroy(this.gameObject);
     }
 }

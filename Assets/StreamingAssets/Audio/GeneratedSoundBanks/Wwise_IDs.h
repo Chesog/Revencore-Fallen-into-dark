@@ -20,9 +20,10 @@ namespace AK
         static const AkUniqueID BOSSSCREAM = 1792029697U;
         static const AkUniqueID ENEMYMINIONATTACK = 3685648097U;
         static const AkUniqueID ENEMYMINIONDEATH = 823102085U;
-        static const AkUniqueID ENEMYSPAWN = 3453203440U;
+        static const AkUniqueID ENEMYMINIONSPAWN = 488669978U;
         static const AkUniqueID ENEMYSPITTERATTACK = 2347568998U;
         static const AkUniqueID ENEMYSPITTERDEATH = 1244705436U;
+        static const AkUniqueID ENEMYSPITTERSPAWN = 1564808583U;
         static const AkUniqueID HEROATTACKHIT = 3405218380U;
         static const AkUniqueID HEROATTACKRANGED = 848077612U;
         static const AkUniqueID HEROATTACKWHOOSH = 367440107U;
