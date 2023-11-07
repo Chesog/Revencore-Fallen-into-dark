@@ -14745,7 +14745,7 @@ PrefabInstance:
     - target: {fileID: 3054406668207551267, guid: 61ca9faac28e4b64f9a5989f4fc33934, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e8493fd90c5c579429e826d838481f49, type: 2}
+      objectReference: {fileID: 2100000, guid: f2dfd6f7110189d4395560f6cf7f6652, type: 2}
     - target: {fileID: 7997720305802786780, guid: 61ca9faac28e4b64f9a5989f4fc33934, type: 3}
       propertyPath: m_Name
       value: SM_muro1
