@@ -786,8 +786,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 415, y: 325}
-  m_SizeDelta: {x: 436.1, y: 181.9}
+  m_AnchoredPosition: {x: 391, y: 310}
+  m_SizeDelta: {x: 501.8, y: 194.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4811810044486345774
 CanvasRenderer:
@@ -817,7 +817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Let God heal you finding this
+  m_text: Let God HEAL YOU finding THIS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0c851c418e2fc947b01903fd257faa7, type: 2}
   m_sharedMaterial: {fileID: 5282067040163916143, guid: d0c851c418e2fc947b01903fd257faa7, type: 2}
@@ -1043,8 +1043,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 390.5, y: 369}
-  m_SizeDelta: {x: -1347.6, y: -875.2}
+  m_AnchoredPosition: {x: 405.755, y: 280}
+  m_SizeDelta: {x: -1317.09, y: -694.60004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6868940699498902816
 CanvasRenderer:
@@ -1074,7 +1074,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press this to
+  m_text: Click the left mouse button to FIGHT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0c851c418e2fc947b01903fd257faa7, type: 2}
   m_sharedMaterial: {fileID: 5282067040163916143, guid: d0c851c418e2fc947b01903fd257faa7, type: 2}
@@ -2212,10 +2212,10 @@ RectTransform:
   m_Father: {fileID: 3213503737829147328}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -219, y: 212}
-  m_SizeDelta: {x: -1448.4, y: -891.9}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -219, y: 172}
+  m_SizeDelta: {x: 172.6, y: 164.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5864735754217578021
 CanvasRenderer:
@@ -2245,7 +2245,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: taking this
+  m_text: taking THIS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0c851c418e2fc947b01903fd257faa7, type: 2}
   m_sharedMaterial: {fileID: 5282067040163916143, guid: d0c851c418e2fc947b01903fd257faa7, type: 2}
@@ -2542,7 +2542,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8126174109849801085
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2815,10 +2815,10 @@ RectTransform:
   m_Father: {fileID: 3213503737829147328}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -416, y: 315}
-  m_SizeDelta: {x: -1246, y: -893.2}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -416, y: 347}
+  m_SizeDelta: {x: 364.2, y: 167.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4712904804076836751
 CanvasRenderer:
@@ -2848,7 +2848,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Become stronger
+  m_text: Become STRONGER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0c851c418e2fc947b01903fd257faa7, type: 2}
   m_sharedMaterial: {fileID: 5282067040163916143, guid: d0c851c418e2fc947b01903fd257faa7, type: 2}
@@ -3591,7 +3591,7 @@ RectTransform:
   - {fileID: 8376134307258096440}
   - {fileID: 6430173276959314316}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3812,7 +3812,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8911629043808713105
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3947,7 +3947,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6965587229646571648
 RectTransform:
   m_ObjectHideFlags: 0
