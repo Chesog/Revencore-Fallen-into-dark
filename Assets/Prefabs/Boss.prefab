@@ -128,8 +128,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 24.248037, y: 22.9924, z: 2.93211}
-  m_Center: {x: 0.6790639, y: -1.5052842, z: -0.07314683}
+  m_Size: {x: 24.248037, y: 22.9924, z: 7.3799987}
+  m_Center: {x: 0.6790639, y: -1.5052842, z: -0.03238475}
 --- !u!114 &2091202133964717629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterHealthComponent: {fileID: 2851139497223971445}
   _playerData: {fileID: 11400000, guid: 5e67e42c21ea55c4b865b291844ebafc, type: 2}
+  anim: {fileID: 0}
   _bombPrefab: {fileID: 3751764816778298236, guid: 6c752a8925c64cf498a7a0f2236b1a93, type: 3}
   _bombRadius: 3
   _bombCooldown: 2
