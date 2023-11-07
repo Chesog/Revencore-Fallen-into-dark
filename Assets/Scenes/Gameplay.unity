@@ -40055,6 +40055,7 @@ GameObject:
   - component: {fileID: 1218676165764051088}
   - component: {fileID: 5020146862556266259}
   - component: {fileID: 7967221295068331498}
+  - component: {fileID: 7967221295068331499}
   m_Layer: 0
   m_Name: SM_valla_1
   m_TagString: Untagged
@@ -67175,6 +67176,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7967221295068331499
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516389600446435967}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6470577930739320356, guid: 98a1ab577c6ec384a941743f1f6477e7, type: 3}
 --- !u!4 &7974909747057687198
 Transform:
   m_ObjectHideFlags: 0
