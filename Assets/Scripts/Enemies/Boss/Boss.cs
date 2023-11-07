@@ -26,9 +26,11 @@ public class Boss : MonoBehaviour
     [SerializeField] private GameObject _enemyPrefab;
     [SerializeField] private float _enemySpawnCooldown = 2f;
     [SerializeField] private float _enemySpawnRadius = 5f;
+    [SerializeField] private float _pushForce = 10f;
     [SerializeField] private RoomManager _roomManager;
     [SerializeField] private Slider _healthBar;
     [SerializeField] private GameObject _sliderParent;
+    [SerializeField] private Rigidbody _playerRb;
 
     #endregion
 
@@ -111,12 +113,14 @@ public class Boss : MonoBehaviour
             Debug.Log("Boss stage: 1");
             DropBombs();
             anim.Play("Boss_Roar");
+            PushPlayer();
         }
         else if (_characterHealthComponent._health > _characterHealthComponent._maxHealth / 3)
         {
             Debug.Log("Boss stage: 2");
             anim.Play("Boss_Summoning");
             StartCoroutine(SpawnEnemy(_enemySpawnCooldown, _enemyPrefab, _playerData._player.transform));
+            PushPlayer();
         }
         else if (_characterHealthComponent._health > 0)
         {
@@ -125,12 +129,14 @@ public class Boss : MonoBehaviour
             DropBombs();
             StartCoroutine(SpawnEnemy(_enemySpawnCooldown - (_enemySpawnCooldown * 0.5f), _enemyPrefab,
                 _playerData._player.transform));
+            PushPlayer();
         }
         else
         {
             Debug.Log("Boss Defeated");
             anim.Play("Boss_Death");
             Destroy(gameObject, 1f);
+            
         }
     }
 
@@ -146,6 +152,11 @@ public class Boss : MonoBehaviour
     private void UpdateHealthBar()
     {
         _healthBar.value = _characterHealthComponent._health;
+    }
+
+    private void PushPlayer()
+    {
+        _playerRb.AddForce(Vector3.left * _pushForce, ForceMode.Impulse);
     }
 
     #endregion

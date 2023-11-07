@@ -37,12 +37,12 @@ public class Knockback : MonoBehaviour
     private IEnumerator KnockbackCoroutine(Vector2 direction)
     {
         float timer = 0;
-        float originalZ = transform.position.z; // Save the original z value
+        float originalZ = transform.position.z; 
 
         while (timer < _delay)
         {
             Vector3 newPosition = (Vector2)transform.position + direction * (_strength * Time.deltaTime);
-            newPosition.z = originalZ; // Restore the original z value
+            newPosition.z = originalZ; 
             transform.position = newPosition;
 
             timer += Time.deltaTime;
