@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+[Serializable]
 public enum HeartStates
 {
     FULLHEART,
@@ -11,8 +12,7 @@ public enum HeartStates
 public class PlayerHeartUI : MonoBehaviour
 {
     [SerializeField] Player_Data_Source _Source;
-    [SerializeField] Image[] heartContainer;
-    [SerializeField] Sprite[] heartStates;
+    [SerializeField] private HeartContainer[] heartContainers;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +21,11 @@ public class PlayerHeartUI : MonoBehaviour
         _Source._player.character_Health_Component.OnIncrease_Health += OnPlayerUpdateHealth;
         if (_Source._player.character_Health_Component._health == _Source._player.character_Health_Component._maxHealth) 
         {
-            for (int i = 0; i < heartContainer.Length; i++)
+            for (int i = 0; i < heartContainers.Length; i++)
             {
-                heartContainer[i].sprite = heartStates[0];
+                heartContainers[i].SetHeartState(HeartStates.FULLHEART);
+                heartContainers[i].UpdateHeart();
+                //heartContainers[i].SetHeartState(2);
             }
         }
 
@@ -31,26 +33,46 @@ public class PlayerHeartUI : MonoBehaviour
 
     private void OnPlayerUpdateHealth()
     {
+        
+        
         int fullHearts = (int)(_Source._player.character_Health_Component._health / 2);
         bool hasHalfHeart = _Source._player.character_Health_Component._health % 2 == 1;
 
-        for (int i = 0; i < heartContainer.Length; i++)
+        for (int i = 0; i < heartContainers.Length; i++)
         {
             if (i < fullHearts)
             {
                 // Draw full heart
-                heartContainer[i].sprite = heartStates[0];
+                heartContainers[i].SetHeartState(HeartStates.FULLHEART);
+                
             }
             else if (i == fullHearts && hasHalfHeart)
             {
                 // Draw half heart
-                heartContainer[i].sprite = heartStates[1];
+                heartContainers[i].SetHeartState(HeartStates.HALFHEART);
             }
             else
             {
                 // Draw empty heart
-                heartContainer[i].sprite = heartStates[2];
+                heartContainers[i].SetHeartState(HeartStates.EMPTYHEART);
             }
+            
+            heartContainers[i].UpdateHeart();
+            //if (i < fullHearts)
+            //{
+            //    // Draw full heart
+            //    heartContainers[i].SetHeartState(2);
+            //}
+            //else if (i == fullHearts && hasHalfHeart)
+            //{
+            //    // Draw half heart
+            //    heartContainers[i].SetHeartState(1);
+            //}
+            //else
+            //{
+            //    // Draw empty heart
+            //    heartContainers[i].SetHeartState(0);
+            //}
         }
     }
 
@@ -59,9 +81,9 @@ public class PlayerHeartUI : MonoBehaviour
         _Source._player.character_Health_Component.OnDecrease_Health -= OnPlayerUpdateHealth;
         if (_Source._player.character_Health_Component._health <= 0)
         {
-            for (int i = 0; i < heartContainer.Length; i++)
+            for (int i = 0; i < heartContainers.Length; i++)
             {
-                heartContainer[i].sprite = heartStates[2];
+                heartContainers[i].SetHeartState(HeartStates.EMPTYHEART);
             }
         }
     }
