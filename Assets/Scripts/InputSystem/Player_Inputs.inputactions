@@ -217,6 +217,17 @@
                 },
                 {
                     "name": "",
+                    "id": "418f67d3-3c05-4757-8718-4de0badf811c",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Melee",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "acb4e196-f04c-4d63-a36f-17f3f2fb0ed9",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -263,6 +274,17 @@
                     "name": "",
                     "id": "5d2c99e4-f6e7-4faf-8421-8f229f597acb",
                     "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PickUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d3b351ab-bce2-488b-9891-aeb3596cdfe9",
+                    "path": "<Keyboard>/o",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
