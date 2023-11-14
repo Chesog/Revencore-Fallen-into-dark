@@ -167,8 +167,8 @@ MonoBehaviour:
   timeBetweenAttacks: 6
   destroyTime: 0
   destroyTimer: 0
-  avoidanceRadius: 7
-  avoidanceForce: 7
+  avoidanceRadius: 3.5
+  avoidanceForce: 2
   ready_To_Attack: 0
   deathLoop: 0
   isHit: 0

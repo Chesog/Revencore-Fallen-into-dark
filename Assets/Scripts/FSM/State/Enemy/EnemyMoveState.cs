@@ -35,30 +35,31 @@ public class EnemyMoveState : EnemyBaseState
 
     private void MoveTowardsTarget()
     {
-        Vector3 force = Vector3.zero;
+        float distance = Vector3.Distance(enemy.transform.position, enemy.target.transform.position);
+        Vector3 direction = enemy.target.transform.position - enemy.transform.position;
 
-        // Attraction force towards the target
-        float distanceToTarget = Vector3.Distance(enemy.transform.position, enemy.target.transform.position);
-        if (distanceToTarget > enemy.stopDistance)
-        {
-            Vector3 directionToTarget = (enemy.target.transform.position - enemy.transform.position).normalized;
-            force += directionToTarget * enemy.speed;
-        }
-
-        // Repulsion force from other enemies
         Collider[] hitColliders = Physics.OverlapSphere(enemy.transform.position, enemy.avoidanceRadius);
+
         foreach (var hitCollider in hitColliders)
         {
             EnemyComponent otherEnemy = hitCollider.GetComponent<EnemyComponent>();
+
             if (otherEnemy != null && otherEnemy != enemy)
             {
-                Vector3 directionFromOther = (enemy.transform.position - otherEnemy.transform.position).normalized;
-                force += directionFromOther * enemy.avoidanceForce;
+                Vector3 diff = enemy.transform.position - otherEnemy.transform.position;
+                if (Mathf.Abs(diff.x) < enemy.avoidanceRadius && Mathf.Abs(diff.z) < enemy.avoidanceRadius)
+                {
+                    direction.x += Mathf.Sign(diff.x);
+                }
             }
         }
-
-        // Apply the force
-        enemy.GetComponent<Rigidbody>().AddForce(force * Time.deltaTime, ForceMode.VelocityChange);
+        
+        
+        if (distance > enemy.stopDistance)
+        {
+            direction.Normalize();
+            enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, enemy.target.transform.position, enemy.speed * Time.deltaTime);
+        }
     }
 
     private void FaceTarget()
