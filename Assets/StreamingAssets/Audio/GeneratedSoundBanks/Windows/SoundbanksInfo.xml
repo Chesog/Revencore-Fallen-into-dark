@@ -3,7 +3,7 @@
 	<RootPaths>
 		<ProjectRoot>D:\Audio y Producción\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\</ProjectRoot>
 		<SourceFilesRoot>D:\Audio y Producción\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Audio y Producción\GitHub\TSDV_4C_Desarollo_3\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\English(US)\</SoundBanksRoot>
+		<SoundBanksRoot>D:\Audio y Producción\GitHub\TSDV_4C_Desarollo_3\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
 		<ExternalSourcesOutputRoot>D:\Audio y Producción\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
