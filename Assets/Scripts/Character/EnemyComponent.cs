@@ -9,6 +9,8 @@ public class EnemyComponent : CharacterComponent
     public float timeBetweenAttacks = 6.0f;
     public float destroyTime;
     public float destroyTimer;
+    public float avoidanceRadius = 5f;
+    public float avoidanceForce = 5f;
     public bool ready_To_Attack;
     public bool deathLoop;
     public bool isHit;

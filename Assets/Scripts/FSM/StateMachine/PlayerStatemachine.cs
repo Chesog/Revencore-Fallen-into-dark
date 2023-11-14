@@ -74,6 +74,8 @@ public class PlayerStatemachine : State_Machine
 
     private void OnEnable()
     {
+        _playerComponent.isDead = false;
+        
         if (_idleState == null)
             _idleState = new PlayerIdleState(nameof(_idleState), this, _playerComponent);
 
