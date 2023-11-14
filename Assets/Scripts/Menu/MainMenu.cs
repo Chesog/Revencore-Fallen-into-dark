@@ -24,6 +24,7 @@ public class MainMenu : MonoBehaviour
 
     public void ReloadScene()
     {
+        Time.timeScale = 1f;
         LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -55,6 +56,7 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 
     #endregion
