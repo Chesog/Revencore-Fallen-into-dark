@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\</ProjectRoot>
-		<SourceFilesRoot>D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Git\TSDV_4C_Desarollo_3\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\English(US)\</SoundBanksRoot>
+		<ProjectRoot>D:\Audio y Producción\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\</ProjectRoot>
+		<SourceFilesRoot>D:\Audio y Producción\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Audio y Producción\GitHub\TSDV_4C_Desarollo_3\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\English(US)\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\Audio y Producción\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="2022992228">
+		<SoundBank Id="3161908922" Language="SFX" Hash="341177133">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -113,7 +113,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1341497909" Name="BossBombExplode" ObjectPath="\Events\Gameplay\BossBombExplode" DurationType="OneShot" DurationMin="0.623146" DurationMax="0.875521">
+				<Event Id="1341497909" Name="BossBombExplode" ObjectPath="\Events\Gameplay\BossBombExplode" MaxAttenuation="100." DurationType="OneShot" DurationMin="0.623146" DurationMax="0.875521">
 					<IncludedMemoryFiles>
 						<File Id="492906008" Language="SFX">
 							<ShortName>BossBombExplode-003.wav</ShortName>
@@ -261,7 +261,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="488669978" Name="EnemyMinionSpawn" ObjectPath="\Events\Gameplay\EnemyMinionSpawn" DurationType="OneShot" DurationMin="0.616667" DurationMax="0.755938">
+				<Event Id="488669978" Name="EnemyMinionSpawn" ObjectPath="\Events\Gameplay\EnemyMinionSpawn" MaxAttenuation="100." DurationType="OneShot" DurationMin="0.616667" DurationMax="0.755938">
 					<IncludedMemoryFiles>
 						<File Id="280491063" Language="SFX">
 							<ShortName>EnemySpawn-003.wav</ShortName>
@@ -353,7 +353,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1564808583" Name="EnemySpitterSpawn" ObjectPath="\Events\Gameplay\EnemySpitterSpawn" DurationType="OneShot" DurationMin="0.616667" DurationMax="0.755938">
+				<Event Id="1564808583" Name="EnemySpitterSpawn" ObjectPath="\Events\Gameplay\EnemySpitterSpawn" MaxAttenuation="100." DurationType="OneShot" DurationMin="0.616667" DurationMax="0.755938">
 					<IncludedMemoryFiles>
 						<File Id="280491063" Language="SFX">
 							<ShortName>EnemySpawn-003.wav</ShortName>
