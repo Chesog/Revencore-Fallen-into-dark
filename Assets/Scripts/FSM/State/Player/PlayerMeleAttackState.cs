@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerMeleAttackState : PlayerBaseState
 {
+    private readonly float _duration;
+
     #region PRIVATE_FIELDS
 
     private string PlayerMeleAnimationName = "Player_Mele_HIt";
@@ -13,10 +15,14 @@ public class PlayerMeleAttackState : PlayerBaseState
     #endregion
 
     public Action OnPlayerShoot;
+    public Action OnAttackEnd;
+    public Action OnComboAttack;
+    private Coroutine endCoroutine;
 
-    public PlayerMeleAttackState(string name, State_Machine stateMachine, PlayerComponent player) : base(name,
+    public PlayerMeleAttackState(string name, State_Machine stateMachine, PlayerComponent player,float duration) : base(name,
         stateMachine, player)
     {
+        _duration = duration;
     }
 
     public override void OnEnter()
@@ -27,6 +33,7 @@ public class PlayerMeleAttackState : PlayerBaseState
         _player.input.OnPlayerAttack += OnMeleeAttack;
         _player.input.OnPlayerMove += OnPlayerMove;
         MeleeAttack();
+        endCoroutine = stateMachine.StartCoroutine(EndAttack());
         base.OnEnter();
     }
 
@@ -39,8 +46,6 @@ public class PlayerMeleAttackState : PlayerBaseState
     {
         if (_player.isRanged_Attacking)
             OnPlayerShoot?.Invoke();
-        else
-            MeleeAttack();
     }
 
     public override void UpdateLogic()
@@ -49,18 +54,15 @@ public class PlayerMeleAttackState : PlayerBaseState
                        _player.characterSprite.transform.right * _player._attackRange;
         if (_player.movement != Vector3.zero)
             _player._movementController.UpdateMovement();
-
+        
         base.UpdateLogic();
     }
 
-    public override void UpdatePhysics()
+    private IEnumerator EndAttack()
     {
-        base.UpdatePhysics();
-    }
-
-    private void playMeleAttackAnimation()
-    {
-        _player.anim.Play(PlayerMeleAnimationName);
+        yield return new WaitForSeconds(_duration);
+        Debug.Log("EndAttack");
+        OnAttackEnd?.Invoke();
     }
 
     private void MeleeAttack()
@@ -81,20 +83,16 @@ public class PlayerMeleAttackState : PlayerBaseState
                     knockback.PlayKnockback(_player.transform);
             }
         }
-
-
-        playMeleAttackAnimation();
-    }
-
-    public override void AddStateTransitions(string transitionName, State transitionState)
-    {
-        base.AddStateTransitions(transitionName, transitionState);
     }
 
     public override void OnExit()
     {
         _player.input.OnPlayerAttack -= OnMeleeAttack;
         _player.anim.StopPlayback();
+        
+        if (endCoroutine != null)
+            stateMachine.StopCoroutine(endCoroutine);
+        
         base.OnExit();
     }
 }

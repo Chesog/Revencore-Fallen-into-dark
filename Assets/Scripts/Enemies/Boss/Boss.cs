@@ -31,6 +31,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private Slider _healthBar;
     [SerializeField] private GameObject _sliderParent;
     [SerializeField] private Rigidbody _playerRb;
+    [SerializeField] private CameraShaker _cameraShake;
 
     #endregion
 
@@ -113,6 +114,7 @@ public class Boss : MonoBehaviour
             Debug.Log("Boss stage: 1");
             DropBombs();
             anim.Play("Boss_Roar");
+            _cameraShake.StartCameraShake();
             PushPlayer();
         }
         else if (_characterHealthComponent._health > _characterHealthComponent._maxHealth / 3)
@@ -126,6 +128,7 @@ public class Boss : MonoBehaviour
         {
             Debug.Log("Boss stage: 3");
             anim.Play("Boss_RoarSumm");
+            _cameraShake.StartCameraShake();
             DropBombs();
             StartCoroutine(SpawnEnemy(_enemySpawnCooldown - (_enemySpawnCooldown * 0.5f), _enemyPrefab,
                 _playerData._player.transform));

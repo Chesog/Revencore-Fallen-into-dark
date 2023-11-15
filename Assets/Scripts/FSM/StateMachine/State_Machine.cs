@@ -57,12 +57,10 @@ public class State_Machine : MonoBehaviour
 
         OnStateExit?.Invoke();
         currentState.OnExit();
-
+        Debug.Log($"Transitioned State : {currentState.name} => {newState.name}" );
         currentState = newState;
 
         OnStateEnter?.Invoke();
         currentState.OnEnter();
-
-        Debug.Log($"Current State : {currentState.name}");
     }
 }

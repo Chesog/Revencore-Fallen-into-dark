@@ -49124,6 +49124,18 @@ PrefabInstance:
       propertyPath: _strength
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 5556089390067047182, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
+      propertyPath: attack1Duration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556089390067047182, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
+      propertyPath: attack2Duration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556089390067047182, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
+      propertyPath: attack3Duration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5673954961807371981, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -63917,6 +63929,10 @@ PrefabInstance:
       propertyPath: _healthBar
       value: 
       objectReference: {fileID: 375815339}
+    - target: {fileID: 2091202133964717629, guid: cd847fe9e6bc6154a836dbbad2e9acea, type: 3}
+      propertyPath: _cameraShake
+      value: 
+      objectReference: {fileID: 3195029495822534145}
     - target: {fileID: 2091202133964717629, guid: cd847fe9e6bc6154a836dbbad2e9acea, type: 3}
       propertyPath: _roomManager
       value: 

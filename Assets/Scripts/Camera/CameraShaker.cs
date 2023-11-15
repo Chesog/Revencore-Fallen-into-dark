@@ -17,13 +17,6 @@ public class CameraShaker : MonoBehaviour
         isCorrutineRuning = false;
         initialPos = transform;
     }
-
-    private void Update()
-    {
-        if (Keyboard.current.spaceKey.isPressed)
-            StartCameraShake();
-    }
-
     public void StartCameraShake()
     {
         if (!isCorrutineRuning)
