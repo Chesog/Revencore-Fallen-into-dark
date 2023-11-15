@@ -85,7 +85,7 @@ public class PlayerMeleAttackState : PlayerBaseState
             }
         }
 
-        stateMachine.StartCoroutine(LerpToEnemy(temp));
+        //stateMachine.StartCoroutine(LerpToEnemy(temp));
         foreach (Collider enemy in hitEnemies)
         {
             if (enemy != null && enemy.tag == "Enemy")
