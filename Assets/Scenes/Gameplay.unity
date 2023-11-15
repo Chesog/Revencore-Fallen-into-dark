@@ -49130,7 +49130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5556089390067047182, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
       propertyPath: attack1Duration
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5556089390067047182, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
       propertyPath: attack2Duration
@@ -49138,7 +49138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5556089390067047182, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
       propertyPath: attack3Duration
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5673954961807371981, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
       propertyPath: m_Layer
