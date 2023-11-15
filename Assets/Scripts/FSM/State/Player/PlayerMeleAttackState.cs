@@ -100,26 +100,21 @@ public class PlayerMeleAttackState : PlayerBaseState
         Vector3 startPosition = _player.transform.position;
         float journeyLength = Vector3.Distance(startPosition, target.position);
         float startTime = Time.time;
+        float fractionOfJourney = 0.0f;
 
-        while (true)
+        while (fractionOfJourney <= 1.0f)
         {
             // Calcula la distancia recorrida.
             float distCovered = (Time.time - startTime) * _player.speed;
 
             // Calcula la fracción del recorrido completado.
-            float fractionOfJourney = distCovered / journeyLength;
+            fractionOfJourney = distCovered / journeyLength;
 
             // Interpola suavemente entre la posición inicial y final.
             _player.transform.position = Vector3.Lerp(startPosition, target.position, fractionOfJourney);
 
             // Espera hasta el siguiente frame.
             yield return null;
-
-            // Si la fracción del recorrido es mayor o igual a 1, hemos llegado al destino y salimos del bucle.
-            if (fractionOfJourney >= 1.0f)
-            {
-                break;
-            }
         }
 
         // El movimiento ha terminado.
