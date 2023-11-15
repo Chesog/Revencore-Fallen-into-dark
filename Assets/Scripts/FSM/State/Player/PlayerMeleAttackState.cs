@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class PlayerMeleAttackState : PlayerBaseState
 {
@@ -76,9 +77,12 @@ public class PlayerMeleAttackState : PlayerBaseState
 
         for (int i = 0; i < hitEnemies.Length; i++)
         {
-            distance = Vector3.Distance(_player.transform.position, hitEnemies[i].transform.position);
-            if (distance < minDistace)
-                temp = hitEnemies[i].transform;
+            if (hitEnemies[i] != null && hitEnemies[i].tag == "Enemy") 
+            {
+                distance = Vector3.Distance(_player.transform.position, hitEnemies[i].transform.position);
+                if (distance < minDistace)
+                    temp = hitEnemies[i].transform;
+            }
         }
 
         stateMachine.StartCoroutine(LerpToEnemy(temp));
