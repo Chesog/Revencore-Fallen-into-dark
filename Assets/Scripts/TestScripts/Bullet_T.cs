@@ -28,7 +28,6 @@ public class Bullet_T : MonoBehaviour
     private void FixedUpdate()
     {
         Quaternion newRot = gameObject.transform.rotation;
-        newRot.y += _speed;
         gameObject.transform.rotation = newRot;
     }
 

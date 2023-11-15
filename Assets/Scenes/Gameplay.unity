@@ -49069,6 +49069,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 661796609}
     - target: {fileID: 1067716849943479645, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
+      propertyPath: isRanged_Attacking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1067716849943479645, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
       propertyPath: _movementController
       value: 
       objectReference: {fileID: 3195029495822534139}

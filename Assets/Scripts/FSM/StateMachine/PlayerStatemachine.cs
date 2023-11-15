@@ -112,11 +112,13 @@ public class PlayerStatemachine : State_Machine
         if (_playerComponent.characterSprite.transform.rotation.y == 0f)
             _playerComponent.rot = Quaternion.EulerRotation(_playerComponent.characterSprite.transform.rotation.x,
                 _playerComponent.characterSprite.transform.rotation.y + 89.5f,
-                _playerComponent.characterSprite.transform.rotation.z);
+                _playerComponent.characterSprite.transform.rotation.z + 89.5f);
         else
             _playerComponent.rot = Quaternion.EulerRotation(_playerComponent.characterSprite.transform.rotation.x,
                 _playerComponent.characterSprite.transform.rotation.y - 90.5f,
-                _playerComponent.characterSprite.transform.rotation.z);
+                _playerComponent.characterSprite.transform.rotation.z - 90.5f);
+        
+        
         GameObject projectile = Instantiate(_playerComponent.bulletPrefab, _playerComponent.shootingPoint.position,
             _playerComponent.rot);
 
