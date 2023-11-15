@@ -1,6 +1,6 @@
+using UnityEditor;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class MainMenu : MonoBehaviour
 {
@@ -56,7 +56,9 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
+#if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+#endif
     }
 
     #endregion

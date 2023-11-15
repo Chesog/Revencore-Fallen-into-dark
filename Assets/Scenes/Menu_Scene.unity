@@ -1508,6 +1508,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2598417426725671680, guid: 3c458963dcbc2aa41a079183ece9d8aa, type: 3}
+      propertyPath: triggerList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598417426725671680, guid: 3c458963dcbc2aa41a079183ece9d8aa, type: 3}
+      propertyPath: triggerList.Array.data[0]
+      value: 1281810935
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598417426725671680, guid: 3c458963dcbc2aa41a079183ece9d8aa, type: 3}
+      propertyPath: triggerList.Array.data[1]
+      value: 1281810935
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598417426725671680, guid: 3c458963dcbc2aa41a079183ece9d8aa, type: 3}
+      propertyPath: unloadTriggerList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598417426725671680, guid: 3c458963dcbc2aa41a079183ece9d8aa, type: 3}
+      propertyPath: unloadTriggerList.Array.data[0]
+      value: -358577003
+      objectReference: {fileID: 0}
     - target: {fileID: 4687995725326893675, guid: 3c458963dcbc2aa41a079183ece9d8aa, type: 3}
       propertyPath: m_Name
       value: Audio Manager
