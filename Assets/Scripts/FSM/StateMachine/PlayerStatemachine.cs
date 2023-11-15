@@ -69,6 +69,7 @@ public class PlayerStatemachine : State_Machine
     private void OnEnable()
     {
         _playerComponent.isDead = false;
+        _playerComponent.character_Health_Component.ResetFullHealth();
 
         if (_idleState == null)
             _idleState = new PlayerIdleState(nameof(_idleState), this, _playerComponent);

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1653270597}
-  m_IndirectSpecularColor: {r: 0.014326355, g: 0.057431918, b: 0.105450705, a: 1}
+  m_IndirectSpecularColor: {r: 0.014324088, g: 0.0574275, b: 0.10544753, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -31863,7 +31863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 460063646777280246, guid: fb0ffd0249c039b4eb4e6e71b31070ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 460063646777280246, guid: fb0ffd0249c039b4eb4e6e71b31070ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -31875,11 +31875,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 460063646777280246, guid: fb0ffd0249c039b4eb4e6e71b31070ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
+      value: ReloadScene
       objectReference: {fileID: 0}
     - target: {fileID: 460063646777280246, guid: fb0ffd0249c039b4eb4e6e71b31070ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MainMenu_T, Assembly-CSharp
+      value: MainMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 460063646777280246, guid: fb0ffd0249c039b4eb4e6e71b31070ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument

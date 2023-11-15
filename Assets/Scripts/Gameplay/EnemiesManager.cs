@@ -100,7 +100,6 @@ public class EnemiesManager : MonoBehaviour
         if (_winningPanel != null)
         {
             _winningPanel.SetActive(true);
-            Time.timeScale = 0f;
         }
     }
 

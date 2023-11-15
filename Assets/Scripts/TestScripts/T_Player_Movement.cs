@@ -52,12 +52,10 @@ public class T_Player_Movement : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         pause = true;
-        Time.timeScale = 0.1f;
     }
     public void UnPauseGame()
     {
         pauseMenu.SetActive(false);
         pause = false;
-        Time.timeScale = 1;
     }
 }

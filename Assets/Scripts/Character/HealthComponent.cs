@@ -21,7 +21,7 @@ public class HealthComponent : MonoBehaviour
         ResetFullHealth();
     }
 
-    private void ResetFullHealth()
+    public void ResetFullHealth()
     {
         _health = _maxHealth;
     }
