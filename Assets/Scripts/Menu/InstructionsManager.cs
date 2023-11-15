@@ -44,6 +44,7 @@ public class InstructionsManager : MonoBehaviour
     public void ShowCreditsMenu()
     {
         creditsMenu.SetActive(true);
+        ChangePage(0, credits);
     }
 
     public void HideCredits()
