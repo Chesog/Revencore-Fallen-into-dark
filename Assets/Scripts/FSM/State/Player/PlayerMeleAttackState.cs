@@ -18,8 +18,9 @@ public class PlayerMeleAttackState : PlayerBaseState
     public Action OnAttackEnd;
     private Coroutine endCoroutine;
 
-    public PlayerMeleAttackState(string name, State_Machine stateMachine, PlayerComponent player,float duration) : base(name,
-        stateMachine, player)
+    public PlayerMeleAttackState(string name, State_Machine stateMachine, PlayerComponent player, float duration) :
+        base(name,
+            stateMachine, player)
     {
         _duration = duration;
     }
@@ -55,7 +56,7 @@ public class PlayerMeleAttackState : PlayerBaseState
                        _player.characterSprite.transform.right * _player._attackRange;
         if (_player.movement != Vector3.zero)
             _player._movementController.UpdateMovement();
-        
+
         base.UpdateLogic();
     }
 
@@ -70,9 +71,9 @@ public class PlayerMeleAttackState : PlayerBaseState
     {
         Collider[] hitEnemies = Physics.OverlapSphere(sphereCenter, _player._attackRange);
         float distance = 0.0f;
-        float minDistace = _player._attackRange;
+        float minDistace = _player._attackRange * 10.0f;
         Transform temp = null;
-        
+
         for (int i = 0; i < hitEnemies.Length; i++)
         {
             distance = Vector3.Distance(_player.transform.position, hitEnemies[i].transform.position);
@@ -96,27 +97,43 @@ public class PlayerMeleAttackState : PlayerBaseState
 
     private IEnumerator LerpToEnemy(Transform target)
     {
-        yield return null;
-        Vector3 originalPos = _player.transform.position;
-        float distance = Vector3.Distance(_player.transform.position, target.position);
-        while (distance > 0.5f)
+        Vector3 startPosition = _player.transform.position;
+        float journeyLength = Vector3.Distance(startPosition, target.position);
+        float startTime = Time.time;
+
+        while (true)
         {
-            distance = Vector3.Distance(_player.transform.position, target.position);
-            _player.transform.position = Vector3.Lerp(originalPos,target.position,_player.speed * Time.deltaTime);
-            Debug.Log("Lerp");
+            // Calcula la distancia recorrida.
+            float distCovered = (Time.time - startTime) * _player.speed;
+
+            // Calcula la fracción del recorrido completado.
+            float fractionOfJourney = distCovered / journeyLength;
+
+            // Interpola suavemente entre la posición inicial y final.
+            _player.transform.position = Vector3.Lerp(startPosition, target.position, fractionOfJourney);
+
+            // Espera hasta el siguiente frame.
             yield return null;
+
+            // Si la fracción del recorrido es mayor o igual a 1, hemos llegado al destino y salimos del bucle.
+            if (fractionOfJourney >= 1.0f)
+            {
+                break;
+            }
         }
-        yield return null;
+
+        // El movimiento ha terminado.
+        Debug.Log("Lerp Completed");
     }
 
     public override void OnExit()
     {
         _player.input.OnPlayerAttack -= OnMeleeAttack;
         _player.anim.StopPlayback();
-        
+
         if (endCoroutine != null)
             stateMachine.StopCoroutine(endCoroutine);
-        
+
         base.OnExit();
     }
 }
