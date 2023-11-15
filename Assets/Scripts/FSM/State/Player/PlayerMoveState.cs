@@ -50,7 +50,6 @@ public class PlayerMoveState : PlayerBaseState
     public override void OnExit()
     {
         _player.input.OnPlayerMove -= OnPlayerMove;
-        _player.anim.StopPlayback();
         base.OnExit();
     }
 }
