@@ -18,8 +18,14 @@ public class HealthComponent : MonoBehaviour
     #region UNITY_CALLS
     private void OnEnable()
     {
+        ResetFullHealth();
+    }
+
+    private void ResetFullHealth()
+    {
         _health = _maxHealth;
     }
+
     private void OnDisable()
     {
         _health = 0;
