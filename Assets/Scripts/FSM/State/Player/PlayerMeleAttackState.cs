@@ -16,7 +16,6 @@ public class PlayerMeleAttackState : PlayerBaseState
 
     public Action OnPlayerShoot;
     public Action OnAttackEnd;
-    public Action OnComboAttack;
     private Coroutine endCoroutine;
 
     public PlayerMeleAttackState(string name, State_Machine stateMachine, PlayerComponent player,float duration) : base(name,
@@ -46,6 +45,8 @@ public class PlayerMeleAttackState : PlayerBaseState
     {
         if (_player.isRanged_Attacking)
             OnPlayerShoot?.Invoke();
+        else
+            MeleeAttack();
     }
 
     public override void UpdateLogic()
@@ -68,12 +69,20 @@ public class PlayerMeleAttackState : PlayerBaseState
     private void MeleeAttack()
     {
         Collider[] hitEnemies = Physics.OverlapSphere(sphereCenter, _player._attackRange);
+        float distance = 0.0f;
+        float minDistace = _player._attackRange;
+        Transform temp = null;
+        
+        for (int i = 0; i < hitEnemies.Length; i++)
+        {
+            distance = Vector3.Distance(_player.transform.position, hitEnemies[i].transform.position);
+            if (distance < minDistace)
+                temp = hitEnemies[i].transform;
+        }
 
+        stateMachine.StartCoroutine(LerpToEnemy(temp));
         foreach (Collider enemy in hitEnemies)
         {
-            //EnemyInputManager meleeEnemy = enemy.GetComponent<EnemyInputManager>();
-            DistanceEnemy distanceEnemy = enemy.GetComponent<DistanceEnemy>();
-
             if (enemy != null && enemy.tag == "Enemy")
             {
                 enemy.GetComponent<HealthComponent>().DecreaseHealth(_player.damage);
@@ -83,6 +92,21 @@ public class PlayerMeleAttackState : PlayerBaseState
                     knockback.PlayKnockback(_player.transform);
             }
         }
+    }
+
+    private IEnumerator LerpToEnemy(Transform target)
+    {
+        yield return null;
+        Vector3 originalPos = _player.transform.position;
+        float distance = Vector3.Distance(_player.transform.position, target.position);
+        while (distance > 0.5f)
+        {
+            distance = Vector3.Distance(_player.transform.position, target.position);
+            _player.transform.position = Vector3.Lerp(originalPos,target.position,_player.speed * Time.deltaTime);
+            Debug.Log("Lerp");
+            yield return null;
+        }
+        yield return null;
     }
 
     public override void OnExit()
