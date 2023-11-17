@@ -1,26 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>D:\Audio y Producción\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\</ProjectRoot>
-		<SourceFilesRoot>D:\Audio y Producción\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Audio y Producción\GitHub\TSDV_4C_Desarollo_3\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\</ProjectRoot>
+		<SourceFilesRoot>D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Git\TSDV_4C_Desarollo_3\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Audio y Producción\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="505167952">
+		<SoundBank Id="1355168291" Language="SFX" Hash="249106614">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3979800752">
+		<SoundBank Id="3161908922" Language="SFX" Hash="362769737">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="3088469391" Name="AmbienceChurchBell" ObjectPath="\Events\Default Work Unit\AmbienceChurchBell" DurationType="OneShot" DurationMin="5.141979" DurationMax="5.141979">
+					<IncludedMemoryFiles>
+						<File Id="468734920" Language="SFX">
+							<ShortName>ChurchBell.wav</ShortName>
+							<Path>SFX\ChurchBell_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1305708715" Name="AmbiencePlay" ObjectPath="\Events\Default Work Unit\AmbiencePlay" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="114299105" Language="SFX">
@@ -113,7 +121,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1341497909" Name="BossBombExplode" ObjectPath="\Events\Gameplay\BossBombExplode" MaxAttenuation="100." DurationType="OneShot" DurationMin="0.623146" DurationMax="0.875521">
+				<Event Id="1341497909" Name="BossBombExplode" ObjectPath="\Events\Gameplay\BossBombExplode" DurationType="OneShot" DurationMin="0.623146" DurationMax="0.875521">
 					<IncludedMemoryFiles>
 						<File Id="492906008" Language="SFX">
 							<ShortName>BossBombExplode-003.wav</ShortName>
@@ -189,7 +197,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3685648097" Name="EnemyMinionAttack" ObjectPath="\Events\Gameplay\EnemyMinionAttack" DurationType="OneShot" DurationMin="0.269917" DurationMax="0.358854">
+				<Event Id="3685648097" Name="EnemyMinionAttack" ObjectPath="\Events\Gameplay\EnemyMinionAttack" DurationType="OneShot" DurationMin="0.769917" DurationMax="0.858854">
 					<IncludedMemoryFiles>
 						<File Id="541828312" Language="SFX">
 							<ShortName>MinionAttack-002.wav</ShortName>
@@ -281,23 +289,23 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2347568998" Name="EnemySpitterAttack" ObjectPath="\Events\Gameplay\EnemySpitterAttack" DurationType="OneShot" DurationMin="0.263808" DurationMax="0.323388">
+				<Event Id="2347568998" Name="EnemySpitterAttack" ObjectPath="\Events\Gameplay\EnemySpitterAttack" MaxAttenuation="100." DurationType="OneShot" DurationMin="0.609667" DurationMax="0.747521">
 					<IncludedMemoryFiles>
-						<File Id="280491063" Language="SFX">
-							<ShortName>EnemySpawn-003.wav</ShortName>
-							<Path>SFX\EnemySpawn-003_10C4C929.wem</Path>
+						<File Id="301244344" Language="SFX">
+							<ShortName>SpitterAttack-001.wav</ShortName>
+							<Path>SFX\SpitterAttack-001_10C4C929.wem</Path>
 						</File>
-						<File Id="644599723" Language="SFX">
-							<ShortName>EnemySpawn-001.wav</ShortName>
-							<Path>SFX\EnemySpawn-001_10C4C929.wem</Path>
+						<File Id="395860220" Language="SFX">
+							<ShortName>SpitterAttack-002.wav</ShortName>
+							<Path>SFX\SpitterAttack-002_10C4C929.wem</Path>
 						</File>
-						<File Id="705112029" Language="SFX">
-							<ShortName>EnemySpawn-002.wav</ShortName>
-							<Path>SFX\EnemySpawn-002_10C4C929.wem</Path>
+						<File Id="901861362" Language="SFX">
+							<ShortName>SpitterAttack-004.wav</ShortName>
+							<Path>SFX\SpitterAttack-004_10C4C929.wem</Path>
 						</File>
-						<File Id="830078579" Language="SFX">
-							<ShortName>EnemySpawn-004.wav</ShortName>
-							<Path>SFX\EnemySpawn-004_10C4C929.wem</Path>
+						<File Id="1018411725" Language="SFX">
+							<ShortName>SpitterAttack-003.wav</ShortName>
+							<Path>SFX\SpitterAttack-003_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -502,6 +510,26 @@
 						<File Id="803274776" Language="SFX">
 							<ShortName>sfx_AttackWhoosh-004.wav</ShortName>
 							<Path>SFX\sfx_AttackWhoosh-004_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3939754330" Name="HeroKickHit" ObjectPath="\Events\Gameplay\HeroKickHit" DurationType="OneShot" DurationMin="0.164646" DurationMax="0.17875">
+					<IncludedMemoryFiles>
+						<File Id="217243609" Language="SFX">
+							<ShortName>Hit2-001.wav</ShortName>
+							<Path>SFX\Hit2-001_10C4C929.wem</Path>
+						</File>
+						<File Id="242975355" Language="SFX">
+							<ShortName>Hit2-004.wav</ShortName>
+							<Path>SFX\Hit2-004_10C4C929.wem</Path>
+						</File>
+						<File Id="1016925065" Language="SFX">
+							<ShortName>Hit2-003.wav</ShortName>
+							<Path>SFX\Hit2-003_10C4C929.wem</Path>
+						</File>
+						<File Id="1066579968" Language="SFX">
+							<ShortName>Hit2-002.wav</ShortName>
+							<Path>SFX\Hit2-002_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
