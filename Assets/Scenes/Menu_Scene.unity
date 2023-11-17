@@ -2038,7 +2038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2598417426725671680, guid: 3c458963dcbc2aa41a079183ece9d8aa, type: 3}
       propertyPath: unloadTriggerList.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2598417426725671680, guid: 3c458963dcbc2aa41a079183ece9d8aa, type: 3}
       propertyPath: unloadTriggerList.Array.data[0]
