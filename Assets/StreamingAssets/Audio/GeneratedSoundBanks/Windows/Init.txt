@@ -8,6 +8,7 @@ State	ID	Name	State Group			Notes
 	979765101	Win	Win_Lose_State			
 	748895195	None	Scene_State			
 	1560169506	Boss	Scene_State			
+	1865857008	Transition	Scene_State			
 	2607556080	Menu	Scene_State			
 	4175426381	Stage_1	Scene_State			
 	4175426382	Stage_2	Scene_State			

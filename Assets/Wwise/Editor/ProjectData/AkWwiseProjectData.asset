@@ -406,7 +406,7 @@ MonoBehaviour:
     ParentPath: Events\Gameplay
     guid: 74b644f45f961a45a6daf86056789653
     GuidInternal: 
-    m_lastTime: -8585022324778406008
+    m_lastTime: -8585016785849107540
     List:
     - name: BossBombExplode
       guid: 1184ea972c6c414cae4074d7d370ed9b
@@ -818,7 +818,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: a014d6473f23ba49bb5e3296f8ec57a4
     GuidInternal: 
-    m_lastTime: -8585032323954219259
+    m_lastTime: -8585014291859855017
     List:
     - name: Scene_State
       guid: 672b6b446acd644fad4ed57203b70ebd
@@ -915,6 +915,22 @@ MonoBehaviour:
         - ElementName: Stage_2
           ObjectType: 8
           guid: 712c5b9588f7a94b91f10bd70f1a8121
+      - name: Transition
+        guid: f22dab8900e57648986db4944565c9d4
+        id: 1865857008
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a014d6473f23ba49bb5e3296f8ec57a4
+        - ElementName: Scene_State
+          ObjectType: 9
+          guid: 672b6b446acd644fad4ed57203b70ebd
+        - ElementName: Transition
+          ObjectType: 8
+          guid: f22dab8900e57648986db4944565c9d4
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
@@ -1013,7 +1029,7 @@ MonoBehaviour:
     m_lastTime: -8585034096903559314
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 21000000220000002300000024000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

@@ -51,6 +51,7 @@ namespace AK
                 static const AkUniqueID NONE = 748895195U;
                 static const AkUniqueID STAGE_1 = 4175426381U;
                 static const AkUniqueID STAGE_2 = 4175426382U;
+                static const AkUniqueID TRANSITION = 1865857008U;
             } // namespace STATE
         } // namespace SCENE_STATE
 
