@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a02e9df7e433824b9fb691d8f1f804b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerList: ae8d9d44
+  triggerList: f7e1664c
   useOtherObject: 0
   data:
     idInternal: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0
-  unloadTriggerList: 
+  unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
 --- !u!1 &4687995725326893675
@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 3311663590259368753}
   - component: {fileID: 7152742005850310484}
   - component: {fileID: 1939184687070183157}
+  - component: {fileID: 8041883226446294199}
   m_Layer: 0
   m_Name: Wwise Listener
   m_TagString: Untagged
@@ -172,6 +173,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDefaultListener: 1
   listenerId: 0
+--- !u!114 &8041883226446294199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7915346837548184291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895c7735798ae814594fe83d9e14d5a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneCamera: {fileID: 0}
 --- !u!1 &9060098573137194987
 GameObject:
   m_ObjectHideFlags: 0
