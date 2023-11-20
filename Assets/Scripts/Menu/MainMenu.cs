@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Diagnostics;
 
 public class MainMenu : MonoBehaviour
 {
@@ -33,12 +34,15 @@ public class MainMenu : MonoBehaviour
 
     public void ShowCredits()
     {
+        AkSoundEngine.PostEvent("StopAmbience", gameObject);
         LoadScene(_creditsSceneName);
     }
 
     public void GoMainMenu()
     {
+        AkSoundEngine.PostEvent("StopAmbience", gameObject);
         LoadScene(_mainMenuSceneName);
+        
     }
 
     public void GoOptions()
