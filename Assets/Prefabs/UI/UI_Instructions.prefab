@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   akEvent:
-  - 'MenuMouseHover '
+  - MenuMouseHover
   - MenuPositive
 --- !u!114 &696183312034160429
 MonoBehaviour:
@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   akEvent:
-  - 'MenuMouseHover '
+  - MenuMouseHover
   - MenuPositive
 --- !u!114 &973709363791874475
 MonoBehaviour:
@@ -1829,7 +1829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   akEvent:
-  - 'MenuMouseHover '
+  - MenuMouseHover
   - MenuPositive
 --- !u!1 &3664245366594246311
 GameObject:
@@ -3016,7 +3016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   akEvent:
-  - 'MenuMouseHover '
+  - MenuMouseHover
   - MenuPositive
 --- !u!114 &3621175684311222343
 MonoBehaviour:
@@ -3924,7 +3924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   akEvent:
-  - 'MenuMouseHover '
+  - MenuMouseHover
   - MenuPositive
 --- !u!114 &1766628177686119517
 MonoBehaviour:
