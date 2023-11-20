@@ -8,6 +8,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1273576127	PowerUpHP			\Gameplay\PowerUpHP	
 	1305708715	AmbiencePlay			\Default Work Unit\AmbiencePlay	
 	1341497909	BossBombExplode			\Gameplay\BossBombExplode	
+	1481017468	BossDeath			\Gameplay\BossDeath	
 	1513208197	MenuNegative			\UI\MenuNegative	
 	1521187885	StartGame			\UI\StartGame	
 	1564808583	EnemySpitterSpawn			\Gameplay\EnemySpitterSpawn	
@@ -15,15 +16,17 @@ Event	ID	Name			Wwise Object Path	Notes
 	2347568998	EnemySpitterAttack			\Gameplay\EnemySpitterAttack	
 	2496648897	MenuPositive			\UI\MenuPositive	
 	3088469391	AmbienceChurchBell			\Default Work Unit\AmbienceChurchBell	
+	3187462089	MenuMouseHover			\UI\MenuMouseHover	
+	3264771457	StopAmbience			\Default Work Unit\StopAmbience	
 	3361532464	BossIdle			\Gameplay\BossIdle	
 	3405218380	HeroAttackHit			\Gameplay\HeroAttackHit	
 	3432866954	BossBombTrail			\Gameplay\BossBombTrail	
-	3478063044	MouseHover			\UI\MouseHover	
 	3685648097	EnemyMinionAttack			\Gameplay\EnemyMinionAttack	
 	3831688773	PlayerHit			\Gameplay\PlayerHit	
 	3876141876	MenuToggle			\UI\MenuToggle	
 	3939754330	HeroKickHit			\Gameplay\HeroKickHit	
 	4144776676	Play_BGM_AudioManager			\Default Work Unit\Play_BGM_AudioManager	
+	4279112603	BossChannel			\Gameplay\BossChannel	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	2358111289	Scene_State			\Default Work Unit\Scene_State	
@@ -53,12 +56,12 @@ Modulator Time	ID	Name			Wwise Object Path	Notes
 	631421086	BossBombTrail			\Default Work Unit\BossBombTrail	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	9493559	sfx_EnemyDeath-007	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-007_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterDeathSound\sfx_EnemyDeath-007		88768
+	9493559	sfx_EnemyDeath-007	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-007_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Minion\MinionDeathSound\sfx_EnemyDeath-007		88768
 	32483774	Qmira	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\Qmira_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\zz_EasterEgg\MessiLoop\Qmira		38812
 	47206944	sfx_AttackLightLeather-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_AttackLightLeather-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\AttackLight\Leather\sfx_AttackLightLeather-001		33664
-	47248372	sfx_EnemyDeath-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterDeathSound\sfx_EnemyDeath-001		83546
+	47248372	sfx_EnemyDeath-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Minion\MinionDeathSound\sfx_EnemyDeath-001		83546
 	69774708	QmiraBobo-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\QmiraBobo-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\zz_EasterEgg\MessiLoop\QmiraBobo-001		66558
-	109173775	sfx_EnemyDeath-012	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-012_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterDeathSound\sfx_EnemyDeath-012		57354
+	109173775	sfx_EnemyDeath-012	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-012_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Minion\MinionDeathSound\sfx_EnemyDeath-012		57354
 	114299105	sfx_TeroChirps-007	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_TeroChirps-007_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience\TeroChirps\sfx_TeroChirps-007		123364
 	118143105	sfx_TeroChirps-006	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_TeroChirps-006_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience\TeroChirps\sfx_TeroChirps-006		620022
 	121706397	sfxAmbChimes-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfxAmbChimes-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience\Chimes\sfxAmbChimes-003		506148
@@ -66,25 +69,29 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	144215372	sfx_AttackWhoosh-006	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_AttackWhoosh-006_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\AttackLight\Whooshes\sfx_AttackWhoosh-006		36418
 	159786757	Demo Menu v2_1	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\Demo Menu v2.1_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\BGM\Menu\Menu _ v2_ DEMO\Demo Menu v2_1		13824064
 	161273651	sfx_TeroChirps-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_TeroChirps-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience\TeroChirps\sfx_TeroChirps-002		153664
+	169104995	BossChannel-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\BossChannel-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Boss\BossChannel\BossChannel-001		842548
 	176981663	BossBombTrail	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\BossBombTrail_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Boss\BossBombTrail		725720
+	178967231	BossChannel-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\BossChannel-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Boss\BossChannel\BossChannel-003		902464
 	191515800	sfxambSolarWind	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfxambSolarWind_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience\sfxambSolarWind		1943362
 	195316329	sfx_AttackLightLeather-005	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_AttackLightLeather-005_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\AttackLight\Leather\sfx_AttackLightLeather-005		23538
 	198459300	Stage 1	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\Stage 1_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\BGM\Stage 1\Stage 1\Stage 1		9953344
+	203553019	BossChannel-005	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\BossChannel-005_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Boss\BossChannel\BossChannel-005		1106876
 	217243609	Hit2-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\Hit2-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\HitB\Hit2-001		17224
 	221780587	sfxAmbChimes-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfxAmbChimes-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience\Chimes\sfxAmbChimes-002		248006
+	235305834	BossChannel-004	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\BossChannel-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Boss\BossChannel\BossChannel-004		721750
 	242975355	Hit2-004	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\Hit2-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\HitB\Hit2-004		16400
-	255470776	sfx_EnemyDeath-010	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-010_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterDeathSound\sfx_EnemyDeath-010		64720
+	255470776	sfx_EnemyDeath-010	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-010_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Minion\MinionDeathSound\sfx_EnemyDeath-010		64720
 	261366603	BossScream-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\BossScream-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Boss\BossScream\BossScream-002		558560
 	273105538	BossScream-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\BossScream-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Boss\BossScream\BossScream-001		453302
 	280491063	EnemySpawn-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\EnemySpawn-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\EnemySpawn\EnemySpawn-003		62364
 	287636987	sfx_TeroChirps-005	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_TeroChirps-005_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience\TeroChirps\sfx_TeroChirps-005		240064
-	294157255	sfx_EnemyDeath-008	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-008_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterDeathSound\sfx_EnemyDeath-008		43442
+	294157255	sfx_EnemyDeath-008	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-008_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Minion\MinionDeathSound\sfx_EnemyDeath-008		43442
 	298818580	sfx_AttackLightLeather-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_AttackLightLeather-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\AttackLight\Leather\sfx_AttackLightLeather-003		25278
 	300099188	sfx_AttackWhoosh-005	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_AttackWhoosh-005_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\AttackLight\Whooshes\sfx_AttackWhoosh-005		26090
 	301244344	SpitterAttack-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\SpitterAttack-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterAttack\SpitterAttack-001		58592
 	308092375	Transition	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\Transition_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\BGM\Transition\Transition\Transition		7741504
 	315049110	RainA	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\RainA_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience\RainA		5826616
-	383496785	sfx_EnemyDeath-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterDeathSound\sfx_EnemyDeath-003		37906
+	383496785	sfx_EnemyDeath-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Minion\MinionDeathSound\sfx_EnemyDeath-003		37906
 	395860220	SpitterAttack-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\SpitterAttack-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterAttack\SpitterAttack-002		71826
 	402629442	Boss	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\Boss_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\BGM\Boss\Boss\Boss		7741504
 	405815339	sfx_AttackWhoosh-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_AttackWhoosh-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\AttackLight\Whooshes\sfx_AttackWhoosh-003		23704
@@ -93,7 +100,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	435000505	sfxAmbWhistlingWind-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfxAmbWhistlingWind-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience\WhistlingWind\sfxAmbWhistlingWind-001		902566
 	468734920	ChurchBell	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\ChurchBell_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\ChurchBell		493694
 	470379356	AndaPalla-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\AndaPalla-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\zz_EasterEgg\MessiLoop\AndaPalla-002		61136
-	488620133	sfx_EnemyDeath-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterDeathSound\sfx_EnemyDeath-002		85182
+	488620133	sfx_EnemyDeath-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Minion\MinionDeathSound\sfx_EnemyDeath-002		85182
 	492906008	BossBombExplode-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\BossBombExplode-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Boss\BossBombExplode\BossBombExplode-003		59886
 	493648686	sfx_AttackWhoosh-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_AttackWhoosh-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\AttackLight\Whooshes\sfx_AttackWhoosh-002		23704
 	500772954	sfx_AttackLightLeather-006	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_AttackLightLeather-006_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\AttackLight\Leather\sfx_AttackLightLeather-006		23836
@@ -103,18 +110,21 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	557499391	sfx_AttackWhoosh-007	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_AttackWhoosh-007_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\AttackLight\Whooshes\sfx_AttackWhoosh-007		37690
 	558935191	sfx_TeroChirps-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_TeroChirps-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience\TeroChirps\sfx_TeroChirps-003		240064
 	561163404	sfx_AttackLightLeather-004	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_AttackLightLeather-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\AttackLight\Leather\sfx_AttackLightLeather-004		26560
-	561449835	sfx_EnemyDeath-009	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-009_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterDeathSound\sfx_EnemyDeath-009		50182
-	573337991	HolyWaterHeal-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\HolyWaterHeal-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PowerUps\Heal\HolyWaterHeal-002		318858
-	592914185	sfx_EnemyDeath-006	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-006_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterDeathSound\sfx_EnemyDeath-006		56508
-	600470384	BossScream-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\BossScream-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Boss\BossScream\BossScream-003		545186
-	617135192	HolyWaterHeal-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\HolyWaterHeal-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PowerUps\Heal\HolyWaterHeal-001		309174
+	561449835	sfx_EnemyDeath-009	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-009_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Minion\MinionDeathSound\sfx_EnemyDeath-009		50182
+	573337991	HolyWaterHeal-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\HolyWaterHeal-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PowerUps\DistancePowerUP\HolyWaterHeal-002		318858
+	574132023	BossScream-007	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\BossScream-007_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Boss\BossScream\BossScream-007		429232
+	592914185	sfx_EnemyDeath-006	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-006_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Minion\MinionDeathSound\sfx_EnemyDeath-006		56508
+	600470384	BossScream-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\BossScream-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Boss\BossScream-003		545186
+	617135192	HolyWaterHeal-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\HolyWaterHeal-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PowerUps\DistancePowerUP\HolyWaterHeal-001		309174
 	617323867	AndaPalla-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\AndaPalla-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\zz_EasterEgg\MessiLoop\AndaPalla-001		52082
+	625362846	BossChannel-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\BossChannel-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Boss\BossChannel\BossChannel-002		476560
 	644599723	EnemySpawn-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\EnemySpawn-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\EnemySpawn\EnemySpawn-001		72634
 	645381670	sfxAmbWhistlingWind-006	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfxAmbWhistlingWind-006_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience\WhistlingWind\sfxAmbWhistlingWind-006		338808
 	652995974	sfx_AttackWhoosh-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_AttackWhoosh-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\AttackLight\Whooshes\sfx_AttackWhoosh-001		19146
 	670544707	sfx_TeroChirps-004	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_TeroChirps-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience\TeroChirps\sfx_TeroChirps-004		116980
-	678097433	sfx_EnemyDeath-005	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-005_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterDeathSound\sfx_EnemyDeath-005		47088
+	678097433	sfx_EnemyDeath-005	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-005_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Minion\MinionDeathSound\sfx_EnemyDeath-005		47088
 	687300541	QmiraBobo-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\QmiraBobo-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\zz_EasterEgg\MessiLoop\QmiraBobo-002		81768
+	694474506	BossScream-006	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\BossScream-006_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Boss\BossScream\BossScream-006		331216
 	705112029	EnemySpawn-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\EnemySpawn-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\EnemySpawn\EnemySpawn-002		59264
 	714008522	BossBombExplode-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\BossBombExplode-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Boss\BossBombExplode\BossBombExplode-002		84114
 	718810468	MinionAttack-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\MinionAttack-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Minion\MinionAttack\MinionAttack-001		28654
@@ -122,7 +132,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	729115484	sfxAmbChimes-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfxAmbChimes-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience\Chimes\sfxAmbChimes-001		292340
 	731431475	sfx_AttackLightLeather-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_AttackLightLeather-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\AttackLight\Leather\sfx_AttackLightLeather-002		35178
 	733080944	sfx_MenuButtonPositive-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_MenuButtonPositive-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\sfx_MenuButtonPositive-001		7092
-	774116351	sfx_EnemyDeath-004	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterDeathSound\sfx_EnemyDeath-004		46744
+	774116351	sfx_EnemyDeath-004	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Minion\MinionDeathSound\sfx_EnemyDeath-004		46744
 	803274776	sfx_AttackWhoosh-004	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_AttackWhoosh-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\AttackLight\Whooshes\sfx_AttackWhoosh-004		39250
 	823869073	sfx_TeroChirps-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_TeroChirps-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience\TeroChirps\sfx_TeroChirps-001		672064
 	830078579	EnemySpawn-004	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\EnemySpawn-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\EnemySpawn\EnemySpawn-004		69536
@@ -131,13 +141,13 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	878060246	sfx_MenuButtonNegative	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_MenuButtonPositive-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\sfx_MenuButtonNegative		25746
 	882900243	Stage 2	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\Stage 2_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\BGM\Stage 2\Stage 2\Stage 2		7741504
 	901861362	SpitterAttack-004	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\SpitterAttack-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterAttack\SpitterAttack-004		64320
-	925581941	HolyWaterHeal-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\HolyWaterHeal-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PowerUps\Heal\HolyWaterHeal-003		370184
+	925581941	HolyWaterHeal-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\HolyWaterHeal-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PowerUps\DistancePowerUP\HolyWaterHeal-003		370184
 	955214238	BossBombExplode-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\BossBombExplode-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Boss\BossBombExplode\BossBombExplode-001		79052
 	959047584	MinionAttack-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\MinionAttack-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Minion\MinionAttack\MinionAttack-003		34514
 	999575354	MinionAttack-004	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\MinionAttack-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Minion\MinionAttack\MinionAttack-004		25976
 	1016925065	Hit2-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\Hit2-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\HitB\Hit2-003		15870
 	1018411725	SpitterAttack-003	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\SpitterAttack-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterAttack\SpitterAttack-003		61020
-	1029339992	sfx_EnemyDeath-011	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-011_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Spitter\SpitterDeathSound\sfx_EnemyDeath-011		39350
+	1029339992	sfx_EnemyDeath-011	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\sfx_EnemyDeath-011_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Minion\MinionDeathSound\sfx_EnemyDeath-011		39350
 	1054680427	Bobo-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\Bobo-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\zz_EasterEgg\MessiLoop\Bobo-002		39124
 	1064314843	Bobo-001	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\Bobo-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\zz_EasterEgg\MessiLoop\Bobo-001		41480
 	1066579968	Hit2-002	D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\SFX\Hit2-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hero\HitB\Hit2-002		17224

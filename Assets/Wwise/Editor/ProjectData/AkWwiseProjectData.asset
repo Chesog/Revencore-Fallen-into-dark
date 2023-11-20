@@ -393,7 +393,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 72cf8d0ae1cf3a448c0a900f11162b19
     GuidInternal: 
-    m_lastTime: -8585013662550713389
+    m_lastTime: -8585011165553169678
     List:
     - name: AmbienceChurchBell
       guid: 55601677396f0642b8d43dd273da1704
@@ -446,6 +446,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: StopAmbience
+      guid: 26e970689074294f9671186b38912666
+      id: 3264771457
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 72cf8d0ae1cf3a448c0a900f11162b19
+      - ElementName: StopAmbience
+        ObjectType: 3
+        guid: 26e970689074294f9671186b38912666
+      Path: Events\Default Work Unit\StopAmbience
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   - PhysicalPath: Events\Gameplay.wwu
     PathAndIcons:
     - ElementName: Events
@@ -759,8 +776,25 @@ MonoBehaviour:
     ParentPath: Events\UI
     guid: bf0976bf18e93249a3658589cb71e58b
     GuidInternal: 
-    m_lastTime: -8585026576277726682
+    m_lastTime: -8585012754970455966
     List:
+    - name: MenuMouseHover
+      guid: ad2c5bbc97dd69438a881d8c25a15c82
+      id: 3187462089
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: UI
+        ObjectType: 12
+        guid: bf0976bf18e93249a3658589cb71e58b
+      - ElementName: MenuMouseHover
+        ObjectType: 3
+        guid: ad2c5bbc97dd69438a881d8c25a15c82
+      Path: Events\UI\MenuMouseHover
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: MenuNegative
       guid: 2420efd29d077d4fad9381cc202eb6e4
       id: 1513208197
@@ -812,23 +846,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.267521
       minDuration: 0.267521
-    - name: MouseHover
-      guid: ad2c5bbc97dd69438a881d8c25a15c82
-      id: 3478063044
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: UI
-        ObjectType: 12
-        guid: bf0976bf18e93249a3658589cb71e58b
-      - ElementName: MouseHover
-        ObjectType: 3
-        guid: ad2c5bbc97dd69438a881d8c25a15c82
-      Path: Events\UI\MouseHover
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
     - name: StartGame
       guid: accb2d269a33004fbf5f805b32c447ae
       id: 1521187885

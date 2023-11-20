@@ -11,12 +11,16 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="249106614">
+		<SoundBank Id="1355168291" Language="SFX" Hash="2049105757">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<GameParameters>
+				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Menu\SFXVolume"/>
+				<GameParameter Id="2346531308" Name="MusicVolume" ObjectPath="\Game Parameters\Menu\MusicVolume"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="362769737">
+		<SoundBank Id="3161908922" Language="SFX" Hash="2135887073">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -145,6 +149,38 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="4279112603" Name="BossChannel" ObjectPath="\Events\Gameplay\BossChannel" DurationType="OneShot" DurationMin="4.9635" DurationMax="11.529292">
+					<IncludedMemoryFiles>
+						<File Id="169104995" Language="SFX">
+							<ShortName>BossChannel-001.wav</ShortName>
+							<Path>SFX\BossChannel-001_10C4C929.wem</Path>
+						</File>
+						<File Id="178967231" Language="SFX">
+							<ShortName>BossChannel-003.wav</ShortName>
+							<Path>SFX\BossChannel-003_10C4C929.wem</Path>
+						</File>
+						<File Id="203553019" Language="SFX">
+							<ShortName>BossChannel-005.wav</ShortName>
+							<Path>SFX\BossChannel-005_10C4C929.wem</Path>
+						</File>
+						<File Id="235305834" Language="SFX">
+							<ShortName>BossChannel-004.wav</ShortName>
+							<Path>SFX\BossChannel-004_10C4C929.wem</Path>
+						</File>
+						<File Id="625362846" Language="SFX">
+							<ShortName>BossChannel-002.wav</ShortName>
+							<Path>SFX\BossChannel-002_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1481017468" Name="BossDeath" ObjectPath="\Events\Gameplay\BossDeath" DurationType="OneShot" DurationMin="5.678354" DurationMax="5.678354">
+					<IncludedMemoryFiles>
+						<File Id="600470384" Language="SFX">
+							<ShortName>BossScream-003.wav</ShortName>
+							<Path>SFX\BossScream-003_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3361532464" Name="BossIdle" ObjectPath="\Events\Gameplay\BossIdle" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="32483774" Language="SFX">
@@ -181,7 +217,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1792029697" Name="BossScream" ObjectPath="\Events\Gameplay\BossScream" DurationType="OneShot" DurationMin="4.721229" DurationMax="5.817667">
+				<Event Id="1792029697" Name="BossScream" ObjectPath="\Events\Gameplay\BossScream" DurationType="OneShot" DurationMin="3.4495" DurationMax="5.817667">
 					<IncludedMemoryFiles>
 						<File Id="261366603" Language="SFX">
 							<ShortName>BossScream-002.wav</ShortName>
@@ -191,9 +227,13 @@
 							<ShortName>BossScream-001.wav</ShortName>
 							<Path>SFX\BossScream-001_10C4C929.wem</Path>
 						</File>
-						<File Id="600470384" Language="SFX">
-							<ShortName>BossScream-003.wav</ShortName>
-							<Path>SFX\BossScream-003_10C4C929.wem</Path>
+						<File Id="574132023" Language="SFX">
+							<ShortName>BossScream-007.wav</ShortName>
+							<Path>SFX\BossScream-007_10C4C929.wem</Path>
+						</File>
+						<File Id="694474506" Language="SFX">
+							<ShortName>BossScream-006.wav</ShortName>
+							<Path>SFX\BossScream-006_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -533,6 +573,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="3187462089" Name="MenuMouseHover" ObjectPath="\Events\UI\MenuMouseHover" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1513208197" Name="MenuNegative" ObjectPath="\Events\UI\MenuNegative" DurationType="OneShot" DurationMin="0.164646" DurationMax="0.17875">
 					<IncludedMemoryFiles>
 						<File Id="217243609" Language="SFX">
@@ -569,7 +610,6 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3478063044" Name="MouseHover" ObjectPath="\Events\UI\MouseHover" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="4144776676" Name="Play_BGM_AudioManager" ObjectPath="\Events\Default Work Unit\Play_BGM_AudioManager" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="159786757" Language="SFX">
@@ -669,6 +709,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="3264771457" Name="StopAmbience" ObjectPath="\Events\Default Work Unit\StopAmbience" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 			</IncludedEvents>
 			<StateGroups>
 				<StateGroup Id="2358111289" Name="Scene_State" ObjectPath="\States\Default Work Unit\Scene_State" GUID="{446B2B67-CD6A-4F64-AD4E-D57203B70EBD}">

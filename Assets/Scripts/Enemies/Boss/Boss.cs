@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 using UnityEngine.UI;
+using System.Diagnostics;
 
 public class Boss : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public class Boss : MonoBehaviour
 
         if (!_characterHealthComponent)
         {
-            Debug.LogError(message: $"{name}: (logError){nameof(_characterHealthComponent)} is null");
+            UnityEngine.Debug.LogError(message: $"{name}: (logError){nameof(_characterHealthComponent)} is null");
             enabled = false;
         }
         else
@@ -111,33 +112,37 @@ public class Boss : MonoBehaviour
     {
         if (_characterHealthComponent._health > 2 * _characterHealthComponent._maxHealth / 3)
         {
-            Debug.Log("Boss stage: 1");
+            UnityEngine.Debug.Log("Boss stage: 1");
             DropBombs();
             anim.Play("Boss_Roar");
             _cameraShake.StartCameraShake();
             PushPlayer();
+            AkSoundEngine.PostEvent("BossScream", gameObject);
         }
         else if (_characterHealthComponent._health > _characterHealthComponent._maxHealth / 3)
         {
-            Debug.Log("Boss stage: 2");
+            UnityEngine.Debug.Log("Boss stage: 2");
             anim.Play("Boss_Summoning");
             StartCoroutine(SpawnEnemy(_enemySpawnCooldown, _enemyPrefab, _playerData._player.transform));
             PushPlayer();
+            AkSoundEngine.PostEvent("BossChannel", gameObject);
         }
         else if (_characterHealthComponent._health > 0)
         {
-            Debug.Log("Boss stage: 3");
+            UnityEngine.Debug.Log("Boss stage: 3");
             anim.Play("Boss_RoarSumm");
             _cameraShake.StartCameraShake();
             DropBombs();
             StartCoroutine(SpawnEnemy(_enemySpawnCooldown - (_enemySpawnCooldown * 0.5f), _enemyPrefab,
                 _playerData._player.transform));
             PushPlayer();
+            AkSoundEngine.PostEvent("BossScream", gameObject);
         }
         else
         {
-            Debug.Log("Boss Defeated");
+            UnityEngine.Debug.Log("Boss Defeated");
             anim.Play("Boss_Death");
+            AkSoundEngine.PostEvent("BossDeath", gameObject);
             Destroy(gameObject, 1f);
             
         }
@@ -159,6 +164,7 @@ public class Boss : MonoBehaviour
 
     private void PushPlayer()
     {
+       
         _playerRb.AddForce(Vector3.left * _pushForce, ForceMode.Impulse);
     }
 
