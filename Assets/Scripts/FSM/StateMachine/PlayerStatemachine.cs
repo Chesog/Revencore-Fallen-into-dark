@@ -139,27 +139,39 @@ public class PlayerStatemachine : State_Machine
     private void OnPlayerPause()
     {
         if (!_playerComponent.isDead)
+        {
             SetState(_idleState);
+            _playerComponent.anim.SetInteger("CurrentAttack", 0);   
+        }
+
     }
 
     private void OnPlayerAttack(bool obj)
     {
         if (!_playerComponent.isDead)
         {
-            if (currentState == _attackState)
+            if (_playerComponent.isRanged_Attacking)
             {
-                SetState(_attackState1);
-                _playerComponent.anim.SetInteger("CurrentAttack", 2);
-            }
-            else if (currentState == _attackState1)
-            {
-                SetState(_attackState2);
-                _playerComponent.anim.SetInteger("CurrentAttack", 3);
+             OnplayerShoot();
+             _playerComponent.anim.SetInteger("CurrentAttack", 0);   
             }
             else
             {
-                SetState(_attackState);
-                _playerComponent.anim.SetInteger("CurrentAttack", 1);
+                if (currentState == _attackState)
+                {
+                    SetState(_attackState1);
+                    _playerComponent.anim.SetInteger("CurrentAttack", 2);
+                }
+                else if (currentState == _attackState1)
+                {
+                    SetState(_attackState2);
+                    _playerComponent.anim.SetInteger("CurrentAttack", 3);
+                }
+                else
+                {
+                    SetState(_attackState);
+                    _playerComponent.anim.SetInteger("CurrentAttack", 1);
+                }
             }
         }
     }
@@ -167,7 +179,11 @@ public class PlayerStatemachine : State_Machine
     private void OnPlayerMove(Vector2 obj)
     {
         if (!_playerComponent.isDead)
+        {
             SetState(_moveState);
+            _playerComponent.anim.SetInteger("CurrentAttack", 0);   
+        }
+
     }
 
     protected override State GetInitialState()
