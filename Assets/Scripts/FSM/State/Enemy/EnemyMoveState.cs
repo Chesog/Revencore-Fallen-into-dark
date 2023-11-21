@@ -24,7 +24,7 @@ public class EnemyMoveState : EnemyBaseState
             if (distance <= enemy.lookRad || distance <= enemy.stopDistance)
                 FaceTarget();
 
-            playMoveAnimation();
+           playMoveAnimation();
         }
     }
 
@@ -68,12 +68,13 @@ public class EnemyMoveState : EnemyBaseState
             enemy.transform.forward = Vector3.forward;
         else if (enemy.target.position.x > enemy.transform.position.x)
             enemy.transform.forward = Vector3.back;
+   
     }
 
     private void playMoveAnimation()
     {
-        //enemy.anim.Play(enemy.moveAnimationName);
-        enemy.anim.SetFloat("Movement",enemy.movement.magnitude - enemy.movement.y);
+        //enemy.anim.SetFloat("Movement",enemy.movement.magnitude - enemy.movement.y);
+        enemy.anim.SetFloat("Movement",1);
     }
 
     public override void AddStateTransitions(string transitionName, State transitionState)
