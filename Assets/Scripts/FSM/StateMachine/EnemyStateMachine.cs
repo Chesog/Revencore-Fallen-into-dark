@@ -43,6 +43,7 @@ public class EnemyStateMachine : State_Machine
         enemyInput.OnEnemyAttack += OnEnemyAttack;
         enemyInput.OnEnemyHit += OnEnemyHit;
         enemyInput.OnGamePause += OnGamePause;
+        EnemiesManager.OnGamePause += OnGamePause;
 
         enemy.character_Health_Component.OnDecrease_Health += OnEnemyHit;
         enemy.character_Health_Component.OnInsufficient_Health += OnInsuficientHealth;
@@ -130,6 +131,7 @@ public class EnemyStateMachine : State_Machine
         enemyInput.OnEnemyAttack -= OnEnemyAttack;
         enemyInput.OnEnemyHit -= OnEnemyHit;
         enemyInput.OnGamePause -= OnGamePause;
+        EnemiesManager.OnGamePause -= OnGamePause;
     }
 
     private void OnDrawGizmos()

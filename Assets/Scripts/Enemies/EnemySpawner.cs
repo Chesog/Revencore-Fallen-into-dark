@@ -30,48 +30,70 @@ public class EnemySpawner : MonoBehaviour
     private int _maxDistanceEnemies;
     private int _count = 0;
     private int _currentRoom = 0;
+    private bool pause = false;
 
     #endregion
 
     #region UNITY_CALLS
 
+    private void Awake()
+    {
+        _roomManager.OnPause += EnablePause;
+        _roomManager.OnUnPause += DisablePause;
+    }
+
     private void Start()
     {
         _maxMeleeEnemies = _enemiesManager._room1NecessaryKills;
         _maxDistanceEnemies = _enemiesManager._room3NecessaryKills;
-
     }
-    
+
     private void Update()
     {
         int newRoom = _roomManager.GetCurrentRoom();
         if (newRoom != _currentRoom)
         {
             _currentRoom = newRoom;
-            _count = 0; 
+            _count = 0;
 
             if (_currentRoom == 1)
             {
-                StartCoroutine(SpawnEnemy(_meleeInterval, _meleeEnemyPrefab, _maxMeleeEnemies, _room1SpawnPositions));
+                StartCoroutine(
+                    SpawnEnemy(_meleeInterval, _meleeEnemyPrefab, _maxMeleeEnemies, _room1SpawnPositions));
             }
             else if (_currentRoom == 3)
             {
-                StartCoroutine(SpawnEnemy(_distanceInterval, _distanceEnemyPrefab, _maxDistanceEnemies, _room2SpawnPositions));
+                StartCoroutine(SpawnEnemy(_distanceInterval, _distanceEnemyPrefab, _maxDistanceEnemies,
+                    _room2SpawnPositions));
             }
         }
     }
 
     private IEnumerator SpawnEnemy(float interval, GameObject enemy, int maxEnemies, Transform[] spawners)
     {
-        yield return new WaitForSeconds(interval);
+        while (_count < maxEnemies)
+        {
+            yield return new WaitForSeconds(interval);
 
-        Transform randomSpawnPos = spawners[Random.Range(0, spawners.Length)];
+            if (!pause) 
+            {
+                Transform randomSpawnPos = spawners[Random.Range(0, spawners.Length)];
 
-        GameObject newEnemy = Instantiate(enemy, randomSpawnPos.position, Quaternion.identity);
-        _count++;
+                Instantiate(enemy, randomSpawnPos.position, Quaternion.identity);
+                _count++;
+            }
+        }
+    }
 
-        if (_count < maxEnemies)
-            StartCoroutine(SpawnEnemy(interval, enemy, maxEnemies, spawners));
+
+    private void EnablePause()
+    {
+        pause = true;
+    }
+
+    private void DisablePause()
+    {
+        pause = false;
     }
 
     #endregion

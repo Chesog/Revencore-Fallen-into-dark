@@ -10,6 +10,7 @@ public class EnemiesManager : MonoBehaviour
     #region EVENTS
 
     public static event Action OnNoEnemies;
+    public static event Action OnGamePause;
 
     #endregion
 
@@ -100,6 +101,7 @@ public class EnemiesManager : MonoBehaviour
         if (_winningPanel != null)
         {
             _winningPanel.SetActive(true);
+            OnGamePause?.Invoke();
         }
     }
 
