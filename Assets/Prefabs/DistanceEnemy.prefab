@@ -38,7 +38,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079312061525422309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.17, z: 0}
+  m_LocalPosition: {x: 0, y: 3.7, z: 0}
   m_LocalScale: {x: 0.17, y: 0.17, z: 0.17}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -46,7 +46,7 @@ Transform:
   - {fileID: 5398486277578416916}
   - {fileID: 7341089523833600507}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3686249587914454159
 MonoBehaviour:
@@ -78,6 +78,8 @@ MonoBehaviour:
   timeBetweenAttacks: 6
   destroyTime: 0
   destroyTimer: 0
+  avoidanceRadius: 5
+  avoidanceForce: 5
   ready_To_Attack: 0
   deathLoop: 0
   isHit: 0
@@ -192,6 +194,8 @@ MonoBehaviour:
   timeBetweenAttacks: 6
   destroyTime: 0
   destroyTimer: 0
+  avoidanceRadius: 5
+  avoidanceForce: 5
   ready_To_Attack: 0
   deathLoop: 0
   isHit: 0
@@ -347,8 +351,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 11.735407, y: 16.386223, z: 3.1074324}
-  m_Center: {x: -0.5427035, y: 0.096343756, z: 0.08821353}
+  m_Size: {x: 11.735407, y: 18.996729, z: 3.1074324}
+  m_Center: {x: -0.5427038, y: -1.2089164, z: 0.08821347}
 --- !u!95 &4159769894979522345
 Animator:
   serializedVersion: 5
