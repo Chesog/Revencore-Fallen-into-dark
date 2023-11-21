@@ -13,8 +13,8 @@ public class RoomManager : MonoBehaviour
     #region EVENTS
 
     public static event Action OnNewRoom;
-    public event Action OnPause;
-    public event Action OnUnPause;
+    public static event Action OnPause;
+    public static event Action OnUnPause;
 
     #endregion
 

@@ -17,6 +17,7 @@ public class PlayerStatemachine : State_Machine
     private float invulneravilityTime = 1.5f;
     private float rangedMaxTime = 10.0f;
     private bool attackCalled;
+    private bool _pause = false;
     private IEnumerator resetRangedAttack;
     
 
@@ -102,10 +103,17 @@ public class PlayerStatemachine : State_Machine
         _playerComponent.character_Health_Component.OnInsufficient_Health += OnplayerInsufficientHeath;
         _playerComponent.character_Health_Component.OnDecrease_Health += OnplayerDecreaseHeath;
 
+        RoomManager.OnUnPause += OnPlayerUnPause;
+        
         resetRangedAttack = ResetAttack();
         attackCalled = false;
 
         base.OnEnable();
+    }
+
+    private void OnPlayerUnPause()
+    {
+        _pause = false;
     }
 
     private void OnplayerShoot()
@@ -140,6 +148,7 @@ public class PlayerStatemachine : State_Machine
     {
         if (!_playerComponent.isDead)
         {
+            _pause = true;
             SetState(_idleState);
             _playerComponent.anim.SetInteger("CurrentAttack", 0);   
         }
@@ -148,7 +157,7 @@ public class PlayerStatemachine : State_Machine
 
     private void OnPlayerAttack(bool obj)
     {
-        if (!_playerComponent.isDead)
+        if (!_playerComponent.isDead && !_pause)
         {
             if (_playerComponent.isRanged_Attacking)
             {
@@ -178,7 +187,7 @@ public class PlayerStatemachine : State_Machine
 
     private void OnPlayerMove(Vector2 obj)
     {
-        if (!_playerComponent.isDead)
+        if (!_playerComponent.isDead && !_pause)
         {
             SetState(_moveState);
             _playerComponent.anim.SetInteger("CurrentAttack", 0);   
@@ -208,5 +217,7 @@ public class PlayerStatemachine : State_Machine
 
         _playerComponent.character_Health_Component.OnInsufficient_Health -= OnplayerInsufficientHeath;
         _playerComponent.character_Health_Component.OnDecrease_Health -= OnplayerDecreaseHeath;
+        
+        RoomManager.OnUnPause -= OnPlayerUnPause;
     }
 }

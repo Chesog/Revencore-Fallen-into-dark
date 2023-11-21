@@ -26,8 +26,8 @@ public class EnemyInputManager : MonoBehaviour
     private void OnEnable()
     {
         roomManager = FindObjectOfType<RoomManager>();
-        roomManager.OnPause += OnPause;
-        roomManager.OnUnPause += OnUnPause;
+        RoomManager.OnPause += OnPause;
+        RoomManager.OnUnPause += OnUnPause;
         EnemiesManager.OnGamePause += OnPause;
     }
     
@@ -77,8 +77,8 @@ public class EnemyInputManager : MonoBehaviour
     private void OnDestroy()
     {
         OnEnemyDestroy?.Invoke();
-        roomManager.OnPause -= OnPause;
-        roomManager.OnUnPause -= OnUnPause;
+        RoomManager.OnPause -= OnPause;
+        RoomManager.OnUnPause -= OnUnPause;
         EnemiesManager.OnGamePause -= OnPause;
     }
 }

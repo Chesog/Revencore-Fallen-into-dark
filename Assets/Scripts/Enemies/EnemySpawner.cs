@@ -38,8 +38,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
-        _roomManager.OnPause += EnablePause;
-        _roomManager.OnUnPause += DisablePause;
+        RoomManager.OnPause += EnablePause;
+        RoomManager.OnUnPause += DisablePause;
     }
 
     private void Start()
@@ -75,7 +75,7 @@ public class EnemySpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(interval);
 
-            if (!pause) 
+            if (!pause)
             {
                 Transform randomSpawnPos = spawners[Random.Range(0, spawners.Length)];
 
@@ -85,6 +85,15 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        RoomManager.OnPause -= EnablePause;
+        RoomManager.OnUnPause -= DisablePause;
+    }
+
+    #endregion
+
+    #region PRIVATE_METHODS
 
     private void EnablePause()
     {
