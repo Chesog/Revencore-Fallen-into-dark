@@ -217,6 +217,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &211732892 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6551144963700660661, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
+  m_PrefabInstance: {fileID: 749315716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &591937698
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +279,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 316016421164244945, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 316016421164244945, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 591937699}
+    - target: {fileID: 316016421164244945, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 316016421164244945, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 316016421164244945, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Menu_Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 759810205948640298, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 749315719}
+    - target: {fileID: 759810205948640298, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GotoPage
+      objectReference: {fileID: 0}
     - target: {fileID: 1251574428684517957, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -284,19 +317,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1272617799988767538, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1272617799988767538, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 591937699}
+      objectReference: {fileID: 749315719}
     - target: {fileID: 1272617799988767538, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
+      value: GotoPage
       objectReference: {fileID: 0}
     - target: {fileID: 1272617799988767538, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MainMenu, Assembly-CSharp
+      value: InstructionsManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1272617799988767538, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -513,6 +546,7 @@ MonoBehaviour:
   - {fileID: 749315722}
   - {fileID: 749315721}
   - {fileID: 749315720}
+  - {fileID: 211732892}
   creditsScene: 1
 --- !u!1 &749315720 stripped
 GameObject:

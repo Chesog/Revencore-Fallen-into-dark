@@ -807,6 +807,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &733943163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6551144963700660661, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
+  m_PrefabInstance: {fileID: 845267637}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &753337992 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 331883197162838978, guid: ad3bef434bf708748980fa5befdc5dd6, type: 3}
@@ -851,6 +856,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 316016421164244945, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1723761276}
+    - target: {fileID: 759810205948640298, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1723761276}
     - target: {fileID: 1251574428684517957, guid: 149d428bf512a1e4683d02b3f5f4cd31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1390,6 +1403,8 @@ MonoBehaviour:
   - {fileID: 845267641}
   - {fileID: 845267640}
   - {fileID: 845267639}
+  - {fileID: 733943163}
+  creditsScene: 0
 --- !u!1 &1811220901
 GameObject:
   m_ObjectHideFlags: 0
