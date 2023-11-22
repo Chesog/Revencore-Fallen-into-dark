@@ -34,6 +34,7 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private Image _arrowImage;
     [SerializeField] private string _playerTag = "Player";
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject optionsMenu;
     [SerializeField] private GameObject _losePanel;
     [SerializeField] private PlayerInputManager _playerInputManager;
     [SerializeField] private Player_Data_Source _playerData;
@@ -130,6 +131,7 @@ public class RoomManager : MonoBehaviour
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
+        optionsMenu.SetActive(false);
         pause = true;
         OnPause?.Invoke();
     }
@@ -137,6 +139,7 @@ public class RoomManager : MonoBehaviour
     public void UnPauseGame()
     {
         pauseMenu.SetActive(false);
+        optionsMenu.SetActive(false);
         pause = false;
         OnUnPause?.Invoke();
     }

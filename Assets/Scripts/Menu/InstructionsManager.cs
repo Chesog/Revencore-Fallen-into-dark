@@ -7,6 +7,7 @@ public class InstructionsManager : MonoBehaviour
 {
     [SerializeField] private GameObject instructionsMenu;
     [SerializeField] private GameObject creditsMenu;
+    [SerializeField] private GameObject OptionsMenu;
     [SerializeField] private GameObject[] instructions;
     [SerializeField] private GameObject[] credits;
 
@@ -39,6 +40,20 @@ public class InstructionsManager : MonoBehaviour
     public void ShowInstructionsMenu()
     {
         instructionsMenu.SetActive(true);
+    }
+
+    public void ToggleOptions()
+    {
+        if (OptionsMenu.activeInHierarchy)
+        {
+            instructionsMenu.SetActive(true);
+            OptionsMenu.SetActive(false);
+        }
+        else
+        {
+            instructionsMenu.SetActive(false);
+            OptionsMenu.SetActive(true);
+        }
     }
 
     public void ShowCreditsMenu()
