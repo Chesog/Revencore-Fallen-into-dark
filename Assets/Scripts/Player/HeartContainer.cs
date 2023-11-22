@@ -12,6 +12,16 @@ public class HeartContainer : MonoBehaviour
     [SerializeField] private Image heartContainer;
     [SerializeField] private Sprite[] heartStates;
 
+    private void Awake()
+    {
+        EnemiesManager.OnFinalVideo += TurnOffHearts;
+    }
+
+    private void TurnOffHearts()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void SetHeartState(HeartStates newStates)
     {
         currentState = newStates;
@@ -42,5 +52,10 @@ public class HeartContainer : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
+
+    private void OnDestroy()
+    {
+        EnemiesManager.OnFinalVideo -= TurnOffHearts;
     }
 }

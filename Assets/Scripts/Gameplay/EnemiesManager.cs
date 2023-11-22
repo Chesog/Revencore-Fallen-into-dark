@@ -11,6 +11,7 @@ public class EnemiesManager : MonoBehaviour
 
     public static event Action OnNoEnemies;
     public static event Action OnGamePause;
+    public static event Action OnFinalVideo;
 
     #endregion
 
@@ -19,6 +20,7 @@ public class EnemiesManager : MonoBehaviour
     [SerializeField] private GameObject _winningPanel;
     [SerializeField] private string _enemyTag = "Enemy";
     [SerializeField] private int _kills = 0;
+    [SerializeField] private VideoHandeler _videoHandeler;
 
     #endregion
 
@@ -43,10 +45,11 @@ public class EnemiesManager : MonoBehaviour
     {
         EnemyInputManager.OnEnemyDestroy += IncreaseKill;
         DistanceEnemy.OnDestroyed += IncreaseKill;
-        Boss.OnDestroyed += ShowVictoryPanel;
+        Boss.OnDestroyed += StartShowVictoryPanel;
         RoomManager.OnNewRoom += ResetKill;
         RoomManager.OnNewRoom += IncreaseCurrentRoom;
     }
+
 
     private void Start()
     {
@@ -96,12 +99,23 @@ public class EnemiesManager : MonoBehaviour
         _currentRoom++;
     }
 
-    private void ShowVictoryPanel()
+    private void StartShowVictoryPanel()
+    {
+        StartCoroutine(ShowVictoryPanel());    }
+    private IEnumerator ShowVictoryPanel()
     {
         if (_winningPanel != null)
-        {
-            _winningPanel.SetActive(true);
+        { 
+            OnFinalVideo?.Invoke();
             OnGamePause?.Invoke();
+            _videoHandeler.PlayVideo();
+            
+            while (!_videoHandeler.IsPaused())
+            {
+                yield return null;
+            }
+
+            _winningPanel.SetActive(true);
         }
     }
 

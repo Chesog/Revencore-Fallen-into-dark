@@ -90,6 +90,7 @@ public class Boss : MonoBehaviour
     private void OnDestroy()
     {
         _characterHealthComponent.OnHealthChanged -= UpdateHealthBar;
+        _sliderParent.SetActive(false);
         OnDestroyed?.Invoke();
     }
 
