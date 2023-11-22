@@ -54,6 +54,7 @@ public class RoomManager : MonoBehaviour
     private void OnInsuficientHealth()
     {
         _losePanel.SetActive(true);
+        OnPause?.Invoke();
     }
 
     private void Start()

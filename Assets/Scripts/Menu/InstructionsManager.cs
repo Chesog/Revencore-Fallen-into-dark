@@ -41,6 +41,10 @@ public class InstructionsManager : MonoBehaviour
     {
         instructionsMenu.SetActive(true);
     }
+    public void HideInstructionsMenu()
+    {
+        instructionsMenu.SetActive(false);
+    }
 
     public void ToggleOptions()
     {

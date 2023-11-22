@@ -41,4 +41,9 @@ public class VideoHandeler : MonoBehaviour
         gameObject.SetActive(false);
         StopVideo();
     }
+
+    public bool IsPaused()
+    {
+        return _videoPlayer.isPaused;
+    }
 }
