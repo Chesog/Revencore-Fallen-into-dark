@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2030,7 +2030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2598417426725671680, guid: 3c458963dcbc2aa41a079183ece9d8aa, type: 3}
       propertyPath: triggerList.Array.data[0]
-      value: 1281810935
+      value: 1151176110
       objectReference: {fileID: 0}
     - target: {fileID: 2598417426725671680, guid: 3c458963dcbc2aa41a079183ece9d8aa, type: 3}
       propertyPath: triggerList.Array.data[1]
@@ -2038,7 +2038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2598417426725671680, guid: 3c458963dcbc2aa41a079183ece9d8aa, type: 3}
       propertyPath: unloadTriggerList.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2598417426725671680, guid: 3c458963dcbc2aa41a079183ece9d8aa, type: 3}
       propertyPath: unloadTriggerList.Array.data[0]
