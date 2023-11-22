@@ -18,14 +18,14 @@ public class VideoHandeler : MonoBehaviour
 
     public void PlayVideo()
     {
-        imageAlpha.a = 1.0f;
+        imageAlpha = new Color(1,1,1,1);
         _videoPlayerImage.color = imageAlpha;
         _videoPlayer.Play();
     }
 
     public void StopVideo()
     {
-        imageAlpha.a = 0.0f;
+        imageAlpha = new Color(1,1,1,0);
         _videoPlayerImage.color = imageAlpha;
         _videoPlayer.Stop();
     }
