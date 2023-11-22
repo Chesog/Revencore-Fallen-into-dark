@@ -8,6 +8,8 @@ using UnityEngine.Video;
 public class VideoHandeler : MonoBehaviour
 {
     [SerializeField] private VideoPlayer _videoPlayer;
+    [SerializeField] private RawImage _videoPlayerImage;
+    private Color imageAlpha;
 
     private void OnEnable()
     {
@@ -16,12 +18,15 @@ public class VideoHandeler : MonoBehaviour
 
     public void PlayVideo()
     {
+        imageAlpha.a = 1.0f;
+        _videoPlayerImage.color = imageAlpha;
         _videoPlayer.Play();
     }
 
     public void StopVideo()
     {
-        //gameObject.SetActive(false);
+        imageAlpha.a = 0.0f;
+        _videoPlayerImage.color = imageAlpha;
         _videoPlayer.Stop();
     }
 

@@ -124,3 +124,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _videoPlayer: {fileID: 6845408101095475213}
+  _videoPlayerImage: {fileID: 8010534892155431761}
