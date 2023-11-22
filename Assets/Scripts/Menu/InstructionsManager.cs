@@ -10,14 +10,20 @@ public class InstructionsManager : MonoBehaviour
     [SerializeField] private GameObject OptionsMenu;
     [SerializeField] private GameObject[] instructions;
     [SerializeField] private GameObject[] credits;
+    [SerializeField] private bool creditsScene;
 
     private void Start()
     {
-        instructionsMenu.SetActive(false);
-        creditsMenu.SetActive(false);
+        if (instructionsMenu != null)
+            instructionsMenu.SetActive(false);
+        if (creditsMenu != null)
+            creditsMenu.SetActive(false);
+        
+        if (creditsScene)
+            creditsMenu.SetActive(true);
     }
 
-    public void ChangePage(int value,GameObject[] target)
+    public void ChangePage(int value, GameObject[] target)
     {
         for (int i = 0; i < target.Length; i++)
         {
@@ -27,14 +33,15 @@ public class InstructionsManager : MonoBehaviour
                 target[i].SetActive(false);
         }
     }
+
     public void GoToNextPage(int pageIndex)
     {
-        ChangePage(pageIndex,instructions);
+        ChangePage(pageIndex, instructions);
     }
 
     public void GotoPage(int pageIndex)
     {
-        ChangePage(pageIndex,credits);
+        ChangePage(pageIndex, credits);
     }
 
     public void ShowInstructionsMenu()
