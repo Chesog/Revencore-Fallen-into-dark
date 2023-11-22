@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 483bbf0d0ac8454290ad646b1a846910
     GuidInternal: 
-    m_lastTime: -8585034096903549309
+    m_lastTime: -8585038764237355814
     List: []
   - PhysicalPath: Virtual Acoustics\Factory Acoustic Textures.wwu
     PathAndIcons:
@@ -37,7 +37,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Factory Acoustic Textures
     guid: 6b663d46a83ca54f8b4a5fef12b883f6
     GuidInternal: 
-    m_lastTime: -8585034096903549309
+    m_lastTime: -8585038764237355814
     List:
     - name: Acoustic_Banner
       guid: f2532d2fccda8e408b8898b1b52a26d6
@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 2afb1dcd6fec2a4688f408430ae85ff5
     GuidInternal: 
-    m_lastTime: -8585034096908749214
+    m_lastTime: -8585010315376519326
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -319,6 +319,40 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: Music
+      guid: 6f26a1a6caf1434e9ae31157b519e0ce
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2afb1dcd6fec2a4688f408430ae85ff5
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 6f26a1a6caf1434e9ae31157b519e0ce
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music
+    - name: SFX
+      guid: 69a053d6c534244fad980f7c06d1799a
+      id: 393239870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2afb1dcd6fec2a4688f408430ae85ff5
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: SFX
+        ObjectType: 2
+        guid: 69a053d6c534244fad980f7c06d1799a
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -331,7 +365,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: b643be897d840946a3ad05bc8fe29e1d
     GuidInternal: 
-    m_lastTime: -8585027549265427491
+    m_lastTime: -8585028910419353152
     List:
     - name: Main
       guid: a9807ba26ab22948bfad5687f5dd5ddf
@@ -359,8 +393,25 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 72cf8d0ae1cf3a448c0a900f11162b19
     GuidInternal: 
-    m_lastTime: -8585032323984907278
+    m_lastTime: -8585009685130802165
     List:
+    - name: AmbienceChurchBell
+      guid: 55601677396f0642b8d43dd273da1704
+      id: 3088469391
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 72cf8d0ae1cf3a448c0a900f11162b19
+      - ElementName: AmbienceChurchBell
+        ObjectType: 3
+        guid: 55601677396f0642b8d43dd273da1704
+      Path: Events\Default Work Unit\AmbienceChurchBell
+      maxAttenuation: 0
+      maxDuration: 5.141979
+      minDuration: 5.141979
     - name: AmbiencePlay
       guid: 1f7ea17783b7034ca0cbcb037d94321b
       id: 1305708715
@@ -378,6 +429,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: MusicMute
+      guid: 5af680f1df92c045b7a5403298671fc6
+      id: 153626945
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 72cf8d0ae1cf3a448c0a900f11162b19
+      - ElementName: MusicMute
+        ObjectType: 3
+        guid: 5af680f1df92c045b7a5403298671fc6
+      Path: Events\Default Work Unit\MusicMute
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MusicUnMute
+      guid: 6727e0d1d2f56d4c97c31d0012790c69
+      id: 2098179344
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 72cf8d0ae1cf3a448c0a900f11162b19
+      - ElementName: MusicUnMute
+        ObjectType: 3
+        guid: 6727e0d1d2f56d4c97c31d0012790c69
+      Path: Events\Default Work Unit\MusicUnMute
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_BGM_AudioManager
       guid: 70ded58bcd3c5c4694c4c66e8ea55583
       id: 4144776676
@@ -395,6 +480,57 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: SFXMute
+      guid: 1dae1790627f02438ca852ae8df9f0a0
+      id: 1264305561
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 72cf8d0ae1cf3a448c0a900f11162b19
+      - ElementName: SFXMute
+        ObjectType: 3
+        guid: 1dae1790627f02438ca852ae8df9f0a0
+      Path: Events\Default Work Unit\SFXMute
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: SFXUnMute
+      guid: 4b2a728db84d5a43a805aeda083297bb
+      id: 4069662840
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 72cf8d0ae1cf3a448c0a900f11162b19
+      - ElementName: SFXUnMute
+        ObjectType: 3
+        guid: 4b2a728db84d5a43a805aeda083297bb
+      Path: Events\Default Work Unit\SFXUnMute
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: StopAmbience
+      guid: 26e970689074294f9671186b38912666
+      id: 3264771457
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 72cf8d0ae1cf3a448c0a900f11162b19
+      - ElementName: StopAmbience
+        ObjectType: 3
+        guid: 26e970689074294f9671186b38912666
+      Path: Events\Default Work Unit\StopAmbience
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   - PhysicalPath: Events\Gameplay.wwu
     PathAndIcons:
     - ElementName: Events
@@ -406,7 +542,7 @@ MonoBehaviour:
     ParentPath: Events\Gameplay
     guid: 74b644f45f961a45a6daf86056789653
     GuidInternal: 
-    m_lastTime: -8585016785849107540
+    m_lastTime: -8585010315376539314
     List:
     - name: BossBombExplode
       guid: 1184ea972c6c414cae4074d7d370ed9b
@@ -442,6 +578,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: BossChannel
+      guid: f7fa4034bc916d40930b74aa53dc2d13
+      id: 4279112603
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Gameplay
+        ObjectType: 12
+        guid: 74b644f45f961a45a6daf86056789653
+      - ElementName: BossChannel
+        ObjectType: 3
+        guid: f7fa4034bc916d40930b74aa53dc2d13
+      Path: Events\Gameplay\BossChannel
+      maxAttenuation: 0
+      maxDuration: 11.529292
+      minDuration: 4.9635
+    - name: BossDeath
+      guid: c81499c5a714614ab4c9f09ead85c4e1
+      id: 1481017468
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Gameplay
+        ObjectType: 12
+        guid: 74b644f45f961a45a6daf86056789653
+      - ElementName: BossDeath
+        ObjectType: 3
+        guid: c81499c5a714614ab4c9f09ead85c4e1
+      Path: Events\Gameplay\BossDeath
+      maxAttenuation: 0
+      maxDuration: 5.678354
+      minDuration: 5.678354
     - name: BossIdle
       guid: c0b708b7bb9b7e4eb33d0fe14f44b5df
       id: 3361532464
@@ -475,7 +645,7 @@ MonoBehaviour:
       Path: Events\Gameplay\BossScream
       maxAttenuation: 0
       maxDuration: 5.817667
-      minDuration: 4.721229
+      minDuration: 3.4495
     - name: EnemyMinionAttack
       guid: 36f82844ab79984ea24effbe064e269b
       id: 3685648097
@@ -491,8 +661,8 @@ MonoBehaviour:
         guid: 36f82844ab79984ea24effbe064e269b
       Path: Events\Gameplay\EnemyMinionAttack
       maxAttenuation: 0
-      maxDuration: 0.358854
-      minDuration: 0.269917
+      maxDuration: 0.858854
+      minDuration: 0.769917
     - name: EnemyMinionDeath
       guid: 989ccf3e9b53c641bca6a39a52c24dbb
       id: 823102085
@@ -541,9 +711,9 @@ MonoBehaviour:
         ObjectType: 3
         guid: bd79030284a5b5429e6d9e9701ed0029
       Path: Events\Gameplay\EnemySpitterAttack
-      maxAttenuation: 0
-      maxDuration: 0.323388
-      minDuration: 0.263808
+      maxAttenuation: 100
+      maxDuration: 0.747521
+      minDuration: 0.609667
     - name: EnemySpitterDeath
       guid: 0d93b648d5df9f49990404b4998d0695
       id: 1244705436
@@ -629,6 +799,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.408188
       minDuration: 0.244521
+    - name: HeroKickHit
+      guid: 267475c875baf54da6674118b9f52e15
+      id: 3939754330
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Gameplay
+        ObjectType: 12
+        guid: 74b644f45f961a45a6daf86056789653
+      - ElementName: HeroKickHit
+        ObjectType: 3
+        guid: 267475c875baf54da6674118b9f52e15
+      Path: Events\Gameplay\HeroKickHit
+      maxAttenuation: 0
+      maxDuration: 0.17875
+      minDuration: 0.164646
     - name: PlayerHit
       guid: 27a259fb0bfea34883f7b0b4e3ecb141
       id: 3831688773
@@ -691,8 +878,25 @@ MonoBehaviour:
     ParentPath: Events\UI
     guid: bf0976bf18e93249a3658589cb71e58b
     GuidInternal: 
-    m_lastTime: -8585027549320181690
+    m_lastTime: -8585010315376529325
     List:
+    - name: MenuMouseHover
+      guid: ad2c5bbc97dd69438a881d8c25a15c82
+      id: 3187462089
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: UI
+        ObjectType: 12
+        guid: bf0976bf18e93249a3658589cb71e58b
+      - ElementName: MenuMouseHover
+        ObjectType: 3
+        guid: ad2c5bbc97dd69438a881d8c25a15c82
+      Path: Events\UI\MenuMouseHover
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: MenuNegative
       guid: 2420efd29d077d4fad9381cc202eb6e4
       id: 1513208197
@@ -744,23 +948,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.267521
       minDuration: 0.267521
-    - name: MouseHover
-      guid: ad2c5bbc97dd69438a881d8c25a15c82
-      id: 3478063044
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: UI
-        ObjectType: 12
-        guid: bf0976bf18e93249a3658589cb71e58b
-      - ElementName: MouseHover
-        ObjectType: 3
-        guid: ad2c5bbc97dd69438a881d8c25a15c82
-      Path: Events\UI\MouseHover
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
     - name: StartGame
       guid: accb2d269a33004fbf5f805b32c447ae
       id: 1521187885
@@ -790,7 +977,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 2641e7ccd4b06240b617af7982998bce
     GuidInternal: 
-    m_lastTime: -8585034096363577189
+    m_lastTime: -8585035243897629318
     List:
     - name: Zone
       guid: 729a1f1e8521214594965d25255b7301
@@ -806,6 +993,47 @@ MonoBehaviour:
         ObjectType: 13
         guid: 729a1f1e8521214594965d25255b7301
       Path: Game Parameters\Default Work Unit\Zone
+  - PhysicalPath: Game Parameters\Menu.wwu
+    PathAndIcons:
+    - ElementName: Game Parameters
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Menu
+      ObjectType: 12
+      guid: 2d735d5a6ba95845a07760ca48e27ecc
+    ParentPath: Game Parameters\Menu
+    guid: 2d735d5a6ba95845a07760ca48e27ecc
+    GuidInternal: 
+    m_lastTime: -8585010315376529325
+    List:
+    - name: MusicVolume
+      guid: 09890059f8f704469fbbf904fc7ce585
+      id: 2346531308
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Menu
+        ObjectType: 12
+        guid: 2d735d5a6ba95845a07760ca48e27ecc
+      - ElementName: MusicVolume
+        ObjectType: 13
+        guid: 09890059f8f704469fbbf904fc7ce585
+      Path: Game Parameters\Menu\MusicVolume
+    - name: SFXVolume
+      guid: b820aef1f8518f489d9e89a93e93769a
+      id: 988953028
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Menu
+        ObjectType: 12
+        guid: 2d735d5a6ba95845a07760ca48e27ecc
+      - ElementName: SFXVolume
+        ObjectType: 13
+        guid: b820aef1f8518f489d9e89a93e93769a
+      Path: Game Parameters\Menu\SFXVolume
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -818,7 +1046,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: a014d6473f23ba49bb5e3296f8ec57a4
     GuidInternal: 
-    m_lastTime: -8585014291859855017
+    m_lastTime: -8585010315361851827
     List:
     - name: Scene_State
       guid: 672b6b446acd644fad4ed57203b70ebd
@@ -1012,7 +1240,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 43c5d1459c5159409ceed5cafd23ab7c
     GuidInternal: 
-    m_lastTime: -8585034096903559314
+    m_lastTime: -8585038764237385800
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -1026,10 +1254,10 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 3285351597c89944a65cd51f238c94ab
     GuidInternal: 
-    m_lastTime: -8585034096903559314
+    m_lastTime: -8585038764237365819
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 21000000220000002300000024000000
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

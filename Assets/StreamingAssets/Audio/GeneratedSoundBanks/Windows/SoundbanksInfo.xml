@@ -1,26 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>D:\Audio y Producción\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\</ProjectRoot>
-		<SourceFilesRoot>D:\Audio y Producción\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Audio y Producción\GitHub\TSDV_4C_Desarollo_3\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>E:\Documents\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\</ProjectRoot>
+		<SourceFilesRoot>E:\Documents\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>E:\Documents\GitHub\TSDV_4C_Desarollo_3\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Audio y Producción\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>E:\Documents\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="505167952">
+		<SoundBank Id="1355168291" Language="SFX" Hash="2049105757">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<GameParameters>
+				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Menu\SFXVolume"/>
+				<GameParameter Id="2346531308" Name="MusicVolume" ObjectPath="\Game Parameters\Menu\MusicVolume"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3979800752">
+		<SoundBank Id="3161908922" Language="SFX" Hash="827925025">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="3088469391" Name="AmbienceChurchBell" ObjectPath="\Events\Default Work Unit\AmbienceChurchBell" DurationType="OneShot" DurationMin="5.141979" DurationMax="5.141979">
+					<IncludedMemoryFiles>
+						<File Id="468734920" Language="SFX">
+							<ShortName>ChurchBell.wav</ShortName>
+							<Path>SFX\ChurchBell_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1305708715" Name="AmbiencePlay" ObjectPath="\Events\Default Work Unit\AmbiencePlay" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="114299105" Language="SFX">
@@ -113,7 +125,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1341497909" Name="BossBombExplode" ObjectPath="\Events\Gameplay\BossBombExplode" MaxAttenuation="100." DurationType="OneShot" DurationMin="0.623146" DurationMax="0.875521">
+				<Event Id="1341497909" Name="BossBombExplode" ObjectPath="\Events\Gameplay\BossBombExplode" DurationType="OneShot" DurationMin="0.623146" DurationMax="0.875521">
 					<IncludedMemoryFiles>
 						<File Id="492906008" Language="SFX">
 							<ShortName>BossBombExplode-003.wav</ShortName>
@@ -134,6 +146,38 @@
 						<File Id="176981663" Language="SFX">
 							<ShortName>BossBombTrail.wav</ShortName>
 							<Path>SFX\BossBombTrail_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4279112603" Name="BossChannel" ObjectPath="\Events\Gameplay\BossChannel" DurationType="OneShot" DurationMin="4.9635" DurationMax="11.529292">
+					<IncludedMemoryFiles>
+						<File Id="169104995" Language="SFX">
+							<ShortName>BossChannel-001.wav</ShortName>
+							<Path>SFX\BossChannel-001_10C4C929.wem</Path>
+						</File>
+						<File Id="178967231" Language="SFX">
+							<ShortName>BossChannel-003.wav</ShortName>
+							<Path>SFX\BossChannel-003_10C4C929.wem</Path>
+						</File>
+						<File Id="203553019" Language="SFX">
+							<ShortName>BossChannel-005.wav</ShortName>
+							<Path>SFX\BossChannel-005_10C4C929.wem</Path>
+						</File>
+						<File Id="235305834" Language="SFX">
+							<ShortName>BossChannel-004.wav</ShortName>
+							<Path>SFX\BossChannel-004_10C4C929.wem</Path>
+						</File>
+						<File Id="625362846" Language="SFX">
+							<ShortName>BossChannel-002.wav</ShortName>
+							<Path>SFX\BossChannel-002_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1481017468" Name="BossDeath" ObjectPath="\Events\Gameplay\BossDeath" DurationType="OneShot" DurationMin="5.678354" DurationMax="5.678354">
+					<IncludedMemoryFiles>
+						<File Id="600470384" Language="SFX">
+							<ShortName>BossScream-003.wav</ShortName>
+							<Path>SFX\BossScream-003_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -173,7 +217,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1792029697" Name="BossScream" ObjectPath="\Events\Gameplay\BossScream" DurationType="OneShot" DurationMin="4.721229" DurationMax="5.817667">
+				<Event Id="1792029697" Name="BossScream" ObjectPath="\Events\Gameplay\BossScream" DurationType="OneShot" DurationMin="3.4495" DurationMax="5.817667">
 					<IncludedMemoryFiles>
 						<File Id="261366603" Language="SFX">
 							<ShortName>BossScream-002.wav</ShortName>
@@ -183,13 +227,17 @@
 							<ShortName>BossScream-001.wav</ShortName>
 							<Path>SFX\BossScream-001_10C4C929.wem</Path>
 						</File>
-						<File Id="600470384" Language="SFX">
-							<ShortName>BossScream-003.wav</ShortName>
-							<Path>SFX\BossScream-003_10C4C929.wem</Path>
+						<File Id="574132023" Language="SFX">
+							<ShortName>BossScream-007.wav</ShortName>
+							<Path>SFX\BossScream-007_10C4C929.wem</Path>
+						</File>
+						<File Id="694474506" Language="SFX">
+							<ShortName>BossScream-006.wav</ShortName>
+							<Path>SFX\BossScream-006_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3685648097" Name="EnemyMinionAttack" ObjectPath="\Events\Gameplay\EnemyMinionAttack" DurationType="OneShot" DurationMin="0.269917" DurationMax="0.358854">
+				<Event Id="3685648097" Name="EnemyMinionAttack" ObjectPath="\Events\Gameplay\EnemyMinionAttack" DurationType="OneShot" DurationMin="0.769917" DurationMax="0.858854">
 					<IncludedMemoryFiles>
 						<File Id="541828312" Language="SFX">
 							<ShortName>MinionAttack-002.wav</ShortName>
@@ -281,23 +329,23 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2347568998" Name="EnemySpitterAttack" ObjectPath="\Events\Gameplay\EnemySpitterAttack" DurationType="OneShot" DurationMin="0.263808" DurationMax="0.323388">
+				<Event Id="2347568998" Name="EnemySpitterAttack" ObjectPath="\Events\Gameplay\EnemySpitterAttack" MaxAttenuation="100." DurationType="OneShot" DurationMin="0.609667" DurationMax="0.747521">
 					<IncludedMemoryFiles>
-						<File Id="280491063" Language="SFX">
-							<ShortName>EnemySpawn-003.wav</ShortName>
-							<Path>SFX\EnemySpawn-003_10C4C929.wem</Path>
+						<File Id="301244344" Language="SFX">
+							<ShortName>SpitterAttack-001.wav</ShortName>
+							<Path>SFX\SpitterAttack-001_10C4C929.wem</Path>
 						</File>
-						<File Id="644599723" Language="SFX">
-							<ShortName>EnemySpawn-001.wav</ShortName>
-							<Path>SFX\EnemySpawn-001_10C4C929.wem</Path>
+						<File Id="395860220" Language="SFX">
+							<ShortName>SpitterAttack-002.wav</ShortName>
+							<Path>SFX\SpitterAttack-002_10C4C929.wem</Path>
 						</File>
-						<File Id="705112029" Language="SFX">
-							<ShortName>EnemySpawn-002.wav</ShortName>
-							<Path>SFX\EnemySpawn-002_10C4C929.wem</Path>
+						<File Id="901861362" Language="SFX">
+							<ShortName>SpitterAttack-004.wav</ShortName>
+							<Path>SFX\SpitterAttack-004_10C4C929.wem</Path>
 						</File>
-						<File Id="830078579" Language="SFX">
-							<ShortName>EnemySpawn-004.wav</ShortName>
-							<Path>SFX\EnemySpawn-004_10C4C929.wem</Path>
+						<File Id="1018411725" Language="SFX">
+							<ShortName>SpitterAttack-003.wav</ShortName>
+							<Path>SFX\SpitterAttack-003_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -505,6 +553,27 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="3939754330" Name="HeroKickHit" ObjectPath="\Events\Gameplay\HeroKickHit" DurationType="OneShot" DurationMin="0.164646" DurationMax="0.17875">
+					<IncludedMemoryFiles>
+						<File Id="217243609" Language="SFX">
+							<ShortName>Hit2-001.wav</ShortName>
+							<Path>SFX\Hit2-001_10C4C929.wem</Path>
+						</File>
+						<File Id="242975355" Language="SFX">
+							<ShortName>Hit2-004.wav</ShortName>
+							<Path>SFX\Hit2-004_10C4C929.wem</Path>
+						</File>
+						<File Id="1016925065" Language="SFX">
+							<ShortName>Hit2-003.wav</ShortName>
+							<Path>SFX\Hit2-003_10C4C929.wem</Path>
+						</File>
+						<File Id="1066579968" Language="SFX">
+							<ShortName>Hit2-002.wav</ShortName>
+							<Path>SFX\Hit2-002_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3187462089" Name="MenuMouseHover" ObjectPath="\Events\UI\MenuMouseHover" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1513208197" Name="MenuNegative" ObjectPath="\Events\UI\MenuNegative" DurationType="OneShot" DurationMin="0.164646" DurationMax="0.17875">
 					<IncludedMemoryFiles>
 						<File Id="217243609" Language="SFX">
@@ -541,7 +610,8 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3478063044" Name="MouseHover" ObjectPath="\Events\UI\MouseHover" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="153626945" Name="MusicMute" ObjectPath="\Events\Default Work Unit\MusicMute" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2098179344" Name="MusicUnMute" ObjectPath="\Events\Default Work Unit\MusicUnMute" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="4144776676" Name="Play_BGM_AudioManager" ObjectPath="\Events\Default Work Unit\Play_BGM_AudioManager" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="159786757" Language="SFX">
@@ -633,6 +703,8 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1264305561" Name="SFXMute" ObjectPath="\Events\Default Work Unit\SFXMute" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="4069662840" Name="SFXUnMute" ObjectPath="\Events\Default Work Unit\SFXUnMute" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1521187885" Name="StartGame" ObjectPath="\Events\UI\StartGame" DurationType="OneShot" DurationMin="3.320771" DurationMax="3.320771">
 					<IncludedMemoryFiles>
 						<File Id="573337991" Language="SFX">
@@ -641,6 +713,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="3264771457" Name="StopAmbience" ObjectPath="\Events\Default Work Unit\StopAmbience" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 			</IncludedEvents>
 			<StateGroups>
 				<StateGroup Id="2358111289" Name="Scene_State" ObjectPath="\States\Default Work Unit\Scene_State" GUID="{446B2B67-CD6A-4F64-AD4E-D57203B70EBD}">
