@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\</ProjectRoot>
-		<SourceFilesRoot>D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Git\TSDV_4C_Desarollo_3\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>E:\Documents\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\</ProjectRoot>
+		<SourceFilesRoot>E:\Documents\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>E:\Documents\GitHub\TSDV_4C_Desarollo_3\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Git\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>E:\Documents\GitHub\Revencore-Audio-Team\Revencore Audio Team - Wwise Project\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -20,7 +20,7 @@
 				<GameParameter Id="2346531308" Name="MusicVolume" ObjectPath="\Game Parameters\Menu\MusicVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="2135887073">
+		<SoundBank Id="3161908922" Language="SFX" Hash="827925025">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -610,6 +610,8 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="153626945" Name="MusicMute" ObjectPath="\Events\Default Work Unit\MusicMute" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2098179344" Name="MusicUnMute" ObjectPath="\Events\Default Work Unit\MusicUnMute" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="4144776676" Name="Play_BGM_AudioManager" ObjectPath="\Events\Default Work Unit\Play_BGM_AudioManager" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="159786757" Language="SFX">
@@ -701,6 +703,8 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1264305561" Name="SFXMute" ObjectPath="\Events\Default Work Unit\SFXMute" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="4069662840" Name="SFXUnMute" ObjectPath="\Events\Default Work Unit\SFXUnMute" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1521187885" Name="StartGame" ObjectPath="\Events\UI\StartGame" DurationType="OneShot" DurationMin="3.320771" DurationMax="3.320771">
 					<IncludedMemoryFiles>
 						<File Id="573337991" Language="SFX">
