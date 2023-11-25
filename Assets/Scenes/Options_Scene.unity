@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -834,15 +834,15 @@ PrefabInstance:
       objectReference: {fileID: -752193475, guid: ac93acfcd2f59864cb259cb8b7bc529e, type: 3}
     - target: {fileID: 1560281770981443590, guid: 9d25baf9aa69da54b97318be46ab2be2, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.8901961
       objectReference: {fileID: 0}
     - target: {fileID: 1560281770981443590, guid: 9d25baf9aa69da54b97318be46ab2be2, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.76862746
       objectReference: {fileID: 0}
     - target: {fileID: 1560281770981443590, guid: 9d25baf9aa69da54b97318be46ab2be2, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.6745098
       objectReference: {fileID: 0}
     - target: {fileID: 5505029136752945434, guid: 9d25baf9aa69da54b97318be46ab2be2, type: 3}
       propertyPath: m_Name
@@ -1135,7 +1135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6745098, g: 0.76862746, b: 0.8901961, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 100
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1289,15 +1289,15 @@ PrefabInstance:
       objectReference: {fileID: -1896913182, guid: ac93acfcd2f59864cb259cb8b7bc529e, type: 3}
     - target: {fileID: 1560281770981443590, guid: 9d25baf9aa69da54b97318be46ab2be2, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.8901961
       objectReference: {fileID: 0}
     - target: {fileID: 1560281770981443590, guid: 9d25baf9aa69da54b97318be46ab2be2, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.76862746
       objectReference: {fileID: 0}
     - target: {fileID: 1560281770981443590, guid: 9d25baf9aa69da54b97318be46ab2be2, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.6745098
       objectReference: {fileID: 0}
     - target: {fileID: 2279820262115286027, guid: 9d25baf9aa69da54b97318be46ab2be2, type: 3}
       propertyPath: m_text
@@ -1508,7 +1508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6745098, g: 0.76862746, b: 0.8901961, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1538,7 +1538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6745098, g: 0.76862746, b: 0.8901961, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1628,7 +1628,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 100
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1869,7 +1869,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -465.00006, y: 215.00005}
-  m_SizeDelta: {x: 376, y: 152}
+  m_SizeDelta: {x: 407.05, y: 152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4974490596262806432
 MonoBehaviour:
@@ -1884,7 +1884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6745098, g: 0.76862746, b: 0.8901961, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2193,7 +2193,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 100
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2260,7 +2260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.8983884, b: 0.7783019, a: 1}
+  m_Color: {r: 0.7881363, g: 0.8106031, b: 0.8396226, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2343,7 +2343,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 100
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
@@ -2424,7 +2424,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 496, y: 213}
-  m_SizeDelta: {x: 366, y: 149}
+  m_SizeDelta: {x: 372.9, y: 167.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7510052695182870087
 MonoBehaviour:
@@ -2439,7 +2439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9481132, g: 1, b: 0.996654, a: 1}
+  m_Color: {r: 0.6734603, g: 0.7670062, b: 0.8867924, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
