@@ -54,9 +54,9 @@ This game was also possible thanks to the support of these professors:
 - **Federico Barra**
 - **Franco Guerra**
 - **Silvina Lemos Hoffmann**
-***Font "NoScary" By Linafis Studio. https://www.dafont.com/noscary.font**
-***Background “FREE Parallax Forest Background HQ” by Digital Moons. https://assetstore.unity.com/packages/2d/environments/free-parallax-forest-background-hq-158680**
-***Skybox "Customizable skybox" by Key Mouse Studio. https://assetstore.unity.com/packages/2d/textures-materials/sky/customizable-skybox-174576**
+- **Font "NoScary" By Linafis Studio. https://www.dafont.com/noscary.font**
+- **Background “FREE Parallax Forest Background HQ” by Digital Moons. https://assetstore.unity.com/packages/2d/environments/free-parallax-forest-background-hq-158680**
+- **Skybox "Customizable skybox" by Key Mouse Studio. https://assetstore.unity.com/packages/2d/textures-materials/sky/customizable-skybox-174576**
 
 
 ## Links
