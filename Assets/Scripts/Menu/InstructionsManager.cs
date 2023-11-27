@@ -8,12 +8,15 @@ public class InstructionsManager : MonoBehaviour
     [SerializeField] private GameObject instructionsMenu;
     [SerializeField] private GameObject creditsMenu;
     [SerializeField] private GameObject OptionsMenu;
+    [SerializeField] private GameObject menuButtons;
     [SerializeField] private GameObject[] instructions;
     [SerializeField] private GameObject[] credits;
     [SerializeField] private bool creditsScene;
 
     private void Start()
     {
+        menuButtons.SetActive(true);
+
         if (instructionsMenu != null)
             instructionsMenu.SetActive(false);
         if (creditsMenu != null)
@@ -69,6 +72,7 @@ public class InstructionsManager : MonoBehaviour
 
     public void ShowCreditsMenu()
     {
+        menuButtons.SetActive(false);
         creditsMenu.SetActive(true);
         ChangePage(0, credits);
     }

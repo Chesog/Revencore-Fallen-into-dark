@@ -1473,6 +1473,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1506021194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1821715597802104511, guid: ad3bef434bf708748980fa5befdc5dd6, type: 3}
+  m_PrefabInstance: {fileID: 7851734540801540060}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1607885276 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4797966891144421055, guid: ad3bef434bf708748980fa5befdc5dd6, type: 3}
@@ -1554,6 +1559,7 @@ MonoBehaviour:
   instructionsMenu: {fileID: 2023289960}
   creditsMenu: {fileID: 845267638}
   OptionsMenu: {fileID: 0}
+  menuButtons: {fileID: 1506021194}
   instructions:
   - {fileID: 1846250353}
   - {fileID: 1846250354}
