@@ -67,6 +67,7 @@ public class RoomManager : MonoBehaviour
         _arrowImage.enabled = false;
         _currentRoom = _rooms[0];
         _currentRoom._canMoveForward = false;
+        pause = false;
         Debug.Log("Current Room: " + _currentRoom.roomNumber);
     }
 
