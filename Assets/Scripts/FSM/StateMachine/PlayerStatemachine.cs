@@ -158,6 +158,7 @@ public class PlayerStatemachine : State_Machine
             {
              OnplayerShoot();
              _playerComponent.anim.SetInteger("CurrentAttack", 0);   
+             _playerComponent.anim.Play("Player_Throw");
             }
             else
             {
