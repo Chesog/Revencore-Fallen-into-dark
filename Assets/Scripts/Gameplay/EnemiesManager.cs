@@ -43,6 +43,15 @@ public class EnemiesManager : MonoBehaviour
 
     private void Awake()
     {
+        //EnemyInputManager.OnEnemyDestroy += IncreaseKill;
+        //DistanceEnemy.OnDestroyed += IncreaseKill;
+        //Boss.OnDestroyed += StartShowVictoryPanel;
+        //RoomManager.OnNewRoom += ResetKill;
+        //RoomManager.OnNewRoom += IncreaseCurrentRoom;
+    }
+
+    private void OnEnable()
+    {
         EnemyInputManager.OnEnemyDestroy += IncreaseKill;
         DistanceEnemy.OnDestroyed += IncreaseKill;
         Boss.OnDestroyed += StartShowVictoryPanel;
@@ -101,7 +110,9 @@ public class EnemiesManager : MonoBehaviour
 
     private void StartShowVictoryPanel()
     {
-        StartCoroutine(ShowVictoryPanel());    }
+        StartCoroutine(ShowVictoryPanel());
+        
+    }
     private IEnumerator ShowVictoryPanel()
     {
         if (_winningPanel != null)

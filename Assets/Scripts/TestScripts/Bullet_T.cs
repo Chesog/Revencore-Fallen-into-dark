@@ -49,7 +49,7 @@ public class Bullet_T : MonoBehaviour
             collision.collider.GetComponentInParent<HealthComponent>().DecreaseHealth(_bulletDamage);
         }
         
-        Destroy(this);
+        Destroy(gameObject);
     }
     #endregion
 }

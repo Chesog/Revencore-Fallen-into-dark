@@ -63,6 +63,8 @@ public class Boss : MonoBehaviour
 
         if (anim == null)
             anim = GetComponent<Animator>();
+
+        _characterHealthComponent.OnInsufficient_Health += BoosDefeated;
     }
 
     private void Start()
@@ -87,11 +89,18 @@ public class Boss : MonoBehaviour
         }
     }
 
+    private void BoosDefeated()
+    {
+        _sliderParent.SetActive(false);
+        OnDestroyed?.Invoke();
+    }
+
     private void OnDestroy()
     {
         _characterHealthComponent.OnHealthChanged -= UpdateHealthBar;
-        _sliderParent.SetActive(false);
-        OnDestroyed?.Invoke();
+        //_sliderParent.SetActive(false);
+        //OnDestroyed?.Invoke();
+        _characterHealthComponent.OnInsufficient_Health -= BoosDefeated;
     }
 
     private IEnumerator SpawnEnemy(float interval, GameObject enemy, Transform playerTransform)
