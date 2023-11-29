@@ -2,20 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class InstructionsManager : MonoBehaviour
 {
     [SerializeField] private GameObject instructionsMenu;
     [SerializeField] private GameObject creditsMenu;
     [SerializeField] private GameObject OptionsMenu;
-    [SerializeField] private GameObject menuButtons;
+    [SerializeField] private GameObject menuPanel;
     [SerializeField] private GameObject[] instructions;
     [SerializeField] private GameObject[] credits;
     [SerializeField] private bool creditsScene;
 
     private void Start()
     {
-        menuButtons.SetActive(true);
+        menuPanel.SetActive(true);
 
         if (instructionsMenu != null)
             instructionsMenu.SetActive(false);
@@ -49,6 +50,7 @@ public class InstructionsManager : MonoBehaviour
 
     public void ShowInstructionsMenu()
     {
+        menuPanel.SetActive(false);
         instructionsMenu.SetActive(true);
     }
     public void HideInstructionsMenu()
@@ -72,13 +74,14 @@ public class InstructionsManager : MonoBehaviour
 
     public void ShowCreditsMenu()
     {
-        menuButtons.SetActive(false);
+        menuPanel.SetActive(false);
         creditsMenu.SetActive(true);
         ChangePage(0, credits);
     }
 
     public void HideCredits()
     {
+        menuPanel.SetActive(true);
         creditsMenu.SetActive(false);
     }
 }
