@@ -11,9 +11,9 @@ public class Shoot_T : MonoBehaviour
     private void Update()
     {
         if (transform.rotation.y == 0f)
-            rot = Quaternion.EulerRotation(transform.rotation.x, transform.rotation.y + 89.5f, transform.rotation.z);
+            rot = Quaternion.EulerRotation(0, transform.rotation.y + 89.5f, transform.rotation.z);
         else
-            rot = Quaternion.EulerRotation(transform.rotation.x, transform.rotation.y - 90.5f, transform.rotation.z);
+            rot = Quaternion.EulerRotation(0, transform.rotation.y - 90.5f, transform.rotation.z);
 
         if (Input.GetKeyDown(KeyCode.E))
             Instantiate(bulletPrefab, shootingPoint.position, rot);
