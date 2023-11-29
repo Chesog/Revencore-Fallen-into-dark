@@ -5,10 +5,13 @@ using UnityEngine;
 public class DistanceEnemy : MonoBehaviour
 {
     #region EVENTS
+
     public static event Action OnDestroyed;
+
     #endregion
 
     #region EXPOSED_FIELDS
+
     [SerializeField] private string _bulletTag = "Bullet";
     [SerializeField] private GameObject _projectilePrefab;
     [SerializeField] private Transform _shootingPoint;
@@ -23,9 +26,11 @@ public class DistanceEnemy : MonoBehaviour
     private float _currentHealth;
     private float _distanceToPlayer;
     private bool _isAttacking = false;
+
     #endregion
 
     #region UNITY_CALLS
+
     private void Start()
     {
         _currentHealth = _maxHealth;
@@ -37,20 +42,27 @@ public class DistanceEnemy : MonoBehaviour
 
         if (_distanceToPlayer > _attackDistance)
         {
-            Vector3 targetPosition = new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z);
+            Vector3 targetPosition = new Vector3(_player.transform.position.x, transform.position.y,
+                _player.transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime);
         }
-        else if (_distanceToPlayer <= _attackDistance && Mathf.Approximately(transform.position.z, _player.transform.position.z))
+        else if (_distanceToPlayer <= _attackDistance &&
+                 Mathf.Approximately(transform.position.z, _player.transform.position.z))
         {
             Vector3 direction = _player.transform.position - transform.position;
             direction.y = 0f;
+            Quaternion rot;
 
             if (direction.x > 0)
+            {
                 transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+                rot = Quaternion.Euler(0f, 180f, 0f);
+            }
             else
+            {
                 transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-             
-            Quaternion rot = Quaternion.LookRotation(-transform.right);
+                rot = Quaternion.Euler(0f, 0f, 0f);
+            }
 
             if (!_isAttacking)
             {
@@ -59,11 +71,11 @@ public class DistanceEnemy : MonoBehaviour
                 _isAttacking = true;
                 StartCoroutine(ResetAttack());
             }
-
         }
-        else if(!Mathf.Approximately(transform.position.x, _player.transform.position.x))
+        else if (!Mathf.Approximately(transform.position.x, _player.transform.position.x))
         {
-            Vector3 targetPosition = new Vector3(transform.position.x, transform.position.y, _player.transform.position.z);
+            Vector3 targetPosition =
+                new Vector3(transform.position.x, transform.position.y, _player.transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime);
         }
 
@@ -72,6 +84,7 @@ public class DistanceEnemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     private void OnDestroy()
     {
         Debug.Log("Mataste un enemigo a distancia!");
@@ -79,8 +92,9 @@ public class DistanceEnemy : MonoBehaviour
     }
 
     #endregion
-    
+
     #region PRIVATE_METHODS
+
     /// <summary>
     /// Resets the enemy's attack state after a certain cooldown, allowing it to attack again.
     /// </summary>
@@ -95,7 +109,6 @@ public class DistanceEnemy : MonoBehaviour
         if (collision.gameObject.CompareTag(_bulletTag))
         {
             TakeDamage(_player.damage);
-    
         }
     }
 
@@ -118,7 +131,6 @@ public class DistanceEnemy : MonoBehaviour
     {
         return _currentHealth > 0;
     }
-    
 
     #endregion
 }
