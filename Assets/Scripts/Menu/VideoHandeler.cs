@@ -28,6 +28,8 @@ public class VideoHandeler : MonoBehaviour
         imageAlpha = new Color(1,1,1,0);
         _videoPlayerImage.color = imageAlpha;
         _videoPlayer.Stop();
+        _videoPlayer.time = 0;
+        _videoPlayer.frame = 0;
     }
 
     private void OnDisable()
