@@ -7,6 +7,7 @@ using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 using UnityEngine.UI;
 using System.Diagnostics;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class Boss : MonoBehaviour
     #region PRIVATE_FIELDS
 
     private float _lastBombDropTime = -2f;
-    
+
     #endregion
 
     #region UNITY_CALLS
@@ -98,8 +99,6 @@ public class Boss : MonoBehaviour
     private void OnDestroy()
     {
         _characterHealthComponent.OnHealthChanged -= UpdateHealthBar;
-        //_sliderParent.SetActive(false);
-        //OnDestroyed?.Invoke();
         _characterHealthComponent.OnInsufficient_Health -= BoosDefeated;
     }
 
@@ -153,9 +152,14 @@ public class Boss : MonoBehaviour
             UnityEngine.Debug.Log("Boss Defeated");
             anim.Play("Boss_Death");
             AkSoundEngine.PostEvent("BossDeath", gameObject);
+            Invoke("LoadWinScene", 1f);
             Destroy(gameObject, 1f);
-            
         }
+    }
+
+    private void LoadWinScene()
+    {
+        SceneManager.LoadScene("WinVideo_Scene");
     }
 
     private void DropBombs()
@@ -174,7 +178,6 @@ public class Boss : MonoBehaviour
 
     private void PushPlayer()
     {
-       
         _playerRb.AddForce(Vector3.left * _pushForce, ForceMode.Impulse);
     }
 

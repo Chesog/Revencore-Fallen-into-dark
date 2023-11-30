@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class EnemiesManager : MonoBehaviour
@@ -20,7 +21,6 @@ public class EnemiesManager : MonoBehaviour
     [SerializeField] private GameObject _winningPanel;
     [SerializeField] private string _enemyTag = "Enemy";
     [SerializeField] private int _kills = 0;
-    [SerializeField] private VideoHandeler _videoHandeler;
 
     #endregion
 
@@ -54,7 +54,6 @@ public class EnemiesManager : MonoBehaviour
     {
         EnemyInputManager.OnEnemyDestroy += IncreaseKill;
         DistanceEnemy.OnDestroyed += IncreaseKill;
-        Boss.OnDestroyed += StartShowVictoryPanel;
         RoomManager.OnNewRoom += ResetKill;
         RoomManager.OnNewRoom += IncreaseCurrentRoom;
     }
@@ -90,7 +89,6 @@ public class EnemiesManager : MonoBehaviour
     {
         EnemyInputManager.OnEnemyDestroy -= IncreaseKill;
         DistanceEnemy.OnDestroyed -= IncreaseKill;
-        Boss.OnDestroyed -= IncreaseKill;
         RoomManager.OnNewRoom -= ResetKill;
         RoomManager.OnNewRoom -= IncreaseCurrentRoom;
     }
@@ -107,28 +105,7 @@ public class EnemiesManager : MonoBehaviour
     {
         _currentRoom++;
     }
-
-    private void StartShowVictoryPanel()
-    {
-        StartCoroutine(ShowVictoryPanel());
-        
-    }
-    private IEnumerator ShowVictoryPanel()
-    {
-        if (_winningPanel != null)
-        { 
-            OnFinalVideo?.Invoke();
-            OnGamePause?.Invoke();
-            _videoHandeler.PlayVideo();
-            
-            while (!_videoHandeler.IsPaused())
-            {
-                yield return null;
-            }
-
-            _winningPanel.SetActive(true);
-        }
-    }
+    
 
     #endregion
 
