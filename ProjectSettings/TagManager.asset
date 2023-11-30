@@ -17,7 +17,7 @@ TagManager:
   - Enemy Bullet
   - Player Bullet
   - Player
-  - 
+  - Pentagram
   - 
   - 
   - 
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: New Layer 1
     uniqueID: 2851803385
+    locked: 0
+  - name: Pentagram
+    uniqueID: 1132282785
     locked: 0
