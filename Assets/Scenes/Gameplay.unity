@@ -1007,7 +1007,7 @@ Transform:
   - {fileID: 1620603118}
   - {fileID: 195284469}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &30090231
 GameObject:
@@ -10810,7 +10810,7 @@ Transform:
   - {fileID: 1070964454}
   - {fileID: 682459543}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &495467188
 PrefabInstance:
@@ -23521,7 +23521,7 @@ Transform:
   - {fileID: 1620715328}
   - {fileID: 1710442270}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115335829
 GameObject:
@@ -23808,7 +23808,7 @@ Transform:
   m_Children:
   - {fileID: 1008550961}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1138843959
 PrefabInstance:
@@ -26628,7 +26628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4274653050354540, guid: e55149ba6f4d00741984987e258c3378, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4274653050354540, guid: e55149ba6f4d00741984987e258c3378, type: 3}
       propertyPath: m_LocalScale.x
@@ -28513,8 +28513,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.88000005, y: 0.41725418}
   m_AnchorMax: {x: 1, y: 0.582373}
-  m_AnchoredPosition: {x: -10, y: 0}
-  m_SizeDelta: {x: -104, y: -27}
+  m_AnchoredPosition: {x: -92, y: -27}
+  m_SizeDelta: {x: 91.364, y: 52.214}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1447691500
 MonoBehaviour:
@@ -28530,7 +28530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

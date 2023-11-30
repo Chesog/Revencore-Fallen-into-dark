@@ -19,7 +19,7 @@ public class PlayerStatemachine : State_Machine
     private bool attackCalled;
     private bool _pause = false;
     private IEnumerator resetRangedAttack;
-    
+
 
     private void OnAttackEnd()
     {
@@ -51,6 +51,7 @@ public class PlayerStatemachine : State_Machine
         if (!_playerComponent.isPlayer_Damaged)
         {
             _playerComponent.isPlayer_Damaged = true;
+            _playerComponent.anim.Play("Player_Daño");
             StartCoroutine(InvulerabilityFrame());
         }
     }
@@ -91,11 +92,11 @@ public class PlayerStatemachine : State_Machine
         _inputManager.OnPlayerAttack += OnPlayerAttack;
         _inputManager.OnPlayerPause += OnPlayerPause;
         _inputManager.OnPlayerPickUp += OnPlayerInteract;
-        
+
         _attackState.OnPlayerShoot += OnplayerShoot;
         _attackState1.OnPlayerShoot += OnplayerShoot;
         _attackState2.OnPlayerShoot += OnplayerShoot;
-        
+
         _attackState.OnAttackEnd += OnAttackEnd;
         _attackState1.OnAttackEnd += OnAttackEnd;
         _attackState2.OnAttackEnd += OnAttackEnd;
@@ -104,7 +105,7 @@ public class PlayerStatemachine : State_Machine
         _playerComponent.character_Health_Component.OnDecrease_Health += OnplayerDecreaseHeath;
 
         RoomManager.OnUnPause += OnPlayerUnPause;
-        
+
         resetRangedAttack = ResetAttack();
         attackCalled = false;
 
@@ -145,9 +146,8 @@ public class PlayerStatemachine : State_Machine
         {
             _pause = true;
             SetState(_idleState);
-            _playerComponent.anim.SetInteger("CurrentAttack", 0);   
+            _playerComponent.anim.SetInteger("CurrentAttack", 0);
         }
-
     }
 
     private void OnPlayerAttack(bool obj)
@@ -156,9 +156,9 @@ public class PlayerStatemachine : State_Machine
         {
             if (_playerComponent.isRanged_Attacking)
             {
-             OnplayerShoot();
-             _playerComponent.anim.SetInteger("CurrentAttack", 0);   
-             _playerComponent.anim.Play("Player_Throw");
+                OnplayerShoot();
+                _playerComponent.anim.SetInteger("CurrentAttack", 0);
+                _playerComponent.anim.Play("Player_Throw");
             }
             else
             {
@@ -186,9 +186,8 @@ public class PlayerStatemachine : State_Machine
         if (!_playerComponent.isDead && !_pause)
         {
             SetState(_moveState);
-            _playerComponent.anim.SetInteger("CurrentAttack", 0);   
+            _playerComponent.anim.SetInteger("CurrentAttack", 0);
         }
-
     }
 
     protected override State GetInitialState()
@@ -202,18 +201,18 @@ public class PlayerStatemachine : State_Machine
         _inputManager.OnPlayerAttack -= OnPlayerAttack;
         _inputManager.OnPlayerPause -= OnPlayerPause;
         _inputManager.OnPlayerPickUp -= OnPlayerInteract;
-        
+
         _attackState.OnPlayerShoot -= OnplayerShoot;
         _attackState1.OnPlayerShoot -= OnplayerShoot;
         _attackState2.OnPlayerShoot -= OnplayerShoot;
-        
+
         _attackState.OnAttackEnd -= OnAttackEnd;
         _attackState1.OnAttackEnd -= OnAttackEnd;
         _attackState2.OnAttackEnd -= OnAttackEnd;
 
         _playerComponent.character_Health_Component.OnInsufficient_Health -= OnplayerInsufficientHeath;
         _playerComponent.character_Health_Component.OnDecrease_Health -= OnplayerDecreaseHeath;
-        
+
         RoomManager.OnUnPause -= OnPlayerUnPause;
     }
 }
