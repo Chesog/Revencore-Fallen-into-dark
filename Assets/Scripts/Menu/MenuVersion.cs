@@ -9,6 +9,6 @@ public class MenuVersion : MonoBehaviour
 
     private void Start()
     {
-        versionText.text = "v" + Application.version;
+        versionText.text = Application.version;
     }
 }
