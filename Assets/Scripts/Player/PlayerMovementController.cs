@@ -11,7 +11,7 @@ public class PlayerMovementController : MonoBehaviour
 
     public void SetMovement(Vector2 newMov)
     {
-        if (!_playerComponent.isDead)
+        if (!_playerComponent.isDead && !_playerComponent.isDialogue)
         {
             _playerComponent.movement.x = newMov.x * _playerComponent.speed;
             _playerComponent.movement.z = newMov.y * _playerComponent.zspeed;

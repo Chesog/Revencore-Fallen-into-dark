@@ -24,7 +24,7 @@ public class CharacterComponent : MonoBehaviour
    public float damage;
    public bool isDead;
    public bool isRanged_Attacking;
-   #endregion
+   #endregion 
 
    #region UNITY_CALLS
    private void OnEnable()

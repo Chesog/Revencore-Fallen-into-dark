@@ -152,7 +152,7 @@ public class PlayerStatemachine : State_Machine
 
     private void OnPlayerAttack(bool obj)
     {
-        if (!_playerComponent.isDead && !_pause)
+        if (!_playerComponent.isDead && !_pause && !_playerComponent.isDialogue)
         {
             if (_playerComponent.isRanged_Attacking)
             {
@@ -183,7 +183,7 @@ public class PlayerStatemachine : State_Machine
 
     private void OnPlayerMove(Vector2 obj)
     {
-        if (!_playerComponent.isDead && !_pause)
+        if (!_playerComponent.isDead && !_pause && !_playerComponent.isDialogue)
         {
             SetState(_moveState);
             _playerComponent.anim.SetInteger("CurrentAttack", 0);

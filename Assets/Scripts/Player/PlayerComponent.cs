@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 /// <summary>
 /// Class That Contains The Player Variables
 /// </summary>
 public class PlayerComponent : CharacterComponent
 {
-   public PlayerInputManager input;
-   public Player_Data_Source player_Source;
-   public PlayerMovementController _movementController;
+    public PlayerInputManager input;
+    public Player_Data_Source player_Source;
+    public PlayerMovementController _movementController;
 
     public Transform feet_Pivot;
     public Transform camera;
@@ -16,7 +17,8 @@ public class PlayerComponent : CharacterComponent
     public Rigidbody rigidbody;
     public bool isPlayer_Attacking;
     public bool isPlayer_Damaged;
-    
+    public bool isDialogue = false;
+
     public Transform shootingPoint;
     public GameObject bulletPrefab;
     public Quaternion rot;

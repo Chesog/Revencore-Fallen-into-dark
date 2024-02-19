@@ -60,6 +60,7 @@ public class PlayerInputManager : MonoBehaviour
     /// Action Event For The Player Pause
     /// </summary>
     public event Action OnPlayerPause;
+    
     #endregion
 
     #region UNITY_CALLS
@@ -142,5 +143,7 @@ public class PlayerInputManager : MonoBehaviour
     {
         OnPlayerPause?.Invoke();
     }
+    
+    
     #endregion
 }
