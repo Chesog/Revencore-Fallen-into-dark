@@ -15,6 +15,7 @@ public class RoomManager : MonoBehaviour
     public static event Action OnNewRoom;
     public static event Action OnPause;
     public static event Action OnUnPause;
+    public static event Action OnDialogue;
 
     #endregion
 
@@ -39,6 +40,8 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private PlayerInputManager _playerInputManager;
     [SerializeField] private Player_Data_Source _playerData;
     private bool pause;
+    private bool _alreadyDialogue = false;
+    
 
     #endregion
 
@@ -48,9 +51,9 @@ public class RoomManager : MonoBehaviour
     {
         _playerInputManager.OnPlayerPause += OnGamePause;
         EnemiesManager.OnNoEnemies += SetCanMoveForward;
-        
+        NPCSystem.OnDialogueFinished += OnDialogueFinished;
     }
-    
+
     private void OnInsuficientHealth()
     {
         _losePanel.SetActive(true);
@@ -59,11 +62,11 @@ public class RoomManager : MonoBehaviour
 
     private void Start()
     {
-        if(_playerData == null)
+        if (_playerData == null)
             _playerData = FindObjectOfType<Player_Data_Source>();
 
         _playerData._player.character_Health_Component.OnInsufficient_Health += OnInsuficientHealth;
-        
+
         _arrowImage.enabled = false;
         _currentRoom = _rooms[0];
         _currentRoom._canMoveForward = false;
@@ -77,6 +80,13 @@ public class RoomManager : MonoBehaviour
         {
             _arrowImage.enabled = true;
             _currentRoom.wall.SetActive(false);
+
+            if (_currentRoom.roomNumber == 3 && !_alreadyDialogue)
+            {
+                _arrowImage.enabled = false;
+                _currentRoom.wall.SetActive(true);
+                OnDialogue?.Invoke();
+            }
         }
         else
         {
@@ -150,7 +160,6 @@ public class RoomManager : MonoBehaviour
     {
         return _currentRoom.roomNumber;
     }
-    
 
     #endregion
 
@@ -171,6 +180,13 @@ public class RoomManager : MonoBehaviour
         {
             _arrowImage.enabled = false;
         }
+    }
+
+    private void OnDialogueFinished()
+    {
+        _arrowImage.enabled = false;
+        _currentRoom.wall.SetActive(true);
+        _alreadyDialogue = true;
     }
 
     #endregion

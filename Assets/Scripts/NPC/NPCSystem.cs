@@ -7,9 +7,15 @@ using UnityEngine.Serialization;
 
 public class NPCSystem : MonoBehaviour
 {
+    #region EVENTS
+    public static event Action OnDialogueFinished;
+
+    #endregion
+    
     [SerializeField] private PlayerComponent _playerComponent;
     [SerializeField] private GameObject _dialogueTemplate;
     [SerializeField] private GameObject _canvas;
+    [SerializeField] private GameObject _arrowSprite;
 
     [SerializeField] private TextMeshProUGUI _textObject;
 
@@ -17,14 +23,20 @@ public class NPCSystem : MonoBehaviour
     [SerializeField] private string[] _texts;
     [SerializeField] private string _playerTag = "Player";
     private bool _playerDetection = false;
+    private bool _canDialogue = false;
     private bool _alreadyDialogue = false;
     private int _currentDialogueIndex = 0;
+
+    private void Awake()
+    {
+        RoomManager.OnDialogue += OnDialogue;
+    }
 
     private void Update()
     {
         if (!_alreadyDialogue)
         {
-            if (_playerDetection && !_playerComponent.isDialogue)
+            if (_playerDetection && !_playerComponent.isDialogue && _canDialogue)
             {
                 _alreadyDialogue = true;
                 _canvas.SetActive(true);
@@ -32,6 +44,15 @@ public class NPCSystem : MonoBehaviour
                 ShowNextDialogue();
                 _dialogueTemplate.SetActive(true);
             }
+        }
+    }
+
+    private void OnDialogue()
+    {
+        if (!_alreadyDialogue)
+        {
+            _canDialogue = true;
+            _arrowSprite.SetActive(true);
         }
     }
 
@@ -46,6 +67,9 @@ public class NPCSystem : MonoBehaviour
         {
             _playerComponent.isDialogue = false;
             _dialogueTemplate.SetActive(false);
+            _arrowSprite.SetActive(false);
+            OnDialogueFinished?.Invoke();
+            
         }
     }
 
@@ -71,5 +95,15 @@ public class NPCSystem : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         _playerDetection = false;
+    }
+
+    private void OnDestroy()
+    {
+        RoomManager.OnDialogue -= OnDialogue;
+    }
+
+    public bool GetAlreadyDialogue()
+    {
+        return _alreadyDialogue;
     }
 }
