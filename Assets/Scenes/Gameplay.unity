@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1653270597}
-  m_IndirectSpecularColor: {r: 0.014324088, g: 0.0574275, b: 0.10544753, a: 1}
+  m_IndirectSpecularColor: {r: 0.01432637, g: 0.05743193, b: 0.10545072, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3895,7 +3895,6 @@ MonoBehaviour:
   _losePanel: {fileID: 1345954893}
   _playerInputManager: {fileID: 819258206}
   _playerData: {fileID: 11400000, guid: 5e67e42c21ea55c4b865b291844ebafc, type: 2}
-  _npcSystem: {fileID: 498738223}
 --- !u!4 &179058109
 Transform:
   m_ObjectHideFlags: 0
@@ -8058,12 +8057,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.98039216, g: 0.3529412, b: 0.81269073, a: 0.78039217}
+  m_Sprite: {fileID: 640053274, guid: 442cf02745bda91488f39359173fd2bb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.89411765}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.115, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -8077,9 +8076,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338023771}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 95.56, y: -2.3624303, z: 12.19}
-  m_LocalScale: {x: 2.2069101, y: 4.108166, z: 4.905449}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 95.56, y: -3.452, z: 12.19}
+  m_LocalScale: {x: 0.26, y: 0.26, z: 0.26}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 498738222}
   - {fileID: 829180121}
@@ -52262,7 +52261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 558881331583698073, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 71.4
+      value: 95.99
       objectReference: {fileID: 0}
     - target: {fileID: 558881331583698073, guid: 54c2ba5fbb6f46a408e0be70356295c5, type: 3}
       propertyPath: m_LocalPosition.y
