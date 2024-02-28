@@ -46,4 +46,9 @@ public class PlayerComponent : CharacterComponent
             Gizmos.color = Color.yellow;
         }
     }
+
+    public void TeleportPlayer(Vector3 newPos)
+    {
+        transform.position = newPos;
+    }
 }

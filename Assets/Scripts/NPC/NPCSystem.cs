@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class NPCSystem : MonoBehaviour
 {
@@ -16,6 +14,8 @@ public class NPCSystem : MonoBehaviour
     [SerializeField] private GameObject _dialogueTemplate;
     [SerializeField] private GameObject _canvas;
     [SerializeField] private GameObject _arrowSprite;
+    [SerializeField] private PlayerComponent _player;
+    [SerializeField] private Transform _houseTeleport;
 
     [SerializeField] private TextMeshProUGUI _textObject;
 
@@ -69,7 +69,7 @@ public class NPCSystem : MonoBehaviour
             _dialogueTemplate.SetActive(false);
             _arrowSprite.SetActive(false);
             OnDialogueFinished?.Invoke();
-            
+            _player.TeleportPlayer(_houseTeleport.position);
         }
     }
 
