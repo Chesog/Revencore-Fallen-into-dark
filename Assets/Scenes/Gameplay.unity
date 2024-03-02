@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1653270597}
-  m_IndirectSpecularColor: {r: 0.01432637, g: 0.05743193, b: 0.10545072, a: 1}
+  m_IndirectSpecularColor: {r: 0.014324088, g: 0.0574275, b: 0.10544753, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3543,8 +3543,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157700721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 119.17, y: 76.47, z: 51.06}
-  m_LocalScale: {x: 5.8910027, y: 5.8910027, z: 5.8910027}
+  m_LocalPosition: {x: 120.6, y: 77.45, z: 52.42}
+  m_LocalScale: {x: 1.2047101, y: 1.2047101, z: 1.2047101}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 813916644}
@@ -3571,8 +3571,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 8.514452, y: 6.1673017, z: 2.0082707}
+  m_Center: {x: 0.50914556, y: -0.44078073, z: -0.046957348}
 --- !u!212 &157700724
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3614,7 +3614,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1229716258, guid: 5c9b6058b26633e49969e99b48d02efb, type: 3}
+  m_Sprite: {fileID: -298962852, guid: e06aa28eb4ad1c84d92ee29c1da41411, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
