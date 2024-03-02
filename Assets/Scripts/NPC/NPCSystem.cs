@@ -16,8 +16,8 @@ public class NPCSystem : MonoBehaviour
     [SerializeField] private GameObject _arrowSprite;
     [SerializeField] private PlayerComponent _player;
     [SerializeField] private Transform _houseTeleport;
-
     [SerializeField] private TextMeshProUGUI _textObject;
+    [SerializeField] private Animator _animator;
 
     //[SerializeField] private float _delayBetweenDialogues = 5f;
     [SerializeField] private string[] _texts;
@@ -68,9 +68,16 @@ public class NPCSystem : MonoBehaviour
             _playerComponent.isDialogue = false;
             _dialogueTemplate.SetActive(false);
             _arrowSprite.SetActive(false);
+            _animator.Play("Fade");
             OnDialogueFinished?.Invoke();
-            _player.TeleportPlayer(_houseTeleport.position);
+            StartCoroutine(TeleportAfterDelay(1.30f));
         }
+    }
+    
+    private IEnumerator TeleportAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        _player.TeleportPlayer(_houseTeleport.position);
     }
 
     private IEnumerator ShowDialogueWithDelay(string text)
