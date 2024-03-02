@@ -11827,9 +11827,9 @@ MonoBehaviour:
   _houseTeleport: {fileID: 1791777799}
   _textObject: {fileID: 1577204651}
   _texts:
-  - Hi!
-  - You have to kill everyone
-  - Bye
+  - Hey, I think the hellworm's heart is inside this place!
+  - You got to follow me inside, we must destroy this horrible lump of a heart to
+    slay the demon.
   _playerTag: Player
 --- !u!65 &498738224
 BoxCollider:
