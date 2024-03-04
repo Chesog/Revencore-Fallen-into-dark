@@ -14,6 +14,8 @@ public class EnemiesManager : MonoBehaviour
     public static event Action OnGamePause;
     public static event Action OnFinalVideo;
 
+    public static event Action OnNoHouseEnemies;
+
     #endregion
 
     #region EXPOSED_FIELDS
@@ -36,6 +38,7 @@ public class EnemiesManager : MonoBehaviour
     public int _room2NecessaryKills = 0;
     public int _room3NecessaryKills = 7;
     public int _room4NecessaryKills = 0;
+    public int _houseNecessaryKills = 5;
 
     #endregion
 
@@ -73,6 +76,10 @@ public class EnemiesManager : MonoBehaviour
         else if (_currentRoom == 2 && _kills >= _room2NecessaryKills)
         {
             OnNoEnemies?.Invoke();
+        }
+        else if (_currentRoom == 3 && _kills >= _room3NecessaryKills + _houseNecessaryKills)
+        {
+            OnNoHouseEnemies?.Invoke();
         }
         else if (_currentRoom == 3 && _kills >= _room3NecessaryKills)
         {

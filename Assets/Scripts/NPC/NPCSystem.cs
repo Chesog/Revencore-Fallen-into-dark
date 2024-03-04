@@ -5,11 +5,7 @@ using UnityEngine;
 
 public class NPCSystem : MonoBehaviour
 {
-    #region EVENTS
-    public static event Action OnDialogueFinished;
 
-    #endregion
-    
     [SerializeField] private PlayerComponent _playerComponent;
     [SerializeField] private GameObject _dialogueTemplate;
     [SerializeField] private GameObject _canvas;
@@ -69,7 +65,6 @@ public class NPCSystem : MonoBehaviour
             _dialogueTemplate.SetActive(false);
             _arrowSprite.SetActive(false);
             _animator.Play("Fade");
-            //OnDialogueFinished?.Invoke();
             StartCoroutine(TeleportAfterDelay(1.30f));
         }
     }

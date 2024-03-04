@@ -21,6 +21,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform[] _room1SpawnPositions;
     [SerializeField] private Transform[] _room2SpawnPositions;
     [SerializeField] private Transform[] _room3SpawnPositions;
+    [SerializeField] private Transform[] _houseSpawnPositions;
 
     #endregion
 
@@ -41,6 +42,7 @@ public class EnemySpawner : MonoBehaviour
         RoomManager.OnPause += EnablePause;
         RoomManager.OnUnPause += DisablePause;
     }
+    
 
     private void Start()
     {
@@ -99,7 +101,7 @@ public class EnemySpawner : MonoBehaviour
     {
         pause = true;
     }
-
+    
     private void DisablePause()
     {
         pause = false;

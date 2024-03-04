@@ -7,6 +7,7 @@ public class BossHeart : MonoBehaviour
 {
     #region EVENTS
     public static event Action OnDialogueFinished;
+    
 
     #endregion
     [SerializeField] private HealthComponent _healthComponent;
@@ -14,6 +15,9 @@ public class BossHeart : MonoBehaviour
     [SerializeField] private PlayerComponent _player;
     [SerializeField] private Transform _outsideTeleport;
     [SerializeField] private Animator _animator;
+    [SerializeField] private VideoHandeler _videoHandeler;
+    
+    private bool _canDestroyHeart = false;
 
     private void OnEnable()
     {
@@ -28,15 +32,24 @@ public class BossHeart : MonoBehaviour
             enabled = false;
         }
         _healthComponent.OnInsufficient_Health += HealthComponentOnOnInsufficient_Health;
+        EnemiesManager.OnNoHouseEnemies += OnCanDestroyHeart;
+    }
+
+    private void OnCanDestroyHeart()
+    {
+        _canDestroyHeart = true;
     }
 
     private void HealthComponentOnOnInsufficient_Health()
     {
-        _cameraShake.StartCameraShake();
-        AkSoundEngine.PostEvent("BossScream", gameObject);
-        // Poner Video Animacion
-        _animator.Play("Fade");
-        StartCoroutine(TeleportAfterDelay(1.30f));
+        if (_canDestroyHeart)
+        {
+            _cameraShake.StartCameraShake();
+            AkSoundEngine.PostEvent("BossScream", gameObject);
+            // Poner Video Animacion
+            _animator.Play("Fade");
+            StartCoroutine(TeleportAfterDelay(1.30f));
+        }
     }
     
     private IEnumerator TeleportAfterDelay(float delay)
@@ -45,4 +58,5 @@ public class BossHeart : MonoBehaviour
         _player.TeleportPlayer(_outsideTeleport.position);
         OnDialogueFinished?.Invoke();
     }
+    
 }
