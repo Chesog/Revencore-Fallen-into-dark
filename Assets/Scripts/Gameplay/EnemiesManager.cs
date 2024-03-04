@@ -80,6 +80,7 @@ public class EnemiesManager : MonoBehaviour
         else if (_currentRoom == 3 && _kills >= _room3NecessaryKills + _houseNecessaryKills)
         {
             OnNoHouseEnemies?.Invoke();
+            OnNoEnemies?.Invoke();
         }
         else if (_currentRoom == 3 && _kills >= _room3NecessaryKills)
         {
