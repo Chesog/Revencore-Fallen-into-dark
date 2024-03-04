@@ -3655,6 +3655,7 @@ MonoBehaviour:
   _cameraShake: {fileID: 3195029495822534145}
   _player: {fileID: 3195029495822534137}
   _outsideTeleport: {fileID: 882090520}
+  _animator: {fileID: 1083799645}
 --- !u!1 &158425145
 GameObject:
   m_ObjectHideFlags: 0
@@ -11851,8 +11852,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.8072904, y: 1, z: 0.8782023}
+  m_Center: {x: -0.008333783, y: 0, z: -0.24892992}
 --- !u!64 &501158275
 MeshCollider:
   m_ObjectHideFlags: 0

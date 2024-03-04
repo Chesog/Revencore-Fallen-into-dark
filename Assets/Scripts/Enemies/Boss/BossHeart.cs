@@ -9,6 +9,7 @@ public class BossHeart : MonoBehaviour
     [SerializeField] private CameraShaker _cameraShake;
     [SerializeField] private PlayerComponent _player;
     [SerializeField] private Transform _outsideTeleport;
+    [SerializeField] private Animator _animator;
 
     private void OnEnable()
     {
@@ -30,6 +31,13 @@ public class BossHeart : MonoBehaviour
         _cameraShake.StartCameraShake();
         AkSoundEngine.PostEvent("BossScream", gameObject);
         // Poner Video Animacion
+        _animator.Play("Fade");
+        StartCoroutine(TeleportAfterDelay(1.30f));
+    }
+    
+    private IEnumerator TeleportAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         _player.TeleportPlayer(_outsideTeleport.position);
     }
 }
