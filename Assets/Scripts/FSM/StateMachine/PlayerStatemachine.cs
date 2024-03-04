@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerStatemachine : State_Machine
@@ -9,6 +11,8 @@ public class PlayerStatemachine : State_Machine
     [SerializeField] private float attack3Duration;
     [SerializeField] private PlayerInputManager _inputManager;
     [SerializeField] private PlayerComponent _playerComponent;
+    [SerializeField] private int _maxShots = 20;
+    [SerializeField] private TextMeshProUGUI _shotsText;
     private PlayerIdleState _idleState;
     private PlayerMeleAttackState _attackState;
     private PlayerMeleAttackState _attackState1;
@@ -17,6 +21,7 @@ public class PlayerStatemachine : State_Machine
     private float invulneravilityTime = 1.5f;
     private float rangedMaxTime = 10.0f;
     private bool attackCalled;
+    private int shotsFired = 0;
     private bool _pause = false;
     private IEnumerator resetRangedAttack;
 
@@ -41,7 +46,10 @@ public class PlayerStatemachine : State_Machine
                 if (healthPotion != null)
                     healthPotion.Interact(_playerComponent);
                 if (shotPotion != null)
+                {
                     shotPotion.Interact(_playerComponent);
+                    _shotsText.text = _maxShots.ToString();
+                }
             }
         }
     }
@@ -105,13 +113,14 @@ public class PlayerStatemachine : State_Machine
         _playerComponent.character_Health_Component.OnDecrease_Health += OnplayerDecreaseHeath;
 
         RoomManager.OnUnPause += OnPlayerUnPause;
-
-        resetRangedAttack = ResetAttack();
+        
         attackCalled = false;
 
         base.OnEnable();
     }
 
+  
+    
     private void OnPlayerUnPause()
     {
         _pause = false;
@@ -127,17 +136,15 @@ public class PlayerStatemachine : State_Machine
         GameObject projectile = Instantiate(_playerComponent.bulletPrefab, _playerComponent.shootingPoint.position,
             _playerComponent.rot);
 
-        if (!attackCalled)
-            StartCoroutine(resetRangedAttack);
-    }
+        shotsFired++;
 
-    private IEnumerator ResetAttack()
-    {
-        attackCalled = true;
-        yield return new WaitForSeconds(rangedMaxTime);
-        _playerComponent.isRanged_Attacking = false;
-        attackCalled = false;
-        yield return null;
+        _shotsText.text = (_maxShots - shotsFired).ToString();
+        
+        if (shotsFired >= _maxShots)
+        {
+            _playerComponent.isRanged_Attacking = false;
+        }
+        
     }
 
     private void OnPlayerPause()
