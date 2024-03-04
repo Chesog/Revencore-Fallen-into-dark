@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class BossHeart : MonoBehaviour
 {
+    #region EVENTS
+    public static event Action OnDialogueFinished;
+
+    #endregion
     [SerializeField] private HealthComponent _healthComponent;
     [SerializeField] private CameraShaker _cameraShake;
     [SerializeField] private PlayerComponent _player;
@@ -39,5 +43,6 @@ public class BossHeart : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         _player.TeleportPlayer(_outsideTeleport.position);
+        OnDialogueFinished?.Invoke();
     }
 }

@@ -69,7 +69,7 @@ public class NPCSystem : MonoBehaviour
             _dialogueTemplate.SetActive(false);
             _arrowSprite.SetActive(false);
             _animator.Play("Fade");
-            OnDialogueFinished?.Invoke();
+            //OnDialogueFinished?.Invoke();
             StartCoroutine(TeleportAfterDelay(1.30f));
         }
     }

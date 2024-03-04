@@ -51,7 +51,7 @@ public class RoomManager : MonoBehaviour
     {
         _playerInputManager.OnPlayerPause += OnGamePause;
         EnemiesManager.OnNoEnemies += SetCanMoveForward;
-        NPCSystem.OnDialogueFinished += OnDialogueFinished;
+        BossHeart.OnDialogueFinished += OnDialogueFinished;
     }
 
     private void OnInsuficientHealth()
