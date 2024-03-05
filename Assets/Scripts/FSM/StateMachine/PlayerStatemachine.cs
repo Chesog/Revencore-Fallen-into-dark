@@ -143,6 +143,7 @@ public class PlayerStatemachine : State_Machine
         if (shotsFired >= _maxShots)
         {
             _playerComponent.isRanged_Attacking = false;
+            shotsFired = 0;
         }
         
     }
