@@ -24971,6 +24971,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 494864935}
     m_Modifications:
+    - target: {fileID: 444641970228491651, guid: 60b278db42eac9140ae048f30e31ced9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 627762092537869117, guid: 60b278db42eac9140ae048f30e31ced9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -25055,13 +25059,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1880544140091787574, guid: 60b278db42eac9140ae048f30e31ced9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2450745113319126392, guid: 60b278db42eac9140ae048f30e31ced9, type: 3}
       propertyPath: m_Name
       value: prefab_options_screen
       objectReference: {fileID: 0}
     - target: {fileID: 2450745113319126392, guid: 60b278db42eac9140ae048f30e31ced9, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5456454175512258266, guid: 60b278db42eac9140ae048f30e31ced9, type: 3}
+      propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976239197286551680, guid: 60b278db42eac9140ae048f30e31ced9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -534
       objectReference: {fileID: 0}
     - target: {fileID: 6460019344048765411, guid: 60b278db42eac9140ae048f30e31ced9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -25090,6 +25106,14 @@ PrefabInstance:
     - target: {fileID: 6460019344048765411, guid: 60b278db42eac9140ae048f30e31ced9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895615891492443195, guid: 60b278db42eac9140ae048f30e31ced9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -534.0002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437118992744322717, guid: 60b278db42eac9140ae048f30e31ced9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -534.0001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37600,6 +37624,10 @@ PrefabInstance:
     - target: {fileID: 8519213655038272253, guid: fb0ffd0249c039b4eb4e6e71b31070ac, type: 3}
       propertyPath: m_Name
       value: Pause Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8519213655038272253, guid: fb0ffd0249c039b4eb4e6e71b31070ac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8744455228332982873, guid: fb0ffd0249c039b4eb4e6e71b31070ac, type: 3}
       propertyPath: OptionsMenu
