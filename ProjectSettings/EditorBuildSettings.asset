@@ -17,9 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Options_Scene.unity
     guid: f61cb5ea6de6dcf419dd347bceadf46f
-  - enabled: 1
-    path: Assets/Scenes/Leaderboard_Scene.unity
-    guid: a6bb379b37a329b45953c198badebd47
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/WinVideo_Scene.unity
     guid: 701be52fbbe18c941b3a951b9fdaddc1
