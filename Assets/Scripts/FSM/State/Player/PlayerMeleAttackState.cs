@@ -71,7 +71,7 @@ public class PlayerMeleAttackState : PlayerBaseState
     private void MeleeAttack()
     {
         Collider[] hitEnemies = Physics.OverlapSphere(sphereCenter, _player._attackRange);
-        float distance = 0.0f;
+        float distance = 1.0f;
         float minDistace = _player._attackRange * 10.0f;
         Transform temp = null;
 
@@ -85,18 +85,18 @@ public class PlayerMeleAttackState : PlayerBaseState
             }
         }
 
-        //stateMachine.StartCoroutine(LerpToEnemy(temp));
-        foreach (Collider enemy in hitEnemies)
-        {
-            if (enemy != null && enemy.tag == "Enemy")
-            {
-                enemy.GetComponent<HealthComponent>().DecreaseHealth(_player.damage);
-
-                Knockback knockback = enemy.GetComponent<Knockback>();
-                if (knockback != null)
-                    knockback.PlayKnockback(_player.transform);
-            }
-        }
+        stateMachine.StartCoroutine(LerpToEnemy(temp));
+        //foreach (Collider enemy in hitEnemies)
+        //{
+        //    if (enemy != null && enemy.tag == "Enemy")
+        //    {
+        //        enemy.GetComponent<HealthComponent>().DecreaseHealth(_player.damage);
+        //
+        //        Knockback knockback = enemy.GetComponent<Knockback>();
+        //        if (knockback != null)
+        //            knockback.PlayKnockback(_player.transform);
+        //    }
+        //}
     }
 
     private IEnumerator LerpToEnemy(Transform target)
@@ -104,8 +104,21 @@ public class PlayerMeleAttackState : PlayerBaseState
         Vector3 startPosition = _player.transform.position;
         float journeyLength = Vector3.Distance(startPosition, target.position);
         float startTime = Time.time;
-        float fractionOfJourney = 0.0f;
+        float fractionOfJourney = 1.0f;
+        Vector3 newpos = target.position;
 
+        if (target.position.x > _player.transform.position.x)
+        {
+            newpos.x -= fractionOfJourney * 1.5f;
+        }
+        else if (target.position.x > _player.transform.position.x)
+        {
+            newpos.x += fractionOfJourney * 1.5f;
+        }
+
+        if (target.position.y > _player.transform.position.y)
+            newpos.y -= (target.position.y - _player.transform.position.y);
+        
         while (fractionOfJourney <= 1.0f)
         {
             // Calcula la distancia recorrida.
@@ -115,7 +128,7 @@ public class PlayerMeleAttackState : PlayerBaseState
             fractionOfJourney = distCovered / journeyLength;
 
             // Interpola suavemente entre la posición inicial y final.
-            _player.transform.position = Vector3.Lerp(startPosition, target.position, fractionOfJourney);
+            _player.transform.position = Vector3.Lerp(startPosition, newpos, fractionOfJourney);
 
             // Espera hasta el siguiente frame.
             yield return null;
@@ -123,6 +136,7 @@ public class PlayerMeleAttackState : PlayerBaseState
 
         // El movimiento ha terminado.
         Debug.Log("Lerp Completed");
+        target.GetComponent<HealthComponent>().DecreaseHealth(_player.damage);
     }
 
     public override void OnExit()
