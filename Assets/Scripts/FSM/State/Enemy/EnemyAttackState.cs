@@ -37,24 +37,92 @@ public class EnemyAttackState : EnemyBaseState
     private void MeleeAttack()
     {
 
+        //Collider[] hitEnemies = Physics.OverlapSphere(enemy.sphereCenter,enemy.stopDistance + 0.5f);
+        //
+        //foreach (Collider obj in hitEnemies)
+        //{
+        //    if (obj != null && obj.tag == "Player" && !enemy.target.GetComponentInParent<PlayerComponent>().isPlayer_Damaged)
+        //    {
+        //        if (!enemy.IsAttacking)
+        //        {
+        //            obj.GetComponentInParent<HealthComponent>().DecreaseHealth(enemy.damage);
+        //            OnEnemyMeleeHit?.Invoke();
+        //            playAttackAnimation();
+        //            MeleeAttackSound();
+        //
+        //            Knockback knockback = obj.GetComponentInParent<Knockback>();
+        //            if (knockback != null)
+        //                knockback.PlayKnockback(enemy.transform);
+        //        }
+        //    }
+        //}
+        
         Collider[] hitEnemies = Physics.OverlapSphere(enemy.sphereCenter,enemy.stopDistance + 0.5f);
+        float distance = 1.0f;
+        float minDistace = enemy.stopDistance + 0.5f;
+        Transform temp = null;
 
-        foreach (Collider obj in hitEnemies)
+        for (int i = 0; i < hitEnemies.Length; i++)
         {
-            if (obj != null && obj.tag == "Player" && !enemy.target.GetComponentInParent<PlayerComponent>().isPlayer_Damaged)
+            if (hitEnemies[i] != null && hitEnemies[i].tag == "Player" && !enemy.target.GetComponentInParent<PlayerComponent>().isPlayer_Damaged) 
             {
-                if (!enemy.IsAttacking)
-                {
-                    obj.GetComponentInParent<HealthComponent>().DecreaseHealth(enemy.damage);
-                    OnEnemyMeleeHit?.Invoke();
-                    playAttackAnimation();
-                    MeleeAttackSound();
-
-                    Knockback knockback = obj.GetComponentInParent<Knockback>();
-                    if (knockback != null)
-                        knockback.PlayKnockback(enemy.transform);
-                }
+                distance = Vector3.Distance(enemy.transform.position, hitEnemies[i].transform.position);
+                if (distance < minDistace)
+                    temp = hitEnemies[i].transform;
             }
+        }
+
+        stateMachine.StartCoroutine(LerpToEnemy(temp));
+    }
+    
+    private IEnumerator LerpToEnemy(Transform target)
+    {
+        Vector3 startPosition = enemy.transform.position;
+        float journeyLength = Vector3.Distance(startPosition, target.position);
+        float startTime = Time.time;
+        float fractionOfJourney = 1.0f;
+        Vector3 newpos = target.position;
+
+        if (target.position.x > enemy.transform.position.x)
+        {
+            newpos.x -= fractionOfJourney * 1.5f;
+        }
+        else if (target.position.x > enemy.transform.position.x)
+        {
+            newpos.x += fractionOfJourney * 1.5f;
+        }
+
+        if (target.position.y > enemy.transform.position.y)
+            newpos.y -= (target.position.y - enemy.transform.position.y);
+        
+        while (fractionOfJourney <= 1.0f)
+        {
+            // Calcula la distancia recorrida.
+            float distCovered = (Time.time - startTime) * enemy.speed;
+
+            // Calcula la fracción del recorrido completado.
+            fractionOfJourney = distCovered / journeyLength;
+
+            // Interpola suavemente entre la posición inicial y final.
+            enemy.transform.position = Vector3.Lerp(startPosition, newpos, fractionOfJourney);
+
+            // Espera hasta el siguiente frame.
+            yield return null;
+        }
+
+        // El movimiento ha terminado.
+        Debug.Log("Lerp Completed");
+        if (!enemy.IsAttacking)
+        {
+            target.GetComponentInParent<HealthComponent>().DecreaseHealth(enemy.damage);
+            Debug.Log("enemy.damage" + enemy.damage);
+            OnEnemyMeleeHit?.Invoke();
+            playAttackAnimation();
+            MeleeAttackSound();
+
+            Knockback knockback = target.GetComponentInParent<Knockback>();
+            if (knockback != null)
+                knockback.PlayKnockback(enemy.transform);
         }
     }
 
